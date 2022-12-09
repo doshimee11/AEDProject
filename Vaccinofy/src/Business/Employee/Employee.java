@@ -4,6 +4,10 @@
  */
 package Business.Employee;
 
+import Business.Hospital.Hospital;
+import Business.Order.OrderCatalog;
+import Business.Pharmacy.Pharmacy;
+
 /**
  *
  * @author meetdoshi
@@ -17,13 +21,13 @@ public class Employee {
     private String enrollmentStatus;
     private Hospital hospital;
     private Pharmacy pharmacy;
-    private MasterOrderCatalog masterOrderCatalog;
+    private OrderCatalog orderCatalog;
     private String check;
     
     public Employee(){
         employeeID = count;
         count++;
-        masterOrderCatalog = new MasterOrderCatalog();
+        orderCatalog = new OrderCatalog();
     }
 
     public String getEmployeeName() {
@@ -66,12 +70,12 @@ public class Employee {
         this.pharmacy = pharmacy;
     }
 
-    public MasterOrderCatalog getMasterOrderCatalog() {
-        return masterOrderCatalog;
+    public OrderCatalog getOrderCatalog() {
+        return orderCatalog;
     }
 
-    public void setMasterOrderCatalog(MasterOrderCatalog masterOrderCatalog) {
-        this.masterOrderCatalog = masterOrderCatalog;
+    public void setOrderCatalog(OrderCatalog orderCatalog) {
+        this.orderCatalog = orderCatalog;
     }
     
     @Override
