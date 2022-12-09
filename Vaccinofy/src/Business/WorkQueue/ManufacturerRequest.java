@@ -9,7 +9,7 @@ package Business.WorkQueue;
  * @author meetdoshi
  */
 
-public class ManufacturerRequest {
+public class ManufacturerRequest extends WorkRequest{
     
     private String manufacturerRequest;
 
