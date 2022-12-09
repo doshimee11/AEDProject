@@ -4,6 +4,7 @@
  */
 package Business.Inventory;
 
+import Business.Vaccine.Vaccine;
 import java.util.ArrayList;
 
 /**

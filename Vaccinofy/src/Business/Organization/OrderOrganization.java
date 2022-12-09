@@ -4,6 +4,10 @@
  */
 package Business.Organization;
 
+import Business.Role.HospitalOrderRole;
+import Business.Role.PharmacyOrderRole;
+import Business.Role.ProviderOrderRole;
+import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
@@ -16,7 +20,7 @@ public class OrderOrganization extends Organization {
     public OrderOrganization(){
         super(Organization.OrganizationType.Order.getValue());
     }
-
+    
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList<>();

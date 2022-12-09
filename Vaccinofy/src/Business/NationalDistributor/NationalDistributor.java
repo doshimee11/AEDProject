@@ -6,6 +6,7 @@ package Business.NationalDistributor;
 
 import Business.Enterprise.Enterprise;
 import Business.Inventory.InventoryDirectory;
+import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
