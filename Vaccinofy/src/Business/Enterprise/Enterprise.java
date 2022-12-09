@@ -5,6 +5,7 @@
 package Business.Enterprise;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
+import Business.UserAccount.UserAccountDirectory;
 
 /**
  *
@@ -15,6 +16,7 @@ public abstract class Enterprise extends Organization{
     
     private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
+    private UserAccountDirectory userAccountDirectory;
     
     public Enterprise(String name, EnterpriseType enterpriseType){
         super(name);
@@ -51,4 +53,9 @@ public abstract class Enterprise extends Organization{
     public OrganizationDirectory getOrganizationDirectory() {
         return organizationDirectory;
     }
+    
+    public UserAccountDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
+    }
+    
 }
