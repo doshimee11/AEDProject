@@ -4,6 +4,11 @@
  */
 package Business.Organization;
 
+import Business.Employee.EmployeeDirectory;
+import Business.Inventory.InventoryDirectory;
+import Business.Role.Role;
+import Business.UserAccount.UserAccountDirectory;
+import Business.WorkQueue.WorkQueue;
 import java.util.ArrayList;
 
 /**
@@ -46,6 +51,38 @@ public abstract class Organization {
         workQueue = new WorkQueue();
         organizationID = count;
         ++count;
+    }
+
+    public String getOrgnizationName() {
+        return orgnizationName;
+    }
+
+    public int getOrganizationID() {
+        return organizationID;
+    }
+
+    public EmployeeDirectory getEmployeeDirectory() {
+        return employeeDirectory;
+    }
+
+    public UserAccountDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
+    }
+
+    public WorkQueue getWorkQueue() {
+        return workQueue;
+    }
+
+    public InventoryDirectory getInventoryDirectory() {
+        return inventoryDirectory;
+    }
+
+    public void setOrgnizationName(String orgnizationName) {
+        this.orgnizationName = orgnizationName;
+    }
+
+    public void setOrganizationID(int organizationID) {
+        this.organizationID = organizationID;
     }
     
     public abstract ArrayList<Role> getSupportedRole();

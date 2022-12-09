@@ -4,6 +4,11 @@
  */
 package Business.Organization;
 
+import Business.Role.DistributerFinanceRole;
+import Business.Role.HospitalFinanceRole;
+import Business.Role.ManufacturerFinanceRole;
+import Business.Role.ProviderFinanceRole;
+import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
@@ -16,13 +21,13 @@ public class FinanceOrganization extends Organization {
     public FinanceOrganization(){
         super(Organization.OrganizationType.Finance.getValue());
     }
-
+    
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList<>();
-        roles.add(new DistributorFinanceRole());
+        roles.add(new DistributerFinanceRole());
         roles.add(new ProviderFinanceRole());
-        roles.add(new ManufactureFinanceRole());
+        roles.add(new ManufacturerFinanceRole());
         roles.add(new HospitalFinanceRole());
         return roles;
     }

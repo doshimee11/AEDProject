@@ -4,6 +4,11 @@
  */
 package Business.Organization;
 
+import Business.Inventory.InventoryDirectory;
+import Business.Order.Order;
+import Business.Role.DistributerInventoryRole;
+import Business.Role.ProviderInventoryRole;
+import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
@@ -33,7 +38,7 @@ public class InventoryOrganization extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList<>();
-        roles.add(new DistributorInventoryRole());
+        roles.add(new DistributerInventoryRole());
         roles.add(new ProviderInventoryRole());
         return roles;
     }
