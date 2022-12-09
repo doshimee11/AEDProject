@@ -4,6 +4,8 @@
  */
 package Business.Network;
 
+import Business.Enterprise.EnterpriseDirectory;
+
 /**
  *
  * @author meetdoshi
