@@ -13,21 +13,24 @@ import javax.swing.JPanel;
  *
  * @author ADMIN
  */
-public class NationalDistributorWorkAreaJPanel extends javax.swing.JPanel {
-    private JPanel userProcessContainer;
-    private Ecosystem system;
-    private UserAccount userAccount;
 
+public class NationalDistributorWorkAreaJPanel extends javax.swing.JPanel {
+    
     /**
      * Creates new form NationalDistributorWorkAreaJPanel
      */
+    
+    private JPanel userProcessContainer;
+    private Ecosystem system;
+    private UserAccount userAccount;
+    
     public NationalDistributorWorkAreaJPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         this.userAccount = userAccount;
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,12 +80,13 @@ public class NationalDistributorWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        VaccineOrderRequestApprovalJPanel vaccineOrderRequestApprovalJPanel = new VaccineOrderRequestApprovalJPanel(userProcessContainer, userAccount, ecoSystem);
+        
+        VaccineOrderRequestApprovalJPanel vaccineOrderRequestApprovalJPanel = new VaccineOrderRequestApprovalJPanel(userProcessContainer, userAccount, system);
         userProcessContainer.add("VaccineOrderRequestApprovalJPanel", vaccineOrderRequestApprovalJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

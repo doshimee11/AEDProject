@@ -17,8 +17,12 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="138" max="32767" attributes="0"/>
+              <EmptySpace pref="485" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="orderVaccineJButton" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
@@ -29,10 +33,6 @@
                       </Group>
                       <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
-                  </Group>
               </Group>
           </Group>
       </Group>
@@ -40,13 +40,13 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
               <Component id="orderVaccineJButton" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Component id="viewOrderHistoryJButton" min="-2" pref="40" max="-2" attributes="0"/>
-              <EmptySpace pref="207" max="32767" attributes="0"/>
+              <EmptySpace pref="748" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -57,7 +57,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Hospital Order Organization Work Area"/>
+        <Property name="text" type="java.lang.String" value="Pharmacy Order Organization Work Area"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="orderVaccineJButton">

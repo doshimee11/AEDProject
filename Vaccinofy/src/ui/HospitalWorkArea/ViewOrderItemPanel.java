@@ -12,25 +12,30 @@ import javax.swing.JPanel;
  *
  * @author ADMIN
  */
-public class ViewOrderItemJPanel extends javax.swing.JPanel {
-    private JPanel userProcessContainer;
-    private OrderItem orderItem;
 
+public class ViewOrderItemPanel extends javax.swing.JPanel {
+    
     /**
      * Creates new form ViewOrderItemJPanel
      */
-    public ViewOrderItemJPanel(JPanel userProcessContainer, OrderItem orderItem) {
+    
+    private JPanel userProcessContainer;
+    private OrderItem orderItem;
+    
+    public ViewOrderItemPanel(JPanel userProcessContainer, OrderItem orderItem) {
         initComponents();
-         this.userProcessContainer = userProcessContainer;
+        this.userProcessContainer = userProcessContainer;
         this.orderItem = orderItem;
+        
         populateForm();
     }
-public void populateForm(){
+    
+    public void populateForm(){
         vaccineNameJTextField.setText(orderItem.getVaccine().getVaccineName());
         vaccineIdJTextField.setText(String.valueOf(orderItem.getVaccine().getVaccineID()));
         quantityJTextField.setText(String.valueOf(orderItem.getItemQuantity()));
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -135,9 +140,11 @@ public void populateForm(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        
     }//GEN-LAST:event_backJButtonActionPerformed
 
 

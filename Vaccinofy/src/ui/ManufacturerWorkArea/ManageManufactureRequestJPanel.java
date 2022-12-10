@@ -4,6 +4,7 @@
  */
 package ui.ManufacturerWorkArea;
 
+import Business.Ecosystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.VaccineManufacturesEnterprise;
@@ -26,27 +27,31 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ADMIN
  */
-public class ManageManufactureRequestJPanel extends javax.swing.JPanel {
-    private JPanel userProcessContainer;
-    private EcoSystem ecoSystem;
-    private UserAccount userAccount;
-    private VaccineManufacturesEnterprise vaccineManufacturesEnterprise;
 
+public class ManageManufactureRequestJPanel extends javax.swing.JPanel {
+    
     /**
      * Creates new form ManageManufactureRequestJPanel
      */
-    public ManageManufactureRequestJPanel(JPanel userProcessContainer, EcoSystem ecoSystem, UserAccount userAccount, VaccineManufacturesEnterprise vaccineManufacturesEnterprise) {
+    
+    private JPanel userProcessContainer;
+    private Ecosystem system;
+    private UserAccount userAccount;
+    private VaccineManufacturesEnterprise vaccineManufacturesEnterprise;
+    
+    public ManageManufactureRequestJPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, VaccineManufacturesEnterprise vaccineManufacturesEnterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
-        this.ecoSystem = ecoSystem;
+        this.system = system;
         this.vaccineManufacturesEnterprise = vaccineManufacturesEnterprise;
+        
         populateManufactureTable();
     }
+    
     public void populateManufactureTable() {
         DefaultTableModel dtm = (DefaultTableModel) manufactureOrderJTable.getModel();
         dtm.setRowCount(0);
-
         for (WorkRequest request : vaccineManufacturesEnterprise.getWorkQueue().getWorkRequestList()) {
             Object[] row = new Object[5];
             row[0] = request;
@@ -221,9 +226,11 @@ public class ManageManufactureRequestJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.remove(this);
         layout.previous(userProcessContainer);
+        
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void manufactureJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manufactureJButtonActionPerformed
@@ -233,7 +240,8 @@ public class ManageManufactureRequestJPanel extends javax.swing.JPanel {
             UserAccount userAccount = (UserAccount) manufactureRequest.getSender();
             int requestedQuantity = manufactureRequest.getRequestedQuantity();
             Enterprise ent = null;
-            for (Network network : ecoSystem.getNetworkDirectory()) {
+            
+            for (Network network : system.getNetworkDirectory()) {
                 for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
                     for (UserAccount ua : enterprise.getUserAccountDirectory().getUserAccountDirectory()) {
                         if (ua == userAccount) {
@@ -242,6 +250,7 @@ public class ManageManufactureRequestJPanel extends javax.swing.JPanel {
                     }
                 }
             }
+            
             for (Organization organization : ent.getOrganizationDirectory().getOrganizationDirectory()) {
                 for (Inventory inventory : organization.getInventoryDirectory().getInventoryDirectory()) {
                     if (manufactureRequest.getOrderID() == inventory.getVaccine().getVaccineID()) {
@@ -256,30 +265,32 @@ public class ManageManufactureRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_manufactureJButtonActionPerformed
 
     private void rejectJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectJButtonActionPerformed
+        
         int selectedRow = manufactureOrderJTable.getSelectedRow();
         int quantity = 0;
         int orginalQuantity = 0;
-
+        
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         if (manufactureOrderJTable.getValueAt(selectedRow, 4) == "Rejected") {
             JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         if (manufactureOrderJTable.getValueAt(selectedRow, 4) == "Approved") {
             JOptionPane.showMessageDialog(null, "The request is already Approved", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         ManufacturerRequest request = (ManufacturerRequest) manufactureOrderJTable.getValueAt(selectedRow, 0);
         if (manufactureOrderJTable.getValueAt(selectedRow, 3) == null) {
             JOptionPane.showMessageDialog(null, "The request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int result = JOptionPane.showConfirmDialog(null, "Are you sure if you want to Reject?", "warning", dialogButton);
         if (result == JOptionPane.YES_OPTION) {
@@ -298,18 +309,20 @@ public class ManageManufactureRequestJPanel extends javax.swing.JPanel {
                 }
             }
         }
+        
         populateManufactureTable();
         JOptionPane.showMessageDialog(null, "The request is rejected", "Vaccine Request", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_rejectJButtonActionPerformed
 
     private void viewOrderJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderJButtonActionPerformed
+        
         int selectedRow = manufactureOrderJTable.getSelectedRow();
         if (selectedRow >= 0) {
             ManufacturerRequest request = (ManufacturerRequest) manufactureOrderJTable.getValueAt(selectedRow, 0);
             DefaultTableModel dtm = (DefaultTableModel) orderJTable.getModel();
             dtm.setRowCount(0);
-
-            for (Vaccine vaccine : ecoSystem.getVaccineDirectory().getVaccineDirectory()) {
+            for (Vaccine vaccine : system.getVaccineDirectory().getVaccineDirectory()) {
                 if (vaccine.getVaccineID() == request.getOrderID()) {
                     Object[] row = new Object[3];
                     row[0] = vaccine;
@@ -318,26 +331,27 @@ public class ManageManufactureRequestJPanel extends javax.swing.JPanel {
                     dtm.addRow(row);
                 }
             }
-
-        } else {
+        }
+        else {
             JOptionPane.showMessageDialog(null, "Please select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
     }//GEN-LAST:event_viewOrderJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
+        
         int selectedRow = manufactureOrderJTable.getSelectedRow();
-
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         if (manufactureOrderJTable.getValueAt(selectedRow, 3) != null) {
             JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         ManufacturerRequest request = (ManufacturerRequest) manufactureOrderJTable.getValueAt(selectedRow, 0);
         request.setReceiver(userAccount);
         request.setStatus("Pending");
@@ -348,42 +362,47 @@ public class ManageManufactureRequestJPanel extends javax.swing.JPanel {
                 order.setOrderStatus("Waiting to be approved by National Distributor");
             }
         }
+        
         populateManufactureTable();
         JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        
     }//GEN-LAST:event_assignJButtonActionPerformed
 
     private void forwardJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardJButtonActionPerformed
+        
         int selectedRow = manufactureOrderJTable.getSelectedRow();
-
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         if (manufactureOrderJTable.getValueAt(selectedRow, 4) == "Approved") {
             JOptionPane.showMessageDialog(null, "The request is already sent to State Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         if (manufactureOrderJTable.getValueAt(selectedRow, 4) == "Rejected") {
             JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         ManufacturerRequest request = (ManufacturerRequest) manufactureOrderJTable.getValueAt(selectedRow, 0);
         if (manufactureOrderJTable.getValueAt(selectedRow, 3) == null) {
             JOptionPane.showMessageDialog(null, "The request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
         request.setStatus("Approved");
         request.setManufacturerRequest("Approved");
         UserAccount user = (UserAccount) request.getSender();
         Employee employee = (Employee) user.getEmployee();
+        
         for (Order order : employee.getOrderCatalog().getOrderList()) {
             if (request.getOrderID() == order.getOrderID()) {
                 order.setOrderStatus("Approved by National Distributor");
             }
         }
+        
         ManufacturerRequest manufactureRequest = new ManufacturerRequest();
         manufactureRequest.setRequestType("Manufacture Vaccine Request");
         manufactureRequest.setStatus("waiting");
@@ -394,7 +413,8 @@ public class ManageManufactureRequestJPanel extends javax.swing.JPanel {
         Enterprise e = null;
         Network net = null;
         Organization org = null;
-        for (Network network : ecoSystem.getNetworkDirectory()) {
+        
+        for (Network network : system.getNetworkDirectory()) {
             for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
                 for (UserAccount userAccount1 : enterprise.getUserAccountDirectory().getUserAccountDirectory()) {
                     if (userAccount == userAccount1) {
@@ -404,26 +424,28 @@ public class ManageManufactureRequestJPanel extends javax.swing.JPanel {
                 }
             }
         }
-
+        
         for (Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()) {
             if (ent instanceof VaccineManufacturesEnterprise) {
                 e = ent;
                 break;
             }
         }
+        
         for (Organization organization: e.getOrganizationDirectory().getOrganizationDirectory()) {
             if (organization instanceof FinanceOrganization) {
                 org = organization;
             }
         }
+        
         if (org!= null) {
             org.getWorkQueue().getWorkRequestList().add(manufactureRequest);
             userAccount.getWorkQueue().getWorkRequestList().add(manufactureRequest);
         }
-
+        
         populateManufactureTable();
+        
     }//GEN-LAST:event_forwardJButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
