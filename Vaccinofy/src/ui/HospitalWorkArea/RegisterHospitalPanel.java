@@ -22,27 +22,31 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ADMIN
  */
-public class RegisterHospitalJPanel extends javax.swing.JPanel {
+
+public class RegisterHospitalPanel extends javax.swing.JPanel {
+    
+    /**
+     * Creates new form RegisterHospitalJPanel
+     */
+    
     private JPanel userProcessContainer;
     private Ecosystem system;
     private UserAccount userAccount;
     private ProviderEnterprise providerEnterprise;
-
-    /**
-     * Creates new form RegisterHospitalJPanel
-     */
-    public RegisterHospitalJPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, ProviderEnterprise providerEnterprise) {
+    
+    public RegisterHospitalPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, ProviderEnterprise providerEnterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         this.userAccount = userAccount;
         this.providerEnterprise = providerEnterprise;
+        
         populateTable();
     }
-public void populateTable(){
+    
+    public void populateTable(){
         DefaultTableModel dtm = (DefaultTableModel) hospitalEnrollmentJTable.getModel();
         dtm.setRowCount(0);
-        
         for(WorkRequest workRequest: userAccount.getWorkQueue().getWorkRequestList()){
             Object[] row = new Object[4];
             row[0] = workRequest;
@@ -53,6 +57,7 @@ public void populateTable(){
             dtm.addRow(row);
         }
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -152,21 +157,26 @@ public void populateTable(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.remove(this);
         layout.previous(userProcessContainer);
+        
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void enrollmentJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentJButtonActionPerformed
+        
         for(WorkRequest workRequest: userAccount.getWorkQueue().getWorkRequestList()){
             if(workRequest.getStatus().equalsIgnoreCase("Approved")){
                 JOptionPane.showMessageDialog(null, "Enrollment request is already approved", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
-            } else if(workRequest.getStatus().equalsIgnoreCase("sent")){
+            }
+            else if(workRequest.getStatus().equalsIgnoreCase("sent")){
                 JOptionPane.showMessageDialog(null, "Enrollment request is already sent and waiting to be approved", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
         }
+        
         EnrollmentRequest enrollmentRequest = new EnrollmentRequest();
         enrollmentRequest.setRequestType("Enrollment Request");
         enrollmentRequest.setStatus("Sent");
@@ -177,6 +187,7 @@ public void populateTable(){
         employee.getHospital().setHospitalStatus("Processing");
         Enterprise enterprise = null;
         Network net = null;
+        
         for(Network network : system.getNetworkDirectory()){
             for(Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()){
                 if(ent == providerEnterprise){
@@ -184,25 +195,29 @@ public void populateTable(){
                 }
             }
         }
+        
         for(Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()){
             if(ent instanceof PublicHealthEnterprise){
                 enterprise = ent;
                 break;
             }
         }
-
+        
         if(enterprise!=null){
             enterprise.getWorkQueue().getWorkRequestList().add(enrollmentRequest);
             userAccount.getWorkQueue().getWorkRequestList().add(enrollmentRequest);
             populateTable();
         }
+        
         JOptionPane.showMessageDialog(null, "Enrolment is requested successfully", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_enrollmentJButtonActionPerformed
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
+        
         populateTable();
+        
     }//GEN-LAST:event_refreshJButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;

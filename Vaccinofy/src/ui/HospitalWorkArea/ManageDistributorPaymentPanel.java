@@ -4,6 +4,7 @@
  */
 package ui.HospitalWorkArea;
 
+import Business.Ecosystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.ProviderEnterprise;
@@ -23,18 +24,21 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ADMIN
  */
-public class ManageDistributorPaymentJPanel extends javax.swing.JPanel {
-    private JPanel userProcessContainer;
-    private EcoSystem ecoSystem;
-    private UserAccount userAccount;
 
+public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
+    
     /**
      * Creates new form ManageDistributorPaymentJPanel
      */
-    public ManageDistributorPaymentJPanel(JPanel userProcessContainer, EcoSystem ecoSystem, UserAccount userAccount) {
+    
+    private JPanel userProcessContainer;
+    private Ecosystem system;
+    private UserAccount userAccount;
+    
+    public ManageDistributorPaymentPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.ecoSystem = ecoSystem;
+        this.system = system;
         this.userAccount = userAccount;
         
         populateBillTable();
@@ -51,7 +55,8 @@ public class ManageDistributorPaymentJPanel extends javax.swing.JPanel {
             float totalPrice = 0;
             Enterprise enterprise = null;
             Network net = null;
-            for (Network network : ecoSystem.getNetworkDirectory()) {
+            
+            for (Network network : system.getNetworkDirectory()) {
                 for (Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
                     for (Organization organization : ent.getOrganizationDirectory().getOrganizationDirectory()) {
                         for (UserAccount userAccount1 : organization.getUserAccountDirectory().getUserAccountDirectory()) {
@@ -62,12 +67,14 @@ public class ManageDistributorPaymentJPanel extends javax.swing.JPanel {
                     }
                 }
             }
+            
             for (Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()) {
                 if (ent instanceof ProviderEnterprise) {
                     enterprise = ent;
                     break;
                 }
             }
+            
             UserAccount uu = null;
             for (Organization o : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
                 if (o instanceof OrderOrganization) {
@@ -76,6 +83,7 @@ public class ManageDistributorPaymentJPanel extends javax.swing.JPanel {
                     }
                 }
             }
+            
             for (Order order : uu.getEmployee().getOrderCatalog().getOrderList()) {
                 if (request.getOrderID() == order.getOrderID()) {
                     for (OrderItem orderItem : order.getOrderItemList()) {
@@ -85,15 +93,15 @@ public class ManageDistributorPaymentJPanel extends javax.swing.JPanel {
 
                 }
             }
+            
             row[2] = totalPrice;
             row[3] = request.getSender();
             row[4] = request.getReceiver();
             row[5] = request.getStatus();
             dtm.addRow(row);
-
         }
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -221,12 +229,14 @@ public class ManageDistributorPaymentJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewOrderJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderJButtonActionPerformed
+        
         int selectedRow = billJTable.getSelectedRow();
         if (selectedRow >= 0) {
             WorkRequest request = (WorkRequest) billJTable.getValueAt(selectedRow, 0);
             Enterprise enterprise = null;
             Network net = null;
-            for (Network network : ecoSystem.getNetworkDirectory()) {
+            
+            for (Network network : system.getNetworkDirectory()) {
                 for (Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
                     for (Organization organization : ent.getOrganizationDirectory().getOrganizationDirectory()) {
                         for (UserAccount userAccount1 : organization.getUserAccountDirectory().getUserAccountDirectory()) {
@@ -237,12 +247,14 @@ public class ManageDistributorPaymentJPanel extends javax.swing.JPanel {
                     }
                 }
             }
+            
             for (Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()) {
                 if (ent instanceof ProviderEnterprise) {
                     enterprise = ent;
                     break;
                 }
             }
+            
             UserAccount uu = null;
             for (Organization o : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
                 if (o instanceof OrderOrganization) {
@@ -251,6 +263,7 @@ public class ManageDistributorPaymentJPanel extends javax.swing.JPanel {
                     }
                 }
             }
+            
             DefaultTableModel dtm = (DefaultTableModel) orderJTable.getModel();
             dtm.setRowCount(0);
 
@@ -260,70 +273,79 @@ public class ManageDistributorPaymentJPanel extends javax.swing.JPanel {
                     orderI = order;
                 }
             }
+            
             for (OrderItem orderItem : orderI.getOrderItemList()) {
                 Object[] row = new Object[2];
                 row[0] = orderItem;
                 row[1] = orderItem.getItemQuantity();
                 dtm.addRow(row);
             }
-        } else {
+            
+        }
+        else {
             JOptionPane.showMessageDialog(null, "Please select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
     }//GEN-LAST:event_viewOrderJButtonActionPerformed
 
     private void payBillJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payBillJButtonActionPerformed
+        
         int selectedRow = billJTable.getSelectedRow();
-
+        
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         if (billJTable.getValueAt(selectedRow, 5) == "Paid") {
             JOptionPane.showMessageDialog(null, "The bill is already Paid", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         if (billJTable.getValueAt(selectedRow, 4) == null) {
             JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         PaymentRequest paymentRequest = (PaymentRequest) billJTable.getValueAt(selectedRow, 0);
         paymentRequest.setPaymentRequest("Paid");
         paymentRequest.setStatus("Paid");
         populateBillTable();
         JOptionPane.showMessageDialog(null, "Bill paid", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_payBillJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
+        
         int selectedRow = billJTable.getSelectedRow();
-
+        
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         if (billJTable.getValueAt(selectedRow, 4) != null) {
             JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         PaymentRequest request = (PaymentRequest) billJTable.getValueAt(selectedRow, 0);
         request.setReceiver(userAccount);
         request.setStatus("Pending");
         UserAccount user = (UserAccount) request.getSender();
         Employee person = (Employee) user.getEmployee();
         for (Order order : person.getOrderCatalog().getOrderList()) {
-            if (request.getOrderID == order.getOrderID()) {
+            if (request.getOrderID() == order.getOrderID()) {
                 order.setOrderStatus("Waiting to be approved by National Distributor");
             }
         }
+        
         populateBillTable();
+        
         JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        
     }//GEN-LAST:event_assignJButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;

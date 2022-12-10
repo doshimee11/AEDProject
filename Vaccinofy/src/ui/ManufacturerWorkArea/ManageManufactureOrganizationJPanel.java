@@ -17,13 +17,16 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ADMIN
  */
-public class ManageManufactureOrganizationJPanel extends javax.swing.JPanel {
-    private JPanel userProcessContainer;
-    private VaccineManufacturesEnterprise vaccineManufacturesEnterprise;
 
+public class ManageManufactureOrganizationJPanel extends javax.swing.JPanel {
+    
     /**
      * Creates new form ManageManufactureOrganizationJPanel
      */
+    
+    private JPanel userProcessContainer;
+    private VaccineManufacturesEnterprise vaccineManufacturesEnterprise;
+    
     public ManageManufactureOrganizationJPanel(JPanel userProcessContainer, VaccineManufacturesEnterprise vaccineManufacturesEnterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -32,10 +35,10 @@ public class ManageManufactureOrganizationJPanel extends javax.swing.JPanel {
         populateTable();
         popOrganizationComboBox();
     }
+    
     public void populateTable(){
         DefaultTableModel model = (DefaultTableModel) userAccountJTable.getModel();
         model.setRowCount(0);
-        
         for(Organization organization : vaccineManufacturesEnterprise.getOrganizationDirectory().getOrganizationDirectory()){
             for(UserAccount userAccount : organization.getUserAccountDirectory().getUserAccountDirectory()){
                 Object[] row = new Object[2];
@@ -49,21 +52,21 @@ public class ManageManufactureOrganizationJPanel extends javax.swing.JPanel {
     public void popOrganizationComboBox() {
         organizationJComboBox.removeAllItems();
         vaccineManufacturesEnterprise.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Finance);
-
         organizationJComboBox.removeAllItems();
         for (Organization org : vaccineManufacturesEnterprise.getOrganizationDirectory().getOrganizationDirectory()){
-                organizationJComboBox.addItem(org);
+            organizationJComboBox.addItem(org);
         }
     }
     
     private void populateRoleComboBox(Organization organization){
         roleJComboBox.removeAllItems();
         for (Role role : organization.getSupportedRole()){
-            if(role.toString().contains("Manufacture"))
+            if(role.toString().contains("Manufacture")){
                 roleJComboBox.addItem(role);
+            }
         }
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -245,6 +248,7 @@ public class ManageManufactureOrganizationJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+        
         String userName = userNameJTextField.getText();
         String password = String.valueOf(passwordJPasswordField.getPassword());
         String empName = nameJTextField.getText();
@@ -254,19 +258,24 @@ public class ManageManufactureOrganizationJPanel extends javax.swing.JPanel {
         organization.getUserAccountDirectory().createNewUserAccount(userName, password, employee, role);
 
         populateTable();
+        
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
+        
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         if (organization != null){
             populateRoleComboBox(organization);
         }
+        
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.remove(this);
         layout.previous(userProcessContainer);
+        
     }//GEN-LAST:event_backJButtonActionPerformed
 
 

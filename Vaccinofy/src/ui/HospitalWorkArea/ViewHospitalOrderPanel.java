@@ -17,21 +17,27 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ADMIN
  */
-public class ViewHospitalJPanel extends javax.swing.JPanel {
+
+public class ViewHospitalOrderPanel extends javax.swing.JPanel {
+    
+    /**
+    * Creates new form ViewHospitalJPanel
+    */
+    
     private JPanel userProcessContainer;
     private UserAccount userAccount;
-
-    /** Creates new form ViewHospitalJPanel */
-    public ViewHospitalJPanel(JPanel userProcessContainer, UserAccount userAccount) {
+    
+    public ViewHospitalOrderPanel(JPanel userProcessContainer, UserAccount userAccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
+        
         populateOrderTable();
     }
-     public void populateOrderTable(){
+    
+    public void populateOrderTable(){
         DefaultTableModel dtm = (DefaultTableModel) orderIDJTable.getModel();
         dtm.setRowCount(0);
-        
         for(Order order : userAccount.getEmployee().getOrderCatalog().getOrderList()){
             if(userAccount.getEmployee().getCheck().equalsIgnoreCase("Hospital")){
                 Object[] row = new Object[2];
@@ -40,7 +46,6 @@ public class ViewHospitalJPanel extends javax.swing.JPanel {
                 dtm.addRow(row);
             }
         }
-        
     }
 
     /** This method is called from within the constructor to
@@ -159,6 +164,7 @@ public class ViewHospitalJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewJButtonActionPerformed
+        
         int selectedRow = orderIDJTable.getSelectedRow();
         if(selectedRow >= 0){
             int orderId = (Integer) orderIDJTable.getValueAt(selectedRow, 0);
@@ -176,18 +182,21 @@ public class ViewHospitalJPanel extends javax.swing.JPanel {
                 row[1] = orderItem.getItemQuantity();
                 dtm.addRow(row);
             }
-        } else {
+        }
+        else {
             JOptionPane.showMessageDialog(null, "Please select a row first", "View Order", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
     }//GEN-LAST:event_viewJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        
     }//GEN-LAST:event_backJButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
@@ -198,5 +207,4 @@ public class ViewHospitalJPanel extends javax.swing.JPanel {
     private javax.swing.JTable vaccineJTable;
     private javax.swing.JButton viewJButton;
     // End of variables declaration//GEN-END:variables
-
 }

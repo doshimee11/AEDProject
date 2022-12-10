@@ -2,35 +2,40 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package ui.HospitalWorkArea;
+package ui.PharmacyWorkArea;
 
+import Business.Ecosystem;
 import Business.Enterprise.ProviderEnterprise;
 import Business.Organization.OrderOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import ui.HospitalWorkArea.OrderVaccinePanel;
 
 /**
  *
- * @author ADMIN
+ * @author kalindjoshi
  */
-public class HospitalOrderOrganizationWorkAreaJPanel extends javax.swing.JPanel {
-private JPanel userProcessContainer;
-    private EcoSystem ecoSystem;
+public class PharmacyOrderOrganizationJPanel extends javax.swing.JPanel {
+    
+    private JPanel userProcessContainer;
+    private Ecosystem system;
     private UserAccount userAccount;
     private OrderOrganization orderOrganization;
     private ProviderEnterprise providerEnterprise;
+
     /**
-     * Creates new form HospitalOrderOrganizationWorkAreaJPanel
+     * Creates new form PharmacyOrderOrganization
      */
-    public HospitalOrderOrganizationWorkAreaJPanel(JPanel userProcessContainer, EcoSystem ecoSystem, UserAccount userAccount, OrderOrganization orderOrganization, ProviderEnterprise providerEnterprise) {
+    public PharmacyOrderOrganizationJPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, OrderOrganization orderOrganization, ProviderEnterprise providerEnterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.ecoSystem = ecoSystem;
+        this.system = system;
         this.userAccount = userAccount;
         this.orderOrganization = orderOrganization;
         this.providerEnterprise = providerEnterprise;
+    
     }
 
     /**
@@ -47,7 +52,7 @@ private JPanel userProcessContainer;
         viewOrderHistoryJButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Hospital Order Organization Work Area");
+        jLabel1.setText("Pharmacy Order Organization Work Area");
 
         orderVaccineJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         orderVaccineJButton.setText("Order Vaccine >>");
@@ -70,43 +75,43 @@ private JPanel userProcessContainer;
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(138, Short.MAX_VALUE)
+                .addContainerGap(485, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(230, 230, 230))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(orderVaccineJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(viewOrderHistoryJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(336, 336, 336))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(228, 228, 228))))
+                        .addGap(336, 336, 336))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addGap(81, 81, 81)
+                .addGap(82, 82, 82)
                 .addComponent(orderVaccineJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addComponent(viewOrderHistoryJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addContainerGap(748, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void orderVaccineJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderVaccineJButtonActionPerformed
         try{
-            if(userAccount.getEmployee().getHospital().getHospitalStatus().equalsIgnoreCase("Approved")){
-                OrderVaccineJPanel orderVaccineJPanel = new OrderVaccineJPanel(userProcessContainer, ecoSystem, userAccount, orderOrganization, providerEnterprise);
+            if(userAccount.getEmployee().getPharmacy().getPharmacyStatus().equalsIgnoreCase("Approved")){
+                OrderVaccinePanel orderVaccineJPanel = new OrderVaccinePanel(userProcessContainer, system, userAccount, orderOrganization, providerEnterprise);
                 userProcessContainer.add("OrderVaccineJPanel",orderVaccineJPanel);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
-            } else if(userAccount.getEmployee().getHospital().getHospitalStatus().equalsIgnoreCase("Rejected")){
+            } else if(userAccount.getEmployee().getPharmacy().getPharmacyStatus().equalsIgnoreCase("Rejected")){
                 JOptionPane.showMessageDialog(null, "The Hospital registration has been REJECTED by State Public Health Department", "Hospital Rejected", JOptionPane.ERROR_MESSAGE);
                 return;
-            } else if(userAccount.getEmployee().getHospital().getHospitalStatus().equalsIgnoreCase("Processing")){
+            } else if(userAccount.getEmployee().getPharmacy().getPharmacyStatus().equalsIgnoreCase("Processing")){
                 JOptionPane.showMessageDialog(null, "The hospital registration request is still pending with State Public Health Department", "Hospital Registration Pending", JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -114,12 +119,11 @@ private JPanel userProcessContainer;
             JOptionPane.showMessageDialog(null, "Please send a hospital registration request to State Public Health Department", "Hospital Registration Not Initialized", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
     }//GEN-LAST:event_orderVaccineJButtonActionPerformed
 
     private void viewOrderHistoryJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderHistoryJButtonActionPerformed
-        ViewHospitalOrderHistoryJPanel ohj = new ViewHospitalOrderHistoryJPanel(userProcessContainer, userAccount);
-        userProcessContainer.add("ViewOrderHistoryJPanel", ohj);
+        ViewPharmacyOrderHistoryJPanel ohj = new ViewPharmacyOrderHistoryJPanel(userProcessContainer, userAccount);
+        userProcessContainer.add("ViewPharmacyOrderHistoryJPanel", ohj);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_viewOrderHistoryJButtonActionPerformed

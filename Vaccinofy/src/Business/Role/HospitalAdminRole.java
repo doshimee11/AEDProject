@@ -10,6 +10,7 @@ import Business.Enterprise.ProviderEnterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import ui.HospitalWorkArea.HospitalPanel;
 
 /**
  *
@@ -20,7 +21,7 @@ public class HospitalAdminRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Ecosystem system) {
-        return new HospitalWorkAreaJPanel(userProcessContainer, system, account, (ProviderEnterprise)enterprise);
+        return new HospitalPanel(userProcessContainer, system, account, (ProviderEnterprise)enterprise);
     }
     
 }
