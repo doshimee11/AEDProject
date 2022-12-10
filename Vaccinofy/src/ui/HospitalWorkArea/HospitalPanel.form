@@ -38,7 +38,7 @@
               <Component id="titleJLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               <Component id="registerHospitalJButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="158" max="32767" attributes="0"/>
+              <EmptySpace pref="859" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

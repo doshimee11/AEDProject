@@ -2,28 +2,34 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package ui.HospitalWorkArea;
+package ui.PharmacyWorkArea;
 
+import Business.Ecosystem;
+import Business.Enterprise.ProviderEnterprise;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
  *
- * @author ADMIN
+ * @author kalindjoshi
  */
-public class HospitalFinanceWorkAreaJPanel extends javax.swing.JPanel {
-private JPanel userProcessContainer;
-    private EcoSystem ecoSystem;
+public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
+    
+    private JPanel userProcessContainer;
+    private Ecosystem system;
     private UserAccount userAccount;
+    private ProviderEnterprise providerEnterprise;
+    
     /**
-     * Creates new form HospitalFinanceWorkAreaJPanel
+     * Creates new form PharmacyWorkAreaJPanel
      */
-    public HospitalFinanceWorkAreaJPanel(JPanel userProcessContainer, EcoSystem ecoSystem, UserAccount userAccount) {
+    public PharmacyWorkAreaJPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, ProviderEnterprise providerEnterprise) {
         initComponents();
+        this.system = system;
         this.userProcessContainer = userProcessContainer;
-        this.ecoSystem = ecoSystem;
         this.userAccount = userAccount;
+        this.providerEnterprise = providerEnterprise;
     }
 
     /**
@@ -37,16 +43,16 @@ private JPanel userProcessContainer;
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        registerPharmacyJButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Hospital Finance Work Area");
+        jLabel1.setText("Pharmacy Work Area");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Manage Distributor Payment >>");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        registerPharmacyJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        registerPharmacyJButton.setText("Register Pharmacy");
+        registerPharmacyJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                registerPharmacyJButtonActionPerformed(evt);
             }
         });
 
@@ -55,30 +61,30 @@ private JPanel userProcessContainer;
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(342, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(271, 271, 271))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(284, 284, 284))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(325, 325, 325)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(357, 357, 357)
+                        .addComponent(registerPharmacyJButton)))
+                .addContainerGap(364, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel1)
-                .addGap(55, 55, 55)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(462, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addComponent(registerPharmacyJButton)
+                .addContainerGap(464, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
+            .addGap(0, 1200, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -87,7 +93,7 @@ private JPanel userProcessContainer;
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 601, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -96,17 +102,17 @@ private JPanel userProcessContainer;
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ManageDistributorPaymentJPanel manageDistributorPaymentJPanel = new ManageDistributorPaymentJPanel(userProcessContainer, ecoSystem, userAccount);
-        userProcessContainer.add("manageDistributorPaymentJPanel", manageDistributorPaymentJPanel);
+    private void registerPharmacyJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerPharmacyJButtonActionPerformed
+        RegisterPharmacyJPanel registerPharmacyJPanel = new RegisterPharmacyJPanel(userProcessContainer, system, userAccount, providerEnterprise);
+        userProcessContainer.add("RegisterPharmacyJPanel", registerPharmacyJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_registerPharmacyJButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton registerPharmacyJButton;
     // End of variables declaration//GEN-END:variables
 }

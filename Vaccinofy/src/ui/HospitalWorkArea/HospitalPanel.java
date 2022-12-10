@@ -4,6 +4,7 @@
  */
 package ui.HospitalWorkArea;
 
+import Business.Ecosystem;
 import Business.Enterprise.ProviderEnterprise;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -13,16 +14,19 @@ import javax.swing.JPanel;
  *
  * @author ADMIN
  */
-public class HospitalWorkAreaJPanel extends javax.swing.JPanel {
-    private JPanel userProcessContainer;
-    private EcoSystem system;
-    private UserAccount userAccount;
-    private ProviderEnterprise providerEnterprise;
 
+public class HospitalPanel extends javax.swing.JPanel {
+    
     /**
      * Creates new form HospitalWorkAreaJPanel
      */
-    public HospitalWorkAreaJPanel(JPanel userProcessContainer, EcoSystem system, UserAccount userAccount, ProviderEnterprise providerEnterprise) {
+    
+    private JPanel userProcessContainer;
+    private Ecosystem system;
+    private UserAccount userAccount;
+    private ProviderEnterprise providerEnterprise;
+    
+    public HospitalPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, ProviderEnterprise providerEnterprise) {
         initComponents();
         this.system = system;
         this.userProcessContainer = userProcessContainer;
@@ -74,15 +78,17 @@ public class HospitalWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(titleJLabel)
                 .addGap(60, 60, 60)
                 .addComponent(registerHospitalJButton)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addContainerGap(859, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void registerHospitalJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerHospitalJButtonActionPerformed
-        RegisterHospitalJPanel registerHospitalJPanel = new RegisterHospitalJPanel(userProcessContainer, system, userAccount, providerEnterprise);
-        userProcessContainer.add("RegisterHospitalJPanel", registerHospitalJPanel);
+        
+        RegisterHospitalPanel registerHospitalPanel = new RegisterHospitalPanel(userProcessContainer, system, userAccount, providerEnterprise);
+        userProcessContainer.add("RegisterHospitalJPanel", registerHospitalPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        
     }//GEN-LAST:event_registerHospitalJButtonActionPerformed
 
 

@@ -9,6 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import ui.HospitalWorkArea.HospitalFinancePanel;
 
 /**
  *
@@ -19,7 +20,7 @@ public class HospitalFinanceRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Ecosystem system) {
-        return new HospitalFinanceWorkAreaJPanel(userProcessContainer, system, account);
+        return new HospitalFinancePanel(userProcessContainer, system, account);
     }
     
 }

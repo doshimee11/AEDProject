@@ -5,32 +5,37 @@
 package ui.HospitalWorkArea;
 
 import Business.Vaccine.Vaccine;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
  *
  * @author ADMIN
  */
-public class ViewVaccineDetailsJPanel extends javax.swing.JPanel {
-    private JPanel userProcessContainer;
-    private Vaccine vaccine;
 
+public class ViewVaccineDetailsPanel extends javax.swing.JPanel {
+    
     /**
      * Creates new form ViewVaccineDetailsJPanel
      */
-    public ViewVaccineDetailsJPanel(JPanel userProcessContainer, Vaccine vaccine) {
+    
+    private JPanel userProcessContainer;
+    private Vaccine vaccine;
+    
+    public ViewVaccineDetailsPanel(JPanel userProcessContainer, Vaccine vaccine) {
         initComponents();
          this.userProcessContainer = userProcessContainer;
         this.vaccine = vaccine;
+        
         populateForm();
     }
+    
     public void populateForm(){
         vaccineNameJTextField.setText(vaccine.getVaccineName());
         vaccineIdJTextField.setText(String.valueOf(vaccine.getVaccineID()));
         diseasesNameJTextField.setText(vaccine.getDiseaseName());
     }
-
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -130,9 +135,11 @@ public class ViewVaccineDetailsJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        
     }//GEN-LAST:event_backJButtonActionPerformed
 
 
