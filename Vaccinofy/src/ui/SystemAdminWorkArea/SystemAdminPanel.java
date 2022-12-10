@@ -30,47 +30,10 @@ public class SystemAdminPanel extends javax.swing.JPanel {
     
     public SystemAdminPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         this.userAccount = userAccount;
-        
-        populateTree();
-    }
-    
-    private void populateTree() {
-        DefaultTreeModel model = (DefaultTreeModel) JTree.getModel();
-        ArrayList<Network> networkList = system.getNetworkDirectory();
-        ArrayList<Enterprise> enterpriseList;
-        ArrayList<Organization> organizationList;
-        Network network;
-        Enterprise enterprise;
-        Organization organization;
-        
-        DefaultMutableTreeNode networks = new DefaultMutableTreeNode("Networks");
-        DefaultMutableTreeNode root = (DefaultMutableTreeNode) model.getRoot();
-        root.insert(networks, 0);
-        
-        DefaultMutableTreeNode networkNode;
-        DefaultMutableTreeNode enterpriseNode;
-        DefaultMutableTreeNode organizationNode;
-        for (int i = 0; i < networkList.size(); i++) {
-            network = networkList.get(i);
-            networkNode = new DefaultMutableTreeNode(network.getNetworkName());
-            networks.insert(networkNode, i);
-            enterpriseList = network.getEnterpriseDirectory().getEnterprisesDirectory();
-            for (int j = 0; j < enterpriseList.size(); j++) {
-                enterprise = enterpriseList.get(j);
-                enterpriseNode = new DefaultMutableTreeNode(enterprise.getOrgnizationName());
-                networkNode.insert(enterpriseNode, j);
-                organizationList = enterprise.getOrganizationDirectory().getOrganizationDirectory();
-                for (int k = 0; k < organizationList.size(); k++) {
-                    organization = organizationList.get(k);
-                    organizationNode = new DefaultMutableTreeNode(organization.getOrgnizationName());
-                    enterpriseNode.insert(organizationNode, k);
-                }
-            }
-        }
-        model.reload();
     }
     
     /**
@@ -84,12 +47,8 @@ public class SystemAdminPanel extends javax.swing.JPanel {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        JTree = new javax.swing.JTree();
         jPanel2 = new javax.swing.JPanel();
         titleJLabel = new javax.swing.JLabel();
-        selectedJLabel = new javax.swing.JLabel();
-        selectedNodeJLabel = new javax.swing.JLabel();
         manageNetworkJButton = new javax.swing.JButton();
         manageEnterpriseJButton = new javax.swing.JButton();
         manageEnterpriseAdminJButton = new javax.swing.JButton();
@@ -98,27 +57,10 @@ public class SystemAdminPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("System");
-        JTree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        JTree.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
-            public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
-                JTreevalueChangedAction(evt);
-            }
-        });
-        jScrollPane1.setViewportView(JTree);
-
-        jPanel1.add(jScrollPane1);
-
         jSplitPane1.setLeftComponent(jPanel1);
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("System Admin Work Area");
-
-        selectedJLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        selectedJLabel.setText("Selected Node:");
-
-        selectedNodeJLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
 
         manageNetworkJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         manageNetworkJButton.setText("Manage Network >>");
@@ -175,12 +117,8 @@ public class SystemAdminPanel extends javax.swing.JPanel {
                     .addComponent(manageVaccineJButton)
                     .addComponent(manageEnterpriseAdminJButton)
                     .addComponent(manageEnterpriseJButton)
-                    .addComponent(manageNetworkJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(selectedJLabel)
-                        .addGap(27, 27, 27)
-                        .addComponent(selectedNodeJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(429, 429, 429))
+                    .addComponent(manageNetworkJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(445, 445, 445))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {manageEnterpriseAdminJButton, manageEnterpriseJButton, manageNetworkJButton, manageVaccineJButton, manageVaccineOrderJButton1});
@@ -190,11 +128,7 @@ public class SystemAdminPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(titleJLabel)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(selectedJLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(selectedNodeJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
+                .addGap(97, 97, 97)
                 .addComponent(manageNetworkJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(manageEnterpriseJButton)
@@ -204,7 +138,7 @@ public class SystemAdminPanel extends javax.swing.JPanel {
                 .addComponent(manageVaccineJButton)
                 .addGap(41, 41, 41)
                 .addComponent(manageVaccineOrderJButton1)
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addContainerGap(306, Short.MAX_VALUE))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {manageEnterpriseAdminJButton, manageEnterpriseJButton, manageNetworkJButton, manageVaccineJButton, manageVaccineOrderJButton1});
@@ -213,13 +147,6 @@ public class SystemAdminPanel extends javax.swing.JPanel {
 
         add(jSplitPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void JTreevalueChangedAction(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_JTreevalueChangedAction
-        DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) JTree.getLastSelectedPathComponent();
-        if (selectedNode != null) {
-            selectedNodeJLabel.setText(selectedNode.toString());
-        }
-    }//GEN-LAST:event_JTreevalueChangedAction
 
     private void manageNetworkJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageNetworkJButtonActionPerformed
         ManageNetworkPanel manageNetworkPanel = new ManageNetworkPanel(userProcessContainer, system);
@@ -258,18 +185,14 @@ public class SystemAdminPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTree JTree;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton manageEnterpriseAdminJButton;
     private javax.swing.JButton manageEnterpriseJButton;
     private javax.swing.JButton manageNetworkJButton;
     private javax.swing.JButton manageVaccineJButton;
     private javax.swing.JButton manageVaccineOrderJButton1;
-    private javax.swing.JLabel selectedJLabel;
-    private javax.swing.JLabel selectedNodeJLabel;
     private javax.swing.JLabel titleJLabel;
     // End of variables declaration//GEN-END:variables
 }
