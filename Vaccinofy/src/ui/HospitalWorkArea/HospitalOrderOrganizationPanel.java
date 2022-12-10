@@ -31,6 +31,7 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
     
     public HospitalOrderOrganizationPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, OrderOrganization orderOrganization, ProviderEnterprise providerEnterprise) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         this.userAccount = userAccount;
@@ -48,25 +49,25 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        orderVaccineJButton = new javax.swing.JButton();
-        viewOrderHistoryJButton = new javax.swing.JButton();
+        orderVaccineButton = new javax.swing.JButton();
+        viewOrderHistoryButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Hospital Order Organization Work Area");
 
-        orderVaccineJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        orderVaccineJButton.setText("Order Vaccine >>");
-        orderVaccineJButton.addActionListener(new java.awt.event.ActionListener() {
+        orderVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        orderVaccineButton.setText("Order Vaccine >>");
+        orderVaccineButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                orderVaccineJButtonActionPerformed(evt);
+                orderVaccineButtonActionPerformed(evt);
             }
         });
 
-        viewOrderHistoryJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        viewOrderHistoryJButton.setText("View Order History >>");
-        viewOrderHistoryJButton.addActionListener(new java.awt.event.ActionListener() {
+        viewOrderHistoryButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderHistoryButton.setText("View Order History >>");
+        viewOrderHistoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewOrderHistoryJButtonActionPerformed(evt);
+                viewOrderHistoryButtonActionPerformed(evt);
             }
         });
 
@@ -79,10 +80,10 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(orderVaccineJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(orderVaccineButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(viewOrderHistoryJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(viewOrderHistoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(336, 336, 336))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -94,19 +95,19 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
                 .addGap(81, 81, 81)
-                .addComponent(orderVaccineJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(orderVaccineButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
-                .addComponent(viewOrderHistoryJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(viewOrderHistoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(748, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void orderVaccineJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderVaccineJButtonActionPerformed
+    private void orderVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderVaccineButtonActionPerformed
         
         try{
             if(userAccount.getEmployee().getHospital().getHospitalStatus().equalsIgnoreCase("Approved")){
                 OrderVaccinePanel orderVaccineJPanel = new OrderVaccinePanel(userProcessContainer, system, userAccount, orderOrganization, providerEnterprise);
-                userProcessContainer.add("OrderVaccineJPanel",orderVaccineJPanel);
+                userProcessContainer.add("OrderVaccinePanel",orderVaccineJPanel);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
             } else if(userAccount.getEmployee().getHospital().getHospitalStatus().equalsIgnoreCase("Rejected")){
@@ -121,22 +122,21 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please send a hospital registration request to State Public Health Department", "Hospital Registration Not Initialized", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        
+    }//GEN-LAST:event_orderVaccineButtonActionPerformed
 
-    }//GEN-LAST:event_orderVaccineJButtonActionPerformed
-
-    private void viewOrderHistoryJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderHistoryJButtonActionPerformed
+    private void viewOrderHistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderHistoryButtonActionPerformed
         
         ViewHospitalOrderPanel hospOrderPanel = new ViewHospitalOrderPanel(userProcessContainer, userAccount);
-        userProcessContainer.add("ViewOrderHistoryJPanel", hospOrderPanel);
+        userProcessContainer.add("ViewOrderHistoryPanel", hospOrderPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         
-    }//GEN-LAST:event_viewOrderHistoryJButtonActionPerformed
-
+    }//GEN-LAST:event_viewOrderHistoryButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton orderVaccineJButton;
-    private javax.swing.JButton viewOrderHistoryJButton;
+    private javax.swing.JButton orderVaccineButton;
+    private javax.swing.JButton viewOrderHistoryButton;
     // End of variables declaration//GEN-END:variables
 }

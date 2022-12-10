@@ -36,7 +36,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
     }
     
     public void populateOrderTable(){
-        DefaultTableModel dtm = (DefaultTableModel) orderIDJTable.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) orderIDTable.getModel();
         dtm.setRowCount(0);
         for(Order order : userAccount.getEmployee().getOrderCatalog().getOrderList()){
             if(userAccount.getEmployee().getCheck().equalsIgnoreCase("Hospital")){
@@ -47,7 +47,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
             }
         }
     }
-
+    
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -58,14 +58,14 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        orderIDJTable = new javax.swing.JTable();
-        viewJButton = new javax.swing.JButton();
+        orderIDTable = new javax.swing.JTable();
+        viewButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        vaccineJTable = new javax.swing.JTable();
+        vaccineTable = new javax.swing.JTable();
         titleJLabel = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
-        orderIDJTable.setModel(new javax.swing.table.DefaultTableModel(
+        orderIDTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -81,17 +81,17 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(orderIDJTable);
+        jScrollPane1.setViewportView(orderIDTable);
 
-        viewJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        viewJButton.setText("View");
-        viewJButton.addActionListener(new java.awt.event.ActionListener() {
+        viewButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewButton.setText("View");
+        viewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewJButtonActionPerformed(evt);
+                viewButtonActionPerformed(evt);
             }
         });
 
-        vaccineJTable.setModel(new javax.swing.table.DefaultTableModel(
+        vaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -107,16 +107,16 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(vaccineJTable);
+        jScrollPane2.setViewportView(vaccineTable);
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("View Hospital Order History");
 
-        backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setText("<< Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
 
@@ -126,7 +126,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(349, 349, 349)
-                .addComponent(backJButton)
+                .addComponent(backButton)
                 .addContainerGap(752, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -136,7 +136,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(160, 160, 160)
-                            .addComponent(viewJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(titleJLabel)
@@ -147,7 +147,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(811, Short.MAX_VALUE)
-                .addComponent(backJButton)
+                .addComponent(backButton)
                 .addGap(160, 160, 160))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -156,19 +156,19 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
                     .addGap(40, 40, 40)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(26, 26, 26)
-                    .addComponent(viewJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(258, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void viewJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewJButtonActionPerformed
+    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
         
-        int selectedRow = orderIDJTable.getSelectedRow();
+        int selectedRow = orderIDTable.getSelectedRow();
         if(selectedRow >= 0){
-            int orderId = (Integer) orderIDJTable.getValueAt(selectedRow, 0);
-            DefaultTableModel dtm = (DefaultTableModel) vaccineJTable.getModel();
+            int orderId = (Integer) orderIDTable.getValueAt(selectedRow, 0);
+            DefaultTableModel dtm = (DefaultTableModel) vaccineTable.getModel();
             dtm.setRowCount(0);
             Order orderI = null;
             for(Order order : userAccount.getEmployee().getOrderCatalog().getOrderList()){
@@ -188,23 +188,23 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
             return;
         }
         
-    }//GEN-LAST:event_viewJButtonActionPerformed
+    }//GEN-LAST:event_viewButtonActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
         
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_backButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
+    private javax.swing.JButton backButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable orderIDJTable;
+    private javax.swing.JTable orderIDTable;
     private javax.swing.JLabel titleJLabel;
-    private javax.swing.JTable vaccineJTable;
-    private javax.swing.JButton viewJButton;
+    private javax.swing.JTable vaccineTable;
+    private javax.swing.JButton viewButton;
     // End of variables declaration//GEN-END:variables
 }

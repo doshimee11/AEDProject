@@ -31,9 +31,9 @@ public class ViewOrderItemPanel extends javax.swing.JPanel {
     }
     
     public void populateForm(){
-        vaccineNameJTextField.setText(orderItem.getVaccine().getVaccineName());
-        vaccineIdJTextField.setText(String.valueOf(orderItem.getVaccine().getVaccineID()));
-        quantityJTextField.setText(String.valueOf(orderItem.getItemQuantity()));
+        vaccineNameTextField.setText(orderItem.getVaccine().getVaccineName());
+        vaccineIdTextField.setText(String.valueOf(orderItem.getVaccine().getVaccineID()));
+        quantityTextField.setText(String.valueOf(orderItem.getItemQuantity()));
     }
     
     /**
@@ -45,43 +45,43 @@ public class ViewOrderItemPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        quantityJTextField = new javax.swing.JTextField();
-        vaccineIdJLabel = new javax.swing.JLabel();
-        vaccineIdJTextField = new javax.swing.JTextField();
-        backJButton = new javax.swing.JButton();
+        quantityTextField = new javax.swing.JTextField();
+        vaccineIDLabel = new javax.swing.JLabel();
+        vaccineIdTextField = new javax.swing.JTextField();
+        backButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        vaccineNameJLabel = new javax.swing.JLabel();
-        vaccineNameJTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        vaccineNameLabel = new javax.swing.JLabel();
+        vaccineNameTextField = new javax.swing.JTextField();
+        vaccineQuantityLabel = new javax.swing.JLabel();
 
-        quantityJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        quantityJTextField.setEnabled(false);
+        quantityTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        quantityTextField.setEnabled(false);
 
-        vaccineIdJLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        vaccineIdJLabel.setText("Vaccine ID :");
+        vaccineIDLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        vaccineIDLabel.setText("Vaccine ID :");
 
-        vaccineIdJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        vaccineIdJTextField.setEnabled(false);
+        vaccineIdTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        vaccineIdTextField.setEnabled(false);
 
-        backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backJButton.setText("<<Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setText("<<Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("View Order Item");
 
-        vaccineNameJLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        vaccineNameJLabel.setText("Vaccine Name :");
+        vaccineNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        vaccineNameLabel.setText("Vaccine Name :");
 
-        vaccineNameJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        vaccineNameJTextField.setEnabled(false);
+        vaccineNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        vaccineNameTextField.setEnabled(false);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Quantity :");
+        vaccineQuantityLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        vaccineQuantityLabel.setText("Quantity :");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,22 +94,22 @@ public class ViewOrderItemPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(489, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backJButton)
+                    .addComponent(backButton)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(vaccineNameJLabel)
+                                .addComponent(vaccineNameLabel)
                                 .addGap(117, 117, 117)
-                                .addComponent(vaccineNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(vaccineNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(vaccineIdJLabel))
+                                    .addComponent(vaccineQuantityLabel)
+                                    .addComponent(vaccineIDLabel))
                                 .addGap(144, 144, 144)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(vaccineIdJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(quantityJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(vaccineIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(quantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(241, 241, 241))
         );
         layout.setVerticalGroup(
@@ -121,41 +121,41 @@ public class ViewOrderItemPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(vaccineNameJLabel))
-                    .addComponent(vaccineNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(vaccineNameLabel))
+                    .addComponent(vaccineNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel3))
-                    .addComponent(quantityJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(vaccineQuantityLabel))
+                    .addComponent(quantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(vaccineIdJLabel)
-                    .addComponent(vaccineIdJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vaccineIDLabel)
+                    .addComponent(vaccineIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
-                .addComponent(backJButton)
+                .addComponent(backButton)
                 .addContainerGap(665, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
         
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_backButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField quantityJTextField;
-    private javax.swing.JLabel vaccineIdJLabel;
-    private javax.swing.JTextField vaccineIdJTextField;
-    private javax.swing.JLabel vaccineNameJLabel;
-    private javax.swing.JTextField vaccineNameJTextField;
+    private javax.swing.JTextField quantityTextField;
+    private javax.swing.JLabel vaccineIDLabel;
+    private javax.swing.JTextField vaccineIdTextField;
+    private javax.swing.JLabel vaccineNameLabel;
+    private javax.swing.JTextField vaccineNameTextField;
+    private javax.swing.JLabel vaccineQuantityLabel;
     // End of variables declaration//GEN-END:variables
 }

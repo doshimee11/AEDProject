@@ -12,6 +12,7 @@ import Business.Enterprise.PublicHealthEnterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import ui.PublicHealthDepartmentWorkArea.PublicHealthDepartmentPanel;
 
 /**
  *
@@ -22,7 +23,7 @@ public class PublicHealthAdmin extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Ecosystem system) {
-        return new PublicHealthDepartmentWorkAreaJPanel(userProcessContainer, (PublicHealthEnterprise)enterprise, account, system);
+        return new PublicHealthDepartmentPanel(userProcessContainer, (PublicHealthEnterprise)enterprise, account, system);
     }
     
 }
