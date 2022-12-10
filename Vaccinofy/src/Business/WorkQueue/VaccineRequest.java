@@ -9,7 +9,7 @@ package Business.WorkQueue;
  * @author meetdoshi
  */
 
-public class VaccineRequest {
+public class VaccineRequest extends WorkRequest {
     
     private String vaccineRequest;
 

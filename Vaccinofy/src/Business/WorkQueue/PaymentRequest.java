@@ -9,7 +9,7 @@ package Business.WorkQueue;
  * @author meetdoshi
  */
 
-public class PaymentRequest {
+public class PaymentRequest extends WorkRequest {
     
     private String paymentRequest;
 
