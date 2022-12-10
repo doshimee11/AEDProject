@@ -21,10 +21,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="orderVaccineJButton" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="orderVaccineButton" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                              <Component id="viewOrderHistoryJButton" min="-2" pref="260" max="-2" attributes="0"/>
+                              <Component id="viewOrderHistoryButton" min="-2" pref="260" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
@@ -43,9 +43,9 @@
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-              <Component id="orderVaccineJButton" min="-2" pref="39" max="-2" attributes="0"/>
+              <Component id="orderVaccineButton" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-              <Component id="viewOrderHistoryJButton" min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="viewOrderHistoryButton" min="-2" pref="40" max="-2" attributes="0"/>
               <EmptySpace pref="748" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -60,7 +60,7 @@
         <Property name="text" type="java.lang.String" value="Hospital Order Organization Work Area"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="orderVaccineJButton">
+    <Component class="javax.swing.JButton" name="orderVaccineButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -68,10 +68,10 @@
         <Property name="text" type="java.lang.String" value="Order Vaccine &gt;&gt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="orderVaccineJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="orderVaccineButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="viewOrderHistoryJButton">
+    <Component class="javax.swing.JButton" name="viewOrderHistoryButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -79,7 +79,7 @@
         <Property name="text" type="java.lang.String" value="View Order History &gt;&gt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewOrderHistoryJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewOrderHistoryButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

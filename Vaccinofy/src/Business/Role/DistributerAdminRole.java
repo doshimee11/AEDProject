@@ -10,6 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import ui.StateDistributer.StateDistributorPanel;
 
 /**
  *
@@ -20,7 +21,7 @@ public class DistributerAdminRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Ecosystem system) {
-        return new StateDistributorWorkAreaJPanel(userProcessContainer, system, account, (DistributorEnterprise)enterprise);
+        return new StateDistributorPanel(userProcessContainer, system, account, (DistributorEnterprise)enterprise);
     }
     
 }

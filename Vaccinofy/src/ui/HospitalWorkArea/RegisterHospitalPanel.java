@@ -45,7 +45,7 @@ public class RegisterHospitalPanel extends javax.swing.JPanel {
     }
     
     public void populateTable(){
-        DefaultTableModel dtm = (DefaultTableModel) hospitalEnrollmentJTable.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) hospitalEnrollmentTable.getModel();
         dtm.setRowCount(0);
         for(WorkRequest workRequest: userAccount.getWorkQueue().getWorkRequestList()){
             Object[] row = new Object[4];
@@ -68,13 +68,13 @@ public class RegisterHospitalPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        hospitalEnrollmentJTable = new javax.swing.JTable();
-        backJButton = new javax.swing.JButton();
-        enrollmentJButton = new javax.swing.JButton();
-        refreshJButton = new javax.swing.JButton();
+        hospitalEnrollmentTable = new javax.swing.JTable();
+        backButton = new javax.swing.JButton();
+        enrollmentButton = new javax.swing.JButton();
+        refreshButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        hospitalEnrollmentJTable.setModel(new javax.swing.table.DefaultTableModel(
+        hospitalEnrollmentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -90,29 +90,29 @@ public class RegisterHospitalPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(hospitalEnrollmentJTable);
+        jScrollPane1.setViewportView(hospitalEnrollmentTable);
 
-        backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setText("<< Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
 
-        enrollmentJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enrollmentJButton.setText("Enrollment Request");
-        enrollmentJButton.addActionListener(new java.awt.event.ActionListener() {
+        enrollmentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        enrollmentButton.setText("Enrollment Request");
+        enrollmentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enrollmentJButtonActionPerformed(evt);
+                enrollmentButtonActionPerformed(evt);
             }
         });
 
-        refreshJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        refreshJButton.setText("Refresh");
-        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
+        refreshButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        refreshButton.setText("Refresh");
+        refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshJButtonActionPerformed(evt);
+                refreshButtonActionPerformed(evt);
             }
         });
 
@@ -131,12 +131,12 @@ public class RegisterHospitalPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(205, 205, 205)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(backJButton, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(backButton, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(refreshJButton)
+                                .addComponent(refreshButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(enrollmentJButton)))))
+                                .addComponent(enrollmentButton)))))
                 .addContainerGap(543, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -148,23 +148,23 @@ public class RegisterHospitalPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(enrollmentJButton)
-                    .addComponent(refreshJButton))
+                    .addComponent(enrollmentButton)
+                    .addComponent(refreshButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 478, Short.MAX_VALUE)
-                .addComponent(backJButton)
+                .addComponent(backButton)
                 .addGap(233, 233, 233))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.remove(this);
         layout.previous(userProcessContainer);
         
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_backButtonActionPerformed
 
-    private void enrollmentJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentJButtonActionPerformed
+    private void enrollmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentButtonActionPerformed
         
         for(WorkRequest workRequest: userAccount.getWorkQueue().getWorkRequestList()){
             if(workRequest.getStatus().equalsIgnoreCase("Approved")){
@@ -211,20 +211,18 @@ public class RegisterHospitalPanel extends javax.swing.JPanel {
         
         JOptionPane.showMessageDialog(null, "Enrolment is requested successfully", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
         
-    }//GEN-LAST:event_enrollmentJButtonActionPerformed
+    }//GEN-LAST:event_enrollmentButtonActionPerformed
 
-    private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
-        
+    private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
         populateTable();
-        
-    }//GEN-LAST:event_refreshJButtonActionPerformed
+    }//GEN-LAST:event_refreshButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
-    private javax.swing.JButton enrollmentJButton;
-    private javax.swing.JTable hospitalEnrollmentJTable;
+    private javax.swing.JButton backButton;
+    private javax.swing.JButton enrollmentButton;
+    private javax.swing.JTable hospitalEnrollmentTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton refreshJButton;
+    private javax.swing.JButton refreshButton;
     // End of variables declaration//GEN-END:variables
 }

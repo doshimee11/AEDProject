@@ -34,7 +34,7 @@ public class EnterpriseDirectory {
             enterprise = new PublicHealthEnterprise(enterpriseName);
             enterprisesDirectory.add(enterprise);
         } else if (type == Enterprise.EnterpriseType.VaccineManufactures){
-            enterprise = new VaccineManufacturesEnterprise(enterpriseName);
+            enterprise = new VaccineManufacturerEnterprise(enterpriseName);
             enterprisesDirectory.add(enterprise);
         }
         return enterprise;

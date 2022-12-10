@@ -20,21 +20,21 @@
               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="backJButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="backButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="761" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="diseasesNameJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="quantityJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="vaccineNameJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="diseasesNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="vaccineQuantityLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="vaccineNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="448" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="vaccineNameJTextField" alignment="1" max="32767" attributes="0"/>
-                          <Component id="vaccineIdJTextField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="diseasesNameJTextField" alignment="0" min="-2" pref="182" max="-2" attributes="0"/>
+                          <Component id="vaccineNameTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="vaccineIDTextField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="diseasesNameTextField" alignment="0" min="-2" pref="182" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
                   </Group>
@@ -56,33 +56,33 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="vaccineNameJLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="vaccineNameJTextField" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="vaccineNameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="vaccineNameTextField" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="diseasesNameJLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="diseasesNameLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="diseasesNameJTextField" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="diseasesNameTextField" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="vaccineIdJTextField" min="-2" max="-2" attributes="0"/>
+                      <Component id="vaccineIDTextField" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Component id="quantityJLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="vaccineQuantityLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="142" pref="142" max="-2" attributes="0"/>
-              <Component id="backJButton" min="-2" max="-2" attributes="0"/>
+              <Component id="backButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="565" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="diseasesNameJLabel">
+    <Component class="javax.swing.JLabel" name="diseasesNameLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -90,7 +90,7 @@
         <Property name="text" type="java.lang.String" value="Diseases Name :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="quantityJLabel">
+    <Component class="javax.swing.JLabel" name="vaccineQuantityLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -98,28 +98,28 @@
         <Property name="text" type="java.lang.String" value="Vaccine ID :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="vaccineNameJTextField">
+    <Component class="javax.swing.JTextField" name="vaccineNameTextField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="diseasesNameJTextField">
+    <Component class="javax.swing.JTextField" name="diseasesNameTextField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="vaccineIdJTextField">
+    <Component class="javax.swing.JTextField" name="vaccineIDTextField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="backJButton">
+    <Component class="javax.swing.JButton" name="backButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -127,7 +127,7 @@
         <Property name="text" type="java.lang.String" value="&lt;&lt; back"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="titleJLabel">
@@ -138,7 +138,7 @@
         <Property name="text" type="java.lang.String" value="View Vaccine Details"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="vaccineNameJLabel">
+    <Component class="javax.swing.JLabel" name="vaccineNameLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>

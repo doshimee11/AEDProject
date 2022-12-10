@@ -6,11 +6,11 @@ package Business.Role;
 
 import Business.Ecosystem;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.VaccineManufacturesEnterprise;
+import Business.Enterprise.VaccineManufacturerEnterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import ui.ManufacturerWorkArea.ManufactureFinanceWorkAreaJPanel;
+import ui.ManufacturerWorkArea.ManufacturerFinancePanel;
 
 /**
  *
@@ -21,7 +21,7 @@ public class ManufacturerFinanceRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Ecosystem system) {
-        return new ManufactureFinanceWorkAreaJPanel(userProcessContainer, system, account, (VaccineManufacturesEnterprise)enterprise);
+        return new ManufacturerFinancePanel(userProcessContainer, system, account, (VaccineManufacturerEnterprise)enterprise);
     }
     
 }
