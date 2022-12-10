@@ -11,6 +11,7 @@ import Business.Organization.OrderOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import ui.PharmacyWorkArea.PharmacyOrderOrganizationJPanel;
 
 /**
  *
@@ -21,7 +22,7 @@ public class PharmacyOrderRole extends Role{
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Ecosystem system) {
-        return new PharmacyOrderOrganiationWorkAreaJPanel(userProcessContainer, system, account, (OrderOrganization)organization, (ProviderEnterprise)enterprise);
+        return new PharmacyOrderOrganizationJPanel(userProcessContainer, system, account, (OrderOrganization)organization, (ProviderEnterprise)enterprise);
     }
     
 }

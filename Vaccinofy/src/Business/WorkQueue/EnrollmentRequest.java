@@ -9,7 +9,7 @@ package Business.WorkQueue;
  * @author meetdoshi
  */
 
-public class EnrollmentRequest {
+public class EnrollmentRequest extends WorkRequest{
     
     private String enrollmentRequest;
 

@@ -82,5 +82,13 @@ public class Employee {
     public String toString(){
         return employeeName; 
     }
+
+    public String getCheck() {
+        return check;
+    }
+
+    public void setCheck(String check) {
+        this.check = check;
+    }
     
 }
