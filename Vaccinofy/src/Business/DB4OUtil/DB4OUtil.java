@@ -11,6 +11,7 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.ta.TransparentPersistenceSupport;
+import java.nio.file.Paths;
 
 /**
  *
@@ -18,7 +19,8 @@ import com.db4o.ta.TransparentPersistenceSupport;
  */
 
 public class DB4OUtil {
-    private static final String FILENAME = "DataBank.db4o";
+    
+    private static final String FILENAME = Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data store
     private static DB4OUtil dB4OUtil;
     
     public synchronized static DB4OUtil getInstance(){
@@ -35,17 +37,16 @@ public class DB4OUtil {
     }
     
     private ObjectContainer createConnection() {
+        EmbeddedConfiguration config = Db4oEmbedded.newConfiguration();
+        config.common().add(new TransparentPersistenceSupport());
+        //Controls the number of objects in memory
+        config.common().activationDepth(Integer.MAX_VALUE);
+        //Controls the depth/level of updation of Object
+        config.common().updateDepth(Integer.MAX_VALUE);
+        //Register your top most Class here
+        config.common().objectClass(Ecosystem.class).cascadeOnUpdate(true); // Change to the object you want to save
+        
         try {
-            EmbeddedConfiguration config = Db4oEmbedded.newConfiguration();
-            config.common().add(new TransparentPersistenceSupport());
-            //Controls the number of objects in memory
-            config.common().activationDepth(Integer.MAX_VALUE);
-            //Controls the depth/level of updation of Object
-            config.common().updateDepth(Integer.MAX_VALUE);
-
-            //Register your top most Class here
-            config.common().objectClass(Ecosystem.class).cascadeOnUpdate(true); // Change to the object you want to save
-
             ObjectContainer db = Db4oEmbedded.openFile(config, FILENAME);
             return db;
         } catch (Exception ex) {
@@ -62,6 +63,31 @@ public class DB4OUtil {
     }
     
     public Ecosystem retrieveSystem(){
+        
+//        ObjectContainer conn = null;
+//        try{
+//            conn = createConnection();
+//            ObjectSet<Ecosystem> systems = conn.query(Ecosystem.class); // Change to the object you want to save
+//            Ecosystem system;
+//            if (systems.size() == 0){
+//                System.out.println("Inside System");
+//                system = ConfigureSystem.configureEcoSystem();  // If there's no System in the record, create a new one
+//            }
+//            else{
+//                system = systems.get(0);
+//            }
+//            conn.close();
+//            System.out.println("Connection Closed");
+//            return system;
+//        }
+//        catch(Exception e){
+//            System.out.println(e + " In Retrieving System");
+//        }
+//        finally{
+//            conn.close();
+//        }
+//        return null;
+        
         ObjectContainer conn = createConnection();
         ObjectSet<Ecosystem> systems = conn.query(Ecosystem.class); // Change to the object you want to save
         Ecosystem system;
@@ -70,6 +96,7 @@ public class DB4OUtil {
         }
         else{
             system = systems.get(0);
+//            system = ConfigureSystem.configureEcoSystem();
         }
         conn.close();
         return system;

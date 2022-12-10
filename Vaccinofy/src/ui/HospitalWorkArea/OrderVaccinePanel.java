@@ -54,7 +54,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
     }
     
     private void populateVaccineTable() {
-        DefaultTableModel dtm = (DefaultTableModel) vaccineJTable.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) vaccineTable.getModel();
         dtm.setRowCount(0);
         for (Vaccine vaccine : system.getVaccineDirectory().getVaccineDirectory()){
             Object row[] = new Object[3];
@@ -67,7 +67,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
     }
     
     private void populateOrderItemTable() {
-        DefaultTableModel dtm = (DefaultTableModel) orderItemJTable.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) orderItemTable.getModel();
         dtm.setRowCount(0);
         for(OrderItem oi : order.getOrderItemList()){
             Object row[] = new Object[2];
@@ -86,60 +86,60 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        changeQuantityJTextField = new javax.swing.JTextField();
-        modifyQuantityJButton = new javax.swing.JButton();
-        viewVaccineJButton = new javax.swing.JButton();
-        viewOrderDetailsJButton = new javax.swing.JButton();
-        removeItemJButton = new javax.swing.JButton();
+        changeQuantityTextField = new javax.swing.JTextField();
+        modifyQuantityButton = new javax.swing.JButton();
+        viewVaccineButton = new javax.swing.JButton();
+        viewOrderDetailsButton = new javax.swing.JButton();
+        removeItemButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        vaccineJTable = new javax.swing.JTable();
-        checkOutJButton = new javax.swing.JButton();
-        backJButton = new javax.swing.JButton();
+        vaccineTable = new javax.swing.JTable();
+        checkOutButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         spnQuantitySpinner = new javax.swing.JSpinner();
-        addToOrderJButton = new javax.swing.JButton();
+        addToOrderButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        orderItemJTable = new javax.swing.JTable();
+        orderItemTable = new javax.swing.JTable();
 
-        changeQuantityJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        changeQuantityJTextField.addActionListener(new java.awt.event.ActionListener() {
+        changeQuantityTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        changeQuantityTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                changeQuantityJTextFieldActionPerformed(evt);
+                changeQuantityTextFieldActionPerformed(evt);
             }
         });
 
-        modifyQuantityJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        modifyQuantityJButton.setText("Modify Quantity");
-        modifyQuantityJButton.addActionListener(new java.awt.event.ActionListener() {
+        modifyQuantityButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        modifyQuantityButton.setText("Modify Quantity");
+        modifyQuantityButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyQuantityJButtonActionPerformed(evt);
+                modifyQuantityButtonActionPerformed(evt);
             }
         });
 
-        viewVaccineJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        viewVaccineJButton.setText("View Vaccine Details");
-        viewVaccineJButton.addActionListener(new java.awt.event.ActionListener() {
+        viewVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewVaccineButton.setText("View Vaccine Details");
+        viewVaccineButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewVaccineJButtonActionPerformed(evt);
+                viewVaccineButtonActionPerformed(evt);
             }
         });
 
-        viewOrderDetailsJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        viewOrderDetailsJButton.setText("View Order Details");
-        viewOrderDetailsJButton.addActionListener(new java.awt.event.ActionListener() {
+        viewOrderDetailsButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderDetailsButton.setText("View Order Details");
+        viewOrderDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewOrderDetailsJButtonActionPerformed(evt);
+                viewOrderDetailsButtonActionPerformed(evt);
             }
         });
 
-        removeItemJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        removeItemJButton.setText("Remove Item");
-        removeItemJButton.addActionListener(new java.awt.event.ActionListener() {
+        removeItemButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        removeItemButton.setText("Remove Item");
+        removeItemButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeItemJButtonActionPerformed(evt);
+                removeItemButtonActionPerformed(evt);
             }
         });
 
-        vaccineJTable.setModel(new javax.swing.table.DefaultTableModel(
+        vaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -155,35 +155,35 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(vaccineJTable);
+        jScrollPane1.setViewportView(vaccineTable);
 
-        checkOutJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        checkOutJButton.setText("Check Out");
-        checkOutJButton.addActionListener(new java.awt.event.ActionListener() {
+        checkOutButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        checkOutButton.setText("Check Out");
+        checkOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkOutJButtonActionPerformed(evt);
+                checkOutButtonActionPerformed(evt);
             }
         });
 
-        backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backJButton.setText("<<Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setText("<<Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
 
         spnQuantitySpinner.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        addToOrderJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addToOrderJButton.setText("Add to Order List");
-        addToOrderJButton.addActionListener(new java.awt.event.ActionListener() {
+        addToOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addToOrderButton.setText("Add to Order List");
+        addToOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addToOrderJButtonActionPerformed(evt);
+                addToOrderButtonActionPerformed(evt);
             }
         });
 
-        orderItemJTable.setModel(new javax.swing.table.DefaultTableModel(
+        orderItemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -199,7 +199,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(orderItemJTable);
+        jScrollPane2.setViewportView(orderItemTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -213,27 +213,27 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(backJButton)
+                                .addComponent(backButton)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(4, 4, 4)
-                                    .addComponent(viewVaccineJButton)
+                                    .addComponent(viewVaccineButton)
                                     .addGap(53, 53, 53)
                                     .addComponent(spnQuantitySpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(39, 39, 39)
-                                    .addComponent(addToOrderJButton))
+                                    .addComponent(addToOrderButton))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(viewOrderDetailsJButton)
+                                    .addComponent(viewOrderDetailsButton)
                                     .addGap(62, 62, 62)
-                                    .addComponent(changeQuantityJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(changeQuantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(47, 47, 47)
-                                    .addComponent(modifyQuantityJButton))
+                                    .addComponent(modifyQuantityButton))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(200, 200, 200)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(removeItemJButton)
+                                        .addComponent(removeItemButton)
                                         .addGroup(layout.createSequentialGroup()
                                             .addGap(6, 6, 6)
-                                            .addComponent(checkOutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(checkOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGap(91, 91, 91))
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -249,45 +249,45 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
                     .addGap(12, 12, 12)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(spnQuantitySpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(viewVaccineJButton)
-                        .addComponent(addToOrderJButton))
+                        .addComponent(viewVaccineButton)
+                        .addComponent(addToOrderButton))
                     .addGap(38, 38, 38)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(37, 37, 37)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(changeQuantityJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(viewOrderDetailsJButton)
-                        .addComponent(modifyQuantityJButton))
+                        .addComponent(changeQuantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(viewOrderDetailsButton)
+                        .addComponent(modifyQuantityButton))
                     .addGap(35, 35, 35)
-                    .addComponent(removeItemJButton)
+                    .addComponent(removeItemButton)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(checkOutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(29, 29, 29)
-                    .addComponent(backJButton)
+                    .addComponent(backButton)
                     .addContainerGap(173, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void changeQuantityJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeQuantityJTextFieldActionPerformed
+    private void changeQuantityTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeQuantityTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_changeQuantityJTextFieldActionPerformed
+    }//GEN-LAST:event_changeQuantityTextFieldActionPerformed
 
-    private void modifyQuantityJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyQuantityJButtonActionPerformed
+    private void modifyQuantityButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyQuantityButtonActionPerformed
         
-        int selectedrow = orderItemJTable.getSelectedRow();
+        int selectedrow = orderItemTable.getSelectedRow();
         if (selectedrow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row first", "Modify Quantity", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        String changeQuantity = changeQuantityJTextField.getText();
+        String changeQuantity = changeQuantityTextField.getText();
         if(changeQuantity.trim().length() == 0){
             JOptionPane.showMessageDialog(null, "Please enter the quantity to be modified", "Modify quantity", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        OrderItem orderItem = (OrderItem) orderItemJTable.getValueAt(selectedrow, 0);
-        int modQuantity = Integer.parseInt(changeQuantityJTextField.getText());
+        OrderItem orderItem = (OrderItem) orderItemTable.getValueAt(selectedrow, 0);
+        int modQuantity = Integer.parseInt(changeQuantityTextField.getText());
         if (modQuantity > orderItem.getItemQuantity() + orderItem.getVaccine().getAvailablity() || modQuantity <= 0){
             JOptionPane.showMessageDialog(null, "Quantity is bad");
             return;
@@ -300,51 +300,51 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         
         populateVaccineTable();
         populateOrderItemTable();
-        changeQuantityJTextField.setText(null);
+        changeQuantityTextField.setText(null);
         
-    }//GEN-LAST:event_modifyQuantityJButtonActionPerformed
+    }//GEN-LAST:event_modifyQuantityButtonActionPerformed
 
-    private void viewVaccineJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewVaccineJButtonActionPerformed
+    private void viewVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewVaccineButtonActionPerformed
         
-        int selectedRow = vaccineJTable.getSelectedRow();
+        int selectedRow = vaccineTable.getSelectedRow();
         if(selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row !" , "Browse Product", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        Vaccine vaccine = (Vaccine) vaccineJTable.getValueAt(selectedRow, 0);
+        Vaccine vaccine = (Vaccine) vaccineTable.getValueAt(selectedRow, 0);
         ViewVaccineDetailsPanel vpj = new ViewVaccineDetailsPanel(userProcessContainer, vaccine);
-        userProcessContainer.add("ViewVaccineDetailsJPanel", vpj);
+        userProcessContainer.add("ViewVaccineDetailsPanel", vpj);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         
-    }//GEN-LAST:event_viewVaccineJButtonActionPerformed
+    }//GEN-LAST:event_viewVaccineButtonActionPerformed
 
-    private void viewOrderDetailsJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderDetailsJButtonActionPerformed
+    private void viewOrderDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderDetailsButtonActionPerformed
         
-        int selectedRow = orderItemJTable.getSelectedRow();
+        int selectedRow = orderItemTable.getSelectedRow();
         if(selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row", "Browse Product", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        OrderItem orderItem = (OrderItem) orderItemJTable.getValueAt(selectedRow, 0);
+        OrderItem orderItem = (OrderItem) orderItemTable.getValueAt(selectedRow, 0);
         ViewOrderItemPanel voj = new ViewOrderItemPanel(userProcessContainer, orderItem);
         userProcessContainer.add("ViewOrderItem", voj);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         
-    }//GEN-LAST:event_viewOrderDetailsJButtonActionPerformed
+    }//GEN-LAST:event_viewOrderDetailsButtonActionPerformed
 
-    private void removeItemJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeItemJButtonActionPerformed
+    private void removeItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeItemButtonActionPerformed
         
-        int selectedRow = orderItemJTable.getSelectedRow();
+        int selectedRow = orderItemTable.getSelectedRow();
         if(selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please Select a row", "Browse Product", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        OrderItem orderItem = (OrderItem) orderItemJTable.getValueAt(selectedRow, 0);
+        OrderItem orderItem = (OrderItem) orderItemTable.getValueAt(selectedRow, 0);
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int result = JOptionPane.showConfirmDialog(null, "Are you sure if you want to delete?", "warning", dialogButton);
         if(result == JOptionPane.YES_OPTION){
@@ -355,12 +355,12 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         populateVaccineTable();
         populateOrderItemTable();
         
-    }//GEN-LAST:event_removeItemJButtonActionPerformed
+    }//GEN-LAST:event_removeItemButtonActionPerformed
 
-    private void checkOutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutJButtonActionPerformed
+    private void checkOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutButtonActionPerformed
         // TODO add your handling code here:
         
-        DefaultTableModel dtm = (DefaultTableModel) orderItemJTable.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) orderItemTable.getModel();
         if(dtm.getRowCount() == 0){
             JOptionPane.showMessageDialog(null, "No item in chart to checkout", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
@@ -414,9 +414,9 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         populateVaccineTable();
         populateOrderItemTable();
         
-    }//GEN-LAST:event_checkOutJButtonActionPerformed
+    }//GEN-LAST:event_checkOutButtonActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         
         if (isCheckOut == false) {
             for (OrderItem orderItem : order.getOrderItemList()) {
@@ -428,19 +428,19 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
         
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_backButtonActionPerformed
 
-    private void addToOrderJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToOrderJButtonActionPerformed
+    private void addToOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToOrderButtonActionPerformed
         // TODO add your handling code here:
         
-        int selectedRow = vaccineJTable.getSelectedRow();
+        int selectedRow = vaccineTable.getSelectedRow();
         int quantity = (Integer) spnQuantitySpinner.getValue();
         if(selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row");
             return;
         }
         
-        Vaccine vaccine = (Vaccine) vaccineJTable.getValueAt(selectedRow, 0);
+        Vaccine vaccine = (Vaccine) vaccineTable.getValueAt(selectedRow, 0);
         Boolean isIncluded = false;
         
         for(OrderItem oi : order.getOrderItemList()){
@@ -467,21 +467,21 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         populateVaccineTable();
         populateOrderItemTable();
         
-    }//GEN-LAST:event_addToOrderJButtonActionPerformed
+    }//GEN-LAST:event_addToOrderButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addToOrderJButton;
-    private javax.swing.JButton backJButton;
-    private javax.swing.JTextField changeQuantityJTextField;
-    private javax.swing.JButton checkOutJButton;
+    private javax.swing.JButton addToOrderButton;
+    private javax.swing.JButton backButton;
+    private javax.swing.JTextField changeQuantityTextField;
+    private javax.swing.JButton checkOutButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton modifyQuantityJButton;
-    private javax.swing.JTable orderItemJTable;
-    private javax.swing.JButton removeItemJButton;
+    private javax.swing.JButton modifyQuantityButton;
+    private javax.swing.JTable orderItemTable;
+    private javax.swing.JButton removeItemButton;
     private javax.swing.JSpinner spnQuantitySpinner;
-    private javax.swing.JTable vaccineJTable;
-    private javax.swing.JButton viewOrderDetailsJButton;
-    private javax.swing.JButton viewVaccineJButton;
+    private javax.swing.JTable vaccineTable;
+    private javax.swing.JButton viewOrderDetailsButton;
+    private javax.swing.JButton viewVaccineButton;
     // End of variables declaration//GEN-END:variables
 }

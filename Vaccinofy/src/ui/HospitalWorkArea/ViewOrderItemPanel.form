@@ -24,24 +24,24 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="489" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="backJButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="backButton" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="vaccineNameJLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="vaccineNameLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="117" pref="117" max="-2" attributes="0"/>
-                              <Component id="vaccineNameJTextField" min="-2" pref="180" max="-2" attributes="0"/>
+                              <Component id="vaccineNameTextField" min="-2" pref="180" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="vaccineIdJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="vaccineQuantityLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="vaccineIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="vaccineIdJTextField" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                                  <Component id="quantityJTextField" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                  <Component id="vaccineIdTextField" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                  <Component id="quantityTextField" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -60,32 +60,32 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="vaccineNameJLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="vaccineNameLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="vaccineNameJTextField" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="vaccineNameTextField" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="vaccineQuantityLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="quantityJTextField" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="quantityTextField" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="vaccineIdJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="vaccineIdJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="vaccineIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="vaccineIdTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-              <Component id="backJButton" min="-2" max="-2" attributes="0"/>
+              <Component id="backButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="665" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="quantityJTextField">
+    <Component class="javax.swing.JTextField" name="quantityTextField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -93,7 +93,7 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="vaccineIdJLabel">
+    <Component class="javax.swing.JLabel" name="vaccineIDLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -101,7 +101,7 @@
         <Property name="text" type="java.lang.String" value="Vaccine ID :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="vaccineIdJTextField">
+    <Component class="javax.swing.JTextField" name="vaccineIdTextField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -109,7 +109,7 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="backJButton">
+    <Component class="javax.swing.JButton" name="backButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -117,7 +117,7 @@
         <Property name="text" type="java.lang.String" value="&lt;&lt;Back"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -128,7 +128,7 @@
         <Property name="text" type="java.lang.String" value="View Order Item"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="vaccineNameJLabel">
+    <Component class="javax.swing.JLabel" name="vaccineNameLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -136,7 +136,7 @@
         <Property name="text" type="java.lang.String" value="Vaccine Name :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="vaccineNameJTextField">
+    <Component class="javax.swing.JTextField" name="vaccineNameTextField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -144,7 +144,7 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="vaccineQuantityLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>

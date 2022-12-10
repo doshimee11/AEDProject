@@ -26,10 +26,10 @@ public class HospitalFinancePanel extends javax.swing.JPanel {
     
     public HospitalFinancePanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         this.userAccount = userAccount;
-        
     }
 
     /**
@@ -43,16 +43,16 @@ public class HospitalFinancePanel extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        manageDistributorPaymentButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Hospital Finance Work Area");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Manage Distributor Payment >>");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        manageDistributorPaymentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        manageDistributorPaymentButton.setText("Manage Distributor Payment >>");
+        manageDistributorPaymentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                manageDistributorPaymentButtonActionPerformed(evt);
             }
         });
 
@@ -67,7 +67,7 @@ public class HospitalFinancePanel extends javax.swing.JPanel {
                         .addComponent(jLabel1)
                         .addGap(271, 271, 271))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(manageDistributorPaymentButton)
                         .addGap(284, 284, 284))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -76,7 +76,7 @@ public class HospitalFinancePanel extends javax.swing.JPanel {
                 .addGap(15, 15, 15)
                 .addComponent(jLabel1)
                 .addGap(55, 55, 55)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(manageDistributorPaymentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(462, Short.MAX_VALUE))
         );
 
@@ -102,16 +102,18 @@ public class HospitalFinancePanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ManageDistributorPaymentPanel manageDistributorPaymentJPanel = new ManageDistributorPaymentPanel(userProcessContainer, system, userAccount);
-        userProcessContainer.add("manageDistributorPaymentJPanel", manageDistributorPaymentJPanel);
+    private void manageDistributorPaymentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageDistributorPaymentButtonActionPerformed
+        
+        ManageDistributorPaymentPanel manageDistributorPaymentPanel = new ManageDistributorPaymentPanel(userProcessContainer, system, userAccount);
+        userProcessContainer.add("manageDistributorPaymentPanel", manageDistributorPaymentPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_manageDistributorPaymentButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton manageDistributorPaymentButton;
     // End of variables declaration//GEN-END:variables
 }

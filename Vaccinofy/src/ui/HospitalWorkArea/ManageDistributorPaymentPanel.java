@@ -37,6 +37,7 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
     
     public ManageDistributorPaymentPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         this.userAccount = userAccount;
@@ -45,7 +46,7 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
     }
     
     public void populateBillTable() {
-        DefaultTableModel dtm = (DefaultTableModel) billJTable.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) billTable.getModel();
         dtm.setRowCount(0);
 
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
@@ -112,15 +113,15 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        billJTable = new javax.swing.JTable();
-        viewOrderJButton = new javax.swing.JButton();
+        billTable = new javax.swing.JTable();
+        viewOrderButton = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        orderJTable = new javax.swing.JTable();
-        payBillJButton = new javax.swing.JButton();
-        assignJButton = new javax.swing.JButton();
+        orderTable = new javax.swing.JTable();
+        payBillButton = new javax.swing.JButton();
+        assignButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        billJTable.setModel(new javax.swing.table.DefaultTableModel(
+        billTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -139,17 +140,17 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(billJTable);
+        jScrollPane1.setViewportView(billTable);
 
-        viewOrderJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        viewOrderJButton.setText("View Order");
-        viewOrderJButton.addActionListener(new java.awt.event.ActionListener() {
+        viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderButton.setText("View Order");
+        viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewOrderJButtonActionPerformed(evt);
+                viewOrderButtonActionPerformed(evt);
             }
         });
 
-        orderJTable.setModel(new javax.swing.table.DefaultTableModel(
+        orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -165,21 +166,21 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(orderJTable);
+        jScrollPane3.setViewportView(orderTable);
 
-        payBillJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        payBillJButton.setText("Pay bill");
-        payBillJButton.addActionListener(new java.awt.event.ActionListener() {
+        payBillButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        payBillButton.setText("Pay bill");
+        payBillButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                payBillJButtonActionPerformed(evt);
+                payBillButtonActionPerformed(evt);
             }
         });
 
-        assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        assignJButton.setText("Assign to me");
-        assignJButton.addActionListener(new java.awt.event.ActionListener() {
+        assignButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignButton.setText("Assign to me");
+        assignButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignJButtonActionPerformed(evt);
+                assignButtonActionPerformed(evt);
             }
         });
 
@@ -204,11 +205,11 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(318, 318, 318)
-                .addComponent(viewOrderJButton)
+                .addComponent(viewOrderButton)
                 .addGap(102, 102, 102)
-                .addComponent(assignJButton)
+                .addComponent(assignButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(payBillJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(payBillButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(330, 330, 330))
         );
         layout.setVerticalGroup(
@@ -220,19 +221,19 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(payBillJButton)
-                    .addComponent(viewOrderJButton)
-                    .addComponent(assignJButton))
+                    .addComponent(payBillButton)
+                    .addComponent(viewOrderButton)
+                    .addComponent(assignButton))
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void viewOrderJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderJButtonActionPerformed
+    private void viewOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderButtonActionPerformed
         
-        int selectedRow = billJTable.getSelectedRow();
+        int selectedRow = billTable.getSelectedRow();
         if (selectedRow >= 0) {
-            WorkRequest request = (WorkRequest) billJTable.getValueAt(selectedRow, 0);
+            WorkRequest request = (WorkRequest) billTable.getValueAt(selectedRow, 0);
             Enterprise enterprise = null;
             Network net = null;
             
@@ -264,7 +265,7 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
                 }
             }
             
-            DefaultTableModel dtm = (DefaultTableModel) orderJTable.getModel();
+            DefaultTableModel dtm = (DefaultTableModel) orderTable.getModel();
             dtm.setRowCount(0);
 
             Order orderI = null;
@@ -287,50 +288,50 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
             return;
         }
         
-    }//GEN-LAST:event_viewOrderJButtonActionPerformed
+    }//GEN-LAST:event_viewOrderButtonActionPerformed
 
-    private void payBillJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payBillJButtonActionPerformed
+    private void payBillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payBillButtonActionPerformed
         
-        int selectedRow = billJTable.getSelectedRow();
+        int selectedRow = billTable.getSelectedRow();
         
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        if (billJTable.getValueAt(selectedRow, 5) == "Paid") {
+        if (billTable.getValueAt(selectedRow, 5) == "Paid") {
             JOptionPane.showMessageDialog(null, "The bill is already Paid", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        if (billJTable.getValueAt(selectedRow, 4) == null) {
+        if (billTable.getValueAt(selectedRow, 4) == null) {
             JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        PaymentRequest paymentRequest = (PaymentRequest) billJTable.getValueAt(selectedRow, 0);
+        PaymentRequest paymentRequest = (PaymentRequest) billTable.getValueAt(selectedRow, 0);
         paymentRequest.setPaymentRequest("Paid");
         paymentRequest.setStatus("Paid");
         populateBillTable();
         JOptionPane.showMessageDialog(null, "Bill paid", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
         
-    }//GEN-LAST:event_payBillJButtonActionPerformed
+    }//GEN-LAST:event_payBillButtonActionPerformed
 
-    private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
+    private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
         
-        int selectedRow = billJTable.getSelectedRow();
+        int selectedRow = billTable.getSelectedRow();
         
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        if (billJTable.getValueAt(selectedRow, 4) != null) {
+        if (billTable.getValueAt(selectedRow, 4) != null) {
             JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        PaymentRequest request = (PaymentRequest) billJTable.getValueAt(selectedRow, 0);
+        PaymentRequest request = (PaymentRequest) billTable.getValueAt(selectedRow, 0);
         request.setReceiver(userAccount);
         request.setStatus("Pending");
         UserAccount user = (UserAccount) request.getSender();
@@ -345,16 +346,16 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
         
         JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
         
-    }//GEN-LAST:event_assignJButtonActionPerformed
+    }//GEN-LAST:event_assignButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton assignJButton;
-    private javax.swing.JTable billJTable;
+    private javax.swing.JButton assignButton;
+    private javax.swing.JTable billTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable orderJTable;
-    private javax.swing.JButton payBillJButton;
-    private javax.swing.JButton viewOrderJButton;
+    private javax.swing.JTable orderTable;
+    private javax.swing.JButton payBillButton;
+    private javax.swing.JButton viewOrderButton;
     // End of variables declaration//GEN-END:variables
 }

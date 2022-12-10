@@ -10,6 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import ui.StateDistributer.DistributerFinancePanel;
 
 /**
  *
@@ -20,7 +21,7 @@ public class DistributerFinanceRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Ecosystem system) {
-        return new DistributorFinanceWorkAreaJPanel(userProcessContainer, system, account, (DistributorEnterprise)enterprise);
+        return new DistributerFinancePanel(userProcessContainer, system, account, (DistributorEnterprise)enterprise);
     }
     
 }
