@@ -4,6 +4,13 @@
  */
 package Business.Organization;
 
+import Business.Role.DistributerAdminRole;
+import Business.Role.HospitalAdminRole;
+import Business.Role.ManufacturerAdminRole;
+import Business.Role.PharmacyAdminRole;
+import Business.Role.ProviderAdminRole;
+import Business.Role.PublicHealthAdmin;
+import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
@@ -20,8 +27,8 @@ public class AdminOrganization extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList<>();
-        roles.add(new DistributorAdminRole());
-        roles.add(new ManufactureAdminRole());
+        roles.add(new DistributerAdminRole());
+        roles.add(new ManufacturerAdminRole());
         roles.add(new ProviderAdminRole());
         roles.add(new PublicHealthAdmin());
         roles.add(new HospitalAdminRole());

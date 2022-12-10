@@ -4,8 +4,15 @@
  */
 package Business;
 
+import Business.Employee.EmployeeDirectory;
+import Business.Inventory.InventoryDirectory;
+import Business.NationalDistributor.NationalDistributor;
 import Business.Network.Network;
 import Business.Organization.Organization;
+import Business.Role.Role;
+import Business.Role.SystemAdminRole;
+import Business.UserAccount.UserAccountDirectory;
+import Business.Vaccine.VaccineDirectory;
 import java.util.ArrayList;
 
 /**
@@ -15,17 +22,19 @@ import java.util.ArrayList;
 
 public class Ecosystem extends Organization {
     
-    private static Ecosystem ecoSystem;
+    private static Ecosystem system;
     private ArrayList<Network> networkDirectory;
     private VaccineDirectory vaccineDirectory;
     private InventoryDirectory inventoryDirectory;
     private NationalDistributor nationalDistributor;
+    private UserAccountDirectory userAccountDirectory;
+    private EmployeeDirectory employeeDirectory;
     
     public static Ecosystem getInstance(){
-        if(ecoSystem == null){
-            ecoSystem = new Ecosystem();
+        if(system == null){
+            system = new Ecosystem();
         }
-        return ecoSystem;
+        return system;
     }
     
     private Ecosystem(){
@@ -34,6 +43,8 @@ public class Ecosystem extends Organization {
         vaccineDirectory = new VaccineDirectory();
         inventoryDirectory = new InventoryDirectory();
         nationalDistributor = new NationalDistributor();
+        userAccountDirectory = new UserAccountDirectory();
+        employeeDirectory = new EmployeeDirectory();
     }
     
     public Network createNetwork(String networkName){
@@ -46,7 +57,7 @@ public class Ecosystem extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList<>();
-        roles.add(new SysAdminRole());
+        roles.add(new SystemAdminRole());
         return roles;
     }
 
@@ -64,6 +75,14 @@ public class Ecosystem extends Organization {
 
     public NationalDistributor getNationalDistributor() {
         return nationalDistributor;
+    }
+
+    public UserAccountDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
+    }
+
+    public EmployeeDirectory getEmployeeDirectory() {
+        return employeeDirectory;
     }
 
     public void setNationalDistributor(NationalDistributor nationalDistributor) {
