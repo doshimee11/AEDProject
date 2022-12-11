@@ -179,7 +179,7 @@ public class ManagePharmacyEmployeePanel extends javax.swing.JPanel {
                 addButtonActionPerformed(evt);
             }
         });
-        add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, -1, 39));
+        add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, -1, 39));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
@@ -189,7 +189,7 @@ public class ManagePharmacyEmployeePanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 560, 140, 40));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 140, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Employee.png"))); // NOI18N
         jLabel5.setText("jLabel5");

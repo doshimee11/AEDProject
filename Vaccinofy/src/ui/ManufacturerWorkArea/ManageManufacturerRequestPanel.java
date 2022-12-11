@@ -95,7 +95,7 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 550, 140, 40));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 550, 140, 40));
 
         manufacturerButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         manufacturerButton.setText("Manufacture Vaccine");
@@ -104,7 +104,7 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
                 manufacturerButtonActionPerformed(evt);
             }
         });
-        add(manufacturerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 290, 40));
+        add(manufacturerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 290, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -132,7 +132,7 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(manufacturerOrderTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 66, 668, 126));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 52, 810, 140));
 
         rejectButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         rejectButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Remove (1).jpg"))); // NOI18N
@@ -192,7 +192,7 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(orderTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 668, 146));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 336, 810, 160));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -245,28 +245,28 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
         int orginalQuantity = 0;
         
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Rejected") {
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Approved") {
-            JOptionPane.showMessageDialog(null, "The request is already Approved", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         ManufacturerRequest request = (ManufacturerRequest) manufacturerOrderTable.getValueAt(selectedRow, 0);
         if (manufacturerOrderTable.getValueAt(selectedRow, 3) == null) {
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "Are you sure if you want to Reject?", "warning", dialogButton);
+        int result = JOptionPane.showConfirmDialog(null, "Confirm reject?", "warning", dialogButton);
         if (result == JOptionPane.YES_OPTION) {
             UserAccount userAccount = (UserAccount) request.getSender();
             Employee employee = (Employee) userAccount.getEmployee();
@@ -285,7 +285,7 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
         }
         
         populateManufactureTable();
-        JOptionPane.showMessageDialog(null, "The request is rejected", "Vaccine Request", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Request rejected", "Vaccine Request", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_rejectButtonActionPerformed
 
@@ -307,7 +307,7 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
             }
         }
         else {
-            JOptionPane.showMessageDialog(null, "Please select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -317,12 +317,12 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
         
         int selectedRow = manufacturerOrderTable.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         if (manufacturerOrderTable.getValueAt(selectedRow, 3) != null) {
-            JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -338,7 +338,7 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
         }
         
         populateManufactureTable();
-        JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
         
     }//GEN-LAST:event_assignButtonActionPerformed
 
@@ -346,17 +346,17 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
         
         int selectedRow = manufacturerOrderTable.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Approved") {
-            JOptionPane.showMessageDialog(null, "The request is already sent to State Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is sent to State Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Rejected") {
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         

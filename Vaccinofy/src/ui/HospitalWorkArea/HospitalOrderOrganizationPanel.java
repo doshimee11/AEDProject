@@ -93,15 +93,15 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
             } else if(userAccount.getEmployee().getHospital().getHospitalStatus().equalsIgnoreCase("Rejected")){
-                JOptionPane.showMessageDialog(null, "The Hospital registration has been REJECTED by State Public Health Department", "Hospital Rejected", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "This hospital registration has been rejected by Health Dept", "Hospital Rejected", JOptionPane.ERROR_MESSAGE);
                 return;
             } else if(userAccount.getEmployee().getHospital().getHospitalStatus().equalsIgnoreCase("Processing")){
-                JOptionPane.showMessageDialog(null, "The hospital registration request is still pending with State Public Health Department", "Hospital Registration Pending", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "This hospital registration request is pending with Health Dept", "Hospital Registration Pending", JOptionPane.ERROR_MESSAGE);
                 return;
             }
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(null, "Please send a hospital registration request to State Public Health Department", "Hospital Registration Not Initialized", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Send a hospital registration request to Health Dept", "Hospital Registration Not Initialized", JOptionPane.ERROR_MESSAGE);
             return;
         }
         

@@ -90,7 +90,7 @@ public class ViewPharmacyOrderHistoryPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(orderIDTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 77, -1, 154));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 77, 490, 190));
 
         viewButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
@@ -100,7 +100,7 @@ public class ViewPharmacyOrderHistoryPanel extends javax.swing.JPanel {
                 viewButtonActionPerformed(evt);
             }
         });
-        add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 140, 42));
+        add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 282, 150, 50));
 
         vaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,16 +120,17 @@ public class ViewPharmacyOrderHistoryPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(vaccineTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 359, -1, 175));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 359, 480, 200));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< Back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 597, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 597, 120, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -158,7 +159,7 @@ public class ViewPharmacyOrderHistoryPanel extends javax.swing.JPanel {
             }
         }
         else {
-            JOptionPane.showMessageDialog(null, "Please select a row first", "View Order", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row first", "View Order", JOptionPane.WARNING_MESSAGE);
             return;
         }
         

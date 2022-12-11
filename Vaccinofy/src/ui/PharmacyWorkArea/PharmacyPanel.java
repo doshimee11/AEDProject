@@ -51,7 +51,7 @@ public class PharmacyPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Pharmacy Work Area");
+        jLabel1.setText("Pharmacy ");
 
         registerPharmacyButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         registerPharmacyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RegisterHospital.jpg"))); // NOI18N

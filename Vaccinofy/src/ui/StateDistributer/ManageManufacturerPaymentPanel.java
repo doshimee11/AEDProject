@@ -108,7 +108,7 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(manufacturerPaymentTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 66, 724, 126));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 66, 860, 200));
 
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
@@ -118,7 +118,7 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
                 viewOrderButtonActionPerformed(evt);
             }
         });
-        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 216, 140, 50));
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 140, 50));
 
         assignButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         assignButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
@@ -128,7 +128,7 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
                 assignButtonActionPerformed(evt);
             }
         });
-        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 216, 180, 50));
+        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 180, 50));
 
         payBillButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         payBillButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Paybill.jpg"))); // NOI18N
@@ -138,7 +138,7 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
                 payBillButtonActionPerformed(evt);
             }
         });
-        add(payBillButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 214, 130, 50));
+        add(payBillButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 300, 130, 50));
 
         billTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -158,7 +158,7 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(billTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 298, 724, 146));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 860, 190));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ManufacturerOrganization.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -187,7 +187,7 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
 
         }
         else {
-            JOptionPane.showMessageDialog(null, "Please select a row", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
     }//GEN-LAST:event_viewOrderButtonActionPerformed
@@ -196,12 +196,12 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
         int selectedRow = manufacturerPaymentTable.getSelectedRow();
 
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if (manufacturerPaymentTable.getValueAt(selectedRow, 2) != null) {
-            JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -218,24 +218,24 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
         
         populateManufacturePaymentTable();
         
-        JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
     }//GEN-LAST:event_assignButtonActionPerformed
 
     private void payBillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payBillButtonActionPerformed
         int selectedRow = manufacturerPaymentTable.getSelectedRow();
 
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if (manufacturerPaymentTable.getValueAt(selectedRow, 3) == "Paid") {
-            JOptionPane.showMessageDialog(null, "The bill is already Paid", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This bill is paid", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if (manufacturerPaymentTable.getValueAt(selectedRow, 2) == null) {
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 

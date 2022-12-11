@@ -142,7 +142,7 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 760, 120, 40));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 760, 120, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -203,7 +203,7 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
             }
         }
         else {
-            JOptionPane.showMessageDialog(null, "Please select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -214,7 +214,7 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
         int selectedRow = vaccineOrderTable.getSelectedRow();
         
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -237,7 +237,7 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
         
         populateVaccineOrderTable();
         
-        JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
         
     }//GEN-LAST:event_assignButtonActionPerformed
 
@@ -246,23 +246,23 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
         int selectedRow = vaccineOrderTable.getSelectedRow();
         
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is already sent to State Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is sent to State Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         VaccineRequest request = (VaccineRequest) vaccineOrderTable.getValueAt(selectedRow, 0);
         if(vaccineOrderTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         

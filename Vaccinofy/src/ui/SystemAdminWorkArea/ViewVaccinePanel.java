@@ -146,7 +146,7 @@ public class ViewVaccinePanel extends javax.swing.JPanel {
     private void saveJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveJButtonActionPerformed
         // TODO add your handling code here:
         if (vaccineNameJTextField.getText().equals("") || diseaseNameJTextField.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Please enter all the fields !", "View Vaccine", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Enter all the fields", "View Vaccine", JOptionPane.WARNING_MESSAGE);
             return;
         }
         else {
@@ -154,7 +154,7 @@ public class ViewVaccinePanel extends javax.swing.JPanel {
             vaccine.setDiseaseName(diseaseNameJTextField.getText());
             vaccineNameJTextField.setEditable(false);
             diseaseNameJTextField.setEditable(false);
-            JOptionPane.showMessageDialog(null, "Data saved successfully", "Update Vaccine",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Data saved", "Update Vaccine",JOptionPane.INFORMATION_MESSAGE);
             saveJButton.setEnabled(false);
 
         }

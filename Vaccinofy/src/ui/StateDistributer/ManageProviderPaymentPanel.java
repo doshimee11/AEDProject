@@ -131,7 +131,7 @@ public class ManageProviderPaymentPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(billTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 91, 748, 126));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 91, 800, 180));
 
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ViewOrder (1).png"))); // NOI18N
@@ -141,7 +141,7 @@ public class ManageProviderPaymentPanel extends javax.swing.JPanel {
                 viewOrderButtonActionPerformed(evt);
             }
         });
-        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 271, 180, 50));
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 180, 50));
 
         sendButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         sendButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Paybill.jpg"))); // NOI18N
@@ -151,7 +151,7 @@ public class ManageProviderPaymentPanel extends javax.swing.JPanel {
                 sendButtonActionPerformed(evt);
             }
         });
-        add(sendButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 210, 50));
+        add(sendButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 210, 50));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -171,7 +171,7 @@ public class ManageProviderPaymentPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(orderTable);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 348, 748, 146));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 800, 210));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
@@ -181,7 +181,7 @@ public class ManageProviderPaymentPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 561, 120, 50));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 670, 120, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ManufacturerOrganization.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -235,7 +235,7 @@ public class ManageProviderPaymentPanel extends javax.swing.JPanel {
                 dtm.addRow(row);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Please select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
     }//GEN-LAST:event_viewOrderButtonActionPerformed
@@ -303,7 +303,7 @@ public class ManageProviderPaymentPanel extends javax.swing.JPanel {
             u.getWorkQueue().getWorkRequestList().add(request);
             userAccount.getWorkQueue().getWorkRequestList().add(request);
             populateVaccineOrderTable();
-            JOptionPane.showMessageDialog(null, "Bill sent successfully", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Bill sent", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
         }
         
     }//GEN-LAST:event_sendButtonActionPerformed

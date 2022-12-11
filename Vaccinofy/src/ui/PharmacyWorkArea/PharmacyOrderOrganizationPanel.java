@@ -57,7 +57,7 @@ public class PharmacyOrderOrganizationPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Pharmacy Order Organization Work Area");
+        jLabel1.setText("Pharmacy Order Organization ");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 21, -1, -1));
 
         orderVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -68,7 +68,7 @@ public class PharmacyOrderOrganizationPanel extends javax.swing.JPanel {
                 orderVaccineButtonActionPerformed(evt);
             }
         });
-        add(orderVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 132, 260, 50));
+        add(orderVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 122, 260, 60));
 
         viewOrderHistoryButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewOrderHistoryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Order History Icon.jpg"))); // NOI18N
@@ -95,16 +95,16 @@ public class PharmacyOrderOrganizationPanel extends javax.swing.JPanel {
                 layout.next(userProcessContainer);
             }
             else if(userAccount.getEmployee().getPharmacy().getPharmacyStatus().equalsIgnoreCase("Rejected")){
-                JOptionPane.showMessageDialog(null, "The Hospital registration has been REJECTED by State Public Health Department", "Hospital Rejected", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "This hospital registration has been rejected by Health Dept", "Hospital Rejected", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             else if(userAccount.getEmployee().getPharmacy().getPharmacyStatus().equalsIgnoreCase("Processing")){
-                JOptionPane.showMessageDialog(null, "The hospital registration request is still pending with State Public Health Department", "Hospital Registration Pending", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "This hospital registration request is pending with Health Dept", "Hospital Registration Pending", JOptionPane.ERROR_MESSAGE);
                 return;
             }
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(null, "Please send a hospital registration request to State Public Health Department", "Hospital Registration Not Initialized", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Send a hospital registration request to Health Department", "Hospital Registration Not Initialized", JOptionPane.ERROR_MESSAGE);
             return;
         }
         

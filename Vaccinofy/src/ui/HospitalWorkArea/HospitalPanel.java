@@ -51,8 +51,8 @@ public class HospitalPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        titleJLabel.setText("Hospital Work Area");
-        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 24, -1, -1));
+        titleJLabel.setText("Hospital ");
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 200, -1));
 
         registerHospitalButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         registerHospitalButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RegisterHospital.jpg"))); // NOI18N
@@ -62,7 +62,7 @@ public class HospitalPanel extends javax.swing.JPanel {
                 registerHospitalButtonActionPerformed(evt);
             }
         });
-        add(registerHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 240, -1));
+        add(registerHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 240, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
         jLabel1.setText("jLabel1");

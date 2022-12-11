@@ -59,17 +59,17 @@ public class AddVaccinePanel extends javax.swing.JPanel {
 
         vaccineNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineNameLabel.setText("Vaccine Name :");
-        add(vaccineNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 92, -1, -1));
+        add(vaccineNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 92, 140, 40));
 
         diseasesNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         diseasesNameLabel.setText("Diseases Name :");
-        add(diseasesNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 164, -1, -1));
+        add(diseasesNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 164, 140, 40));
 
         vaccineNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(vaccineNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(572, 86, 182, -1));
+        add(vaccineNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 200, 40));
 
         diseasesNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(diseasesNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(572, 158, 182, -1));
+        add(diseasesNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 200, 40));
 
         addVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addVaccineButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/OrderVacccine.jpg"))); // NOI18N
@@ -89,7 +89,7 @@ public class AddVaccinePanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 140, 40));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 150, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

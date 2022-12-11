@@ -56,7 +56,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Pharmacy Work Area"/>
+            <Property name="text" type="java.lang.String" value="Pharmacy "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="registerPharmacyButton">

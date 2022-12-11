@@ -216,7 +216,7 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
             }
         }
         else {
-            JOptionPane.showMessageDialog(null, "Please select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
     }//GEN-LAST:event_viewOrderButtonActionPerformed
@@ -224,11 +224,11 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
     private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
         int selectedRow = vaccineOrderTable.getSelectedRow();
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         if(vaccineOrderTable.getValueAt(selectedRow, 3) != null){
-            JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -239,32 +239,32 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
         Employee person = (Employee) userAccount.getEmployee();
         for(Order order : person.getOrderCatalog().getOrderList()){
             if(request.getOrderID() == order.getOrderID()){
-                order.setOrderStatus("Waiting to be approved by CDC");
+                order.setOrderStatus("Waiting to be approved by Distributor");
             }
         }
         
         populateVaccineOrderTable();
         
-        JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
     }//GEN-LAST:event_assignButtonActionPerformed
 
     private void forwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardButtonActionPerformed
         int selectedRow = vaccineOrderTable.getSelectedRow();
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is already sent to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is sent to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         VaccineRequest request = (VaccineRequest) vaccineOrderTable.getValueAt(selectedRow, 0);
         if(vaccineOrderTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to CDC", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         request.setStatus("Approved");
@@ -303,33 +303,33 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
         int orginalQuantity = 0;
 
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is already Approved", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         VaccineRequest request = (VaccineRequest) vaccineOrderTable.getValueAt(selectedRow, 0);
         if(vaccineOrderTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to CDC", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "Are you sure if you want to Reject?", "warning", dialogButton);
+        int result = JOptionPane.showConfirmDialog(null, "Confirm reject?", "warning", dialogButton);
         if(result == JOptionPane.YES_OPTION){
             UserAccount userAccount = (UserAccount) request.getSender();
             Employee employee = (Employee) userAccount.getEmployee();
             for(Order order : employee.getOrderCatalog().getOrderList()){
                 if(request.getOrderID() == order.getOrderID()){
-                    order.setOrderStatus("Order rejected by CDC");
+                    order.setOrderStatus("Order rejected by Distributor");
                     request.setStatus("Rejected");
                     request.setVaccineRequest("Rejected");
                     for (OrderItem oi : order.getOrderItemList()) {
@@ -343,7 +343,7 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
         
         populateVaccineOrderTable();
         
-        JOptionPane.showMessageDialog(null, "The request is rejected", "Vaccine Request", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "This request is rejected", "Vaccine Request", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_rejectButtonActionPerformed
 
 

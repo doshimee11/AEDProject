@@ -135,7 +135,7 @@ public class ManageHospitalUserAccountPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(userTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(528, 71, 375, 179));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 71, 540, 179));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Organization :");
@@ -197,7 +197,7 @@ public class ManageHospitalUserAccountPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(528, 593, 160, 40));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 610, 160, 50));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
         jLabel7.setText("jLabel7");

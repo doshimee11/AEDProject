@@ -57,16 +57,16 @@ public class ManagePharmacyPanel extends javax.swing.JPanel {
                 manageEmployeeButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 102, 293, 38));
+        add(manageEmployeeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 320, 50));
 
         manageUserAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageUserAccountButton.setText("Manage Pharmacy UserAccount >>");
+        manageUserAccountButton.setText("Manage Pharmacy UserAccount ");
         manageUserAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageUserAccountButtonActionPerformed(evt);
             }
         });
-        add(manageUserAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 158, 293, 38));
+        add(manageUserAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 158, 320, 60));
 
         addPharmacyButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addPharmacyButton.setText("Add Pharmacy ");
@@ -75,7 +75,7 @@ public class ManagePharmacyPanel extends javax.swing.JPanel {
                 addPharmacyButtonActionPerformed(evt);
             }
         });
-        add(addPharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 223, 293, 40));
+        add(addPharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 320, 50));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
@@ -85,7 +85,7 @@ public class ManagePharmacyPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 140, 40));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 140, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");

@@ -73,11 +73,11 @@ public class DistributerFinancePanel extends javax.swing.JPanel {
                 manageProviderPaymentButtonActionPerformed(evt);
             }
         });
-        add(manageProviderPaymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 310, 70));
+        add(manageProviderPaymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 310, 70));
 
         jLabel2.setIcon(new javax.swing.ImageIcon("/Users/kalindjoshi/Downloads/Employee.png")); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 5, 1200, 1000));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageManufacturerPaymentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageManufacturerPaymentButtonActionPerformed

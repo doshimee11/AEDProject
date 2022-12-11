@@ -261,7 +261,7 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
             
         }
         else {
-            JOptionPane.showMessageDialog(null, "Please select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -272,17 +272,17 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
         int selectedRow = billTable.getSelectedRow();
         
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         if (billTable.getValueAt(selectedRow, 5) == "Paid") {
-            JOptionPane.showMessageDialog(null, "The bill is already Paid", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This bill is paid", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         if (billTable.getValueAt(selectedRow, 4) == null) {
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -299,12 +299,12 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
         int selectedRow = billTable.getSelectedRow();
         
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         if (billTable.getValueAt(selectedRow, 4) != null) {
-            JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -321,7 +321,7 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
         
         populateBillTable();
         
-        JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
         
     }//GEN-LAST:event_assignButtonActionPerformed
 

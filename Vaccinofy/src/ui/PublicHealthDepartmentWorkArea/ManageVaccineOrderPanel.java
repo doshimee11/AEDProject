@@ -142,7 +142,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 viewJButtonActionPerformed(evt);
             }
         });
-        add(viewJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 150, 40));
+        add(viewJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 150, 40));
 
         forwardJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         forwardJButton.setText("Forward to CDC");
@@ -164,13 +164,14 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         add(rejectJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 120, 40));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 486, 130, 50));
 
         vaccineTableJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -236,7 +237,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 dtm.addRow(row);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Please select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
     }//GEN-LAST:event_viewJButtonActionPerformed
@@ -245,23 +246,23 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         int selectedRow = vaccineRequestJTable.getSelectedRow();
 
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(vaccineRequestJTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is already sent to CDC", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(vaccineRequestJTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         VaccineRequest request = (VaccineRequest) vaccineRequestJTable.getValueAt(selectedRow, 0);
         if(vaccineRequestJTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to a State Public Health Department", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to Health Department", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         request.setStatus("Approved");
@@ -270,7 +271,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         Employee person = (Employee) userAccount.getEmployee();
         for(Order order : person.getOrderCatalog().getOrderList()){
             if(request.getOrderID() == order.getOrderID()){
-                order.setOrderStatus("Approved by State public health department");
+                order.setOrderStatus("Approved by State public Health Department");
             }
         }
         VaccineRequest vaccineRequest = new VaccineRequest();
@@ -299,27 +300,27 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         int orginalQuantity = 0;
 
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(vaccineRequestJTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(vaccineRequestJTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is already Approved", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         VaccineRequest request = (VaccineRequest) vaccineRequestJTable.getValueAt(selectedRow, 0);
         if(vaccineRequestJTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to a State public health department", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to health dept", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "Are you sure if you want to Reject?", "warning", dialogButton);
+        int result = JOptionPane.showConfirmDialog(null, "Confirm reject?", "warning", dialogButton);
         if(result == JOptionPane.YES_OPTION){
             UserAccount userAccount = (UserAccount) request.getSender();
             Employee employee = (Employee) userAccount.getEmployee();
@@ -341,7 +342,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         } else if(request.getSender().getEmployee().getCheck().equalsIgnoreCase("Pharmacy")){
             populatePharmacyVaccineTable();
         }
-        JOptionPane.showMessageDialog(null, "The request is rejected", "Shipping Request", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "This request is rejected", "Shipping Request", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_rejectJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -365,12 +366,12 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         int selectedRow = vaccineRequestJTable.getSelectedRow();
 
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(vaccineRequestJTable.getValueAt(selectedRow, 3) != null){
-            JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -389,7 +390,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         } else if(request.getSender().getEmployee().getCheck().equalsIgnoreCase("Pharmacy")){
             populatePharmacyVaccineTable();
         }
-        JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
     }//GEN-LAST:event_assignJButtonActionPerformed
 
 
