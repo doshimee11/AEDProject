@@ -70,7 +70,7 @@ public class AddHospitalPanel extends javax.swing.JPanel {
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("Add Hospital");
-        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 25, -1, -1));
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
 
         hospitalTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -93,25 +93,25 @@ public class AddHospitalPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(hospitalTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 72, 510, 90));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 72, 560, 160));
 
         hospitalNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         hospitalNameLabel.setText("Hospital Name :");
-        add(hospitalNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
+        add(hospitalNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
 
         hospitalNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(hospitalNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 304, -1));
+        add(hospitalNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 304, -1));
 
         hospitalAddressLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         hospitalAddressLabel.setText("Hospital Address :");
-        add(hospitalAddressLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 238, -1, -1));
+        add(hospitalAddressLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, -1, -1));
 
         hospitalAddressTextArea.setColumns(20);
         hospitalAddressTextArea.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         hospitalAddressTextArea.setRows(5);
         jScrollPane2.setViewportView(hospitalAddressTextArea);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 238, -1, -1));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, -1, -1));
 
         addHospitalButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addHospitalButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RegisterHospital.jpg"))); // NOI18N
@@ -121,17 +121,17 @@ public class AddHospitalPanel extends javax.swing.JPanel {
                 addHospitalButtonActionPerformed(evt);
             }
         });
-        add(addHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 407, 180, 38));
+        add(addHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 478, 190, 50));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
-        backButton.setText(" back");
+        backButton.setText(" Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 447, 150, 40));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 560, 160, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
         jLabel1.setText("jLabel1");

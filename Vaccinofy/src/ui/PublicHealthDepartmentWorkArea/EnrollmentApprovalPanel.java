@@ -132,7 +132,7 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, 130, 40));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, 130, 50));
 
         rejectJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         rejectJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Remove (1).jpg"))); // NOI18N
@@ -185,12 +185,12 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
         int selectedRow = messageJTable.getSelectedRow();
 
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(messageJTable.getValueAt(selectedRow, 3) != null){
-            JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -202,30 +202,30 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
         } else if(request.getSender().getEmployee().getCheck().equalsIgnoreCase("Pharmacy")){
             populatePharmacyTable();
         }
-        JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
     }//GEN-LAST:event_assignJButtonActionPerformed
 
     private void approveJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveJButtonActionPerformed
         int selectedRow = messageJTable.getSelectedRow();
 
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(messageJTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is already approved", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "The request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(messageJTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         EnrollmentRequest request = (EnrollmentRequest) messageJTable.getValueAt(selectedRow, 0);
         if(messageJTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the State PHD", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to the Health Dept", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         UserAccount userAccount = (UserAccount) request.getSender();
@@ -240,7 +240,7 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
             employee.getPharmacy().setPharmacyStatus("Approved");
             populatePharmacyTable();
         }
-        JOptionPane.showMessageDialog(null, "The request is approved", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "This request is approved", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_approveJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -253,27 +253,27 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
         int selectedRow = messageJTable.getSelectedRow();
 
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(messageJTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(messageJTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is already Approved", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         EnrollmentRequest request = (EnrollmentRequest) messageJTable.getValueAt(selectedRow, 0);
         if(messageJTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the State PHD", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the Health Dept", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "Are you sure if you want to Reject?", "warning", dialogButton);
+        int result = JOptionPane.showConfirmDialog(null, "Confirm reject?", "warning", dialogButton);
         if(result == JOptionPane.YES_OPTION){
             UserAccount userAccount = (UserAccount) request.getSender();
             Employee employee = (Employee) userAccount.getEmployee();
@@ -288,7 +288,7 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
                 populatePharmacyTable();
             }
 
-            JOptionPane.showMessageDialog(null, "The request is rejected", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_rejectJButtonActionPerformed
 

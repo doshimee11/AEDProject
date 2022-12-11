@@ -176,16 +176,16 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
     private void removeVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeVaccineButtonActionPerformed
         int row = vaccineTable.getSelectedRow();
         if(row < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         else { 
             Vaccine vaccine = (Vaccine)vaccineTable.getValueAt(row, 0);
             int dialogButton = JOptionPane.YES_NO_OPTION;
-            int result = JOptionPane.showConfirmDialog(null, "Are you sure if you want to delete?", "warning", dialogButton);
+            int result = JOptionPane.showConfirmDialog(null, "Confirm delete?", "warning", dialogButton);
             if(result == JOptionPane.YES_OPTION){
                 system.getVaccineDirectory().removeOldVaccine(vaccine);
-                JOptionPane.showMessageDialog(null, "Vaccine is removed!", "Vaccine Supplier",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Vaccine removed", "Vaccine Supplier",JOptionPane.INFORMATION_MESSAGE);
                 populateTable();
             }
         }
@@ -221,7 +221,7 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
 
     private void searchVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchVaccineButtonActionPerformed
         if(vaccineIdTextField.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Please type the Vaccine ID to be searched.", "Search Vaccine", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Type the Vaccine ID to search.", "Search Vaccine", JOptionPane.WARNING_MESSAGE);
             return;
         }
         try{ 
@@ -229,7 +229,7 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
             int vaccineId = Integer.parseInt(vaccineIdTextField.getText());
             vaccine = system.getVaccineDirectory().searchVaccine(vaccineId);
             if (vaccine == null){
-                JOptionPane.showMessageDialog(null, "Please Input a valid Vaccine ID", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Use a valid Vaccine ID", "Warning", JOptionPane.WARNING_MESSAGE);
                 vaccineIdTextField.setText(null);
                 return;
             }

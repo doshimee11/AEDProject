@@ -242,13 +242,13 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         
         int selectedrow = orderItemTable.getSelectedRow();
         if (selectedrow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row first", "Modify Quantity", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row first", "Modify Quantity", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         String changeQuantity = changeQuantityTextField.getText();
         if(changeQuantity.trim().length() == 0){
-            JOptionPane.showMessageDialog(null, "Please enter the quantity to be modified", "Modify quantity", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Enter the quantity to be modified", "Modify quantity", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -274,7 +274,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         
         int selectedRow = vaccineTable.getSelectedRow();
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row !" , "Browse Product", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row " , "Browse Product", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -290,7 +290,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         
         int selectedRow = orderItemTable.getSelectedRow();
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row", "Browse Product", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row", "Browse Product", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -306,13 +306,13 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         
         int selectedRow = orderItemTable.getSelectedRow();
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please Select a row", "Browse Product", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row", "Browse Product", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         OrderItem orderItem = (OrderItem) orderItemTable.getValueAt(selectedRow, 0);
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "Are you sure if you want to delete?", "warning", dialogButton);
+        int result = JOptionPane.showConfirmDialog(null, "Confirm delete?", "warning", dialogButton);
         if(result == JOptionPane.YES_OPTION){
             order.removeOrderItem(orderItem);
             int newAvailablity = orderItem.getItemQuantity() + orderItem.getVaccine().getAvailablity();
@@ -328,7 +328,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         
         DefaultTableModel dtm = (DefaultTableModel) orderItemTable.getModel();
         if(dtm.getRowCount() == 0){
-            JOptionPane.showMessageDialog(null, "No item in chart to checkout", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No item in chart", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -337,7 +337,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "You have successfully checked out");
         }
         else {
-            JOptionPane.showMessageDialog(null, "There is an error processing yoour order");
+            JOptionPane.showMessageDialog(null, "There is an error processing the order");
         }
         
         VaccineRequest request = new VaccineRequest();
@@ -402,7 +402,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         int selectedRow = vaccineTable.getSelectedRow();
         int quantity = (Integer) spnQuantitySpinner.getValue();
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row");
+            JOptionPane.showMessageDialog(null, "Select a row");
             return;
         }
         

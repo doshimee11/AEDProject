@@ -86,7 +86,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(orderIDTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 327, -1, 154));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(346, 327, 540, 154));
 
         viewButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
@@ -96,7 +96,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
                 viewButtonActionPerformed(evt);
             }
         });
-        add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 507, 140, 42));
+        add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(524, 499, 150, 50));
 
         vaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,7 +116,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(vaccineTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 567, -1, 175));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 567, 530, 175));
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("View Hospital Order History");
@@ -130,7 +130,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 791, 140, 50));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 790, 140, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -158,7 +158,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
             }
         }
         else {
-            JOptionPane.showMessageDialog(null, "Please select a row first", "View Order", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row first", "View Order", JOptionPane.WARNING_MESSAGE);
             return;
         }
         

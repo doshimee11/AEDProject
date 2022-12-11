@@ -101,16 +101,17 @@ public class RegisterPharmacyPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(hospitalEnrollmentTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 70, -1, 109));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 59, 580, 160));
 
         refreshButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        refreshButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Refresh (2).png"))); // NOI18N
         refreshButton.setText("Refresh");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshButtonActionPerformed(evt);
             }
         });
-        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 212, -1, -1));
+        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 170, 50));
 
         enrollmentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         enrollmentButton.setText("Enrollment Request");
@@ -119,16 +120,17 @@ public class RegisterPharmacyPanel extends javax.swing.JPanel {
                 enrollmentButtonActionPerformed(evt);
             }
         });
-        add(enrollmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 212, -1, -1));
+        add(enrollmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 190, 50));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< Back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 401, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 170, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -143,10 +145,10 @@ public class RegisterPharmacyPanel extends javax.swing.JPanel {
         
         for(WorkRequest workRequest: userAccount.getWorkQueue().getWorkRequestList()){
             if(workRequest.getStatus().equalsIgnoreCase("Approved")){
-                JOptionPane.showMessageDialog(null, "Enrollment request is already approved", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Enrollment request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             } else if(workRequest.getStatus().equalsIgnoreCase("sent")){
-                JOptionPane.showMessageDialog(null, "Enrollment request is already sent and waiting to be approved", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Enrollment request is sent and waiting to be approved", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
         }
@@ -183,7 +185,7 @@ public class RegisterPharmacyPanel extends javax.swing.JPanel {
             populateTable();
         }
         
-        JOptionPane.showMessageDialog(null, "Enrolment is requested successfully", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Enrollment is requested successfully", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_enrollmentButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed

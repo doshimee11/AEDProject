@@ -57,7 +57,7 @@ public class ProviderPanel extends javax.swing.JPanel {
                 manageOrganizationButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 125, 233, 38));
+        add(manageOrganizationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 138, 240, 50));
 
         manageHospitalButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         manageHospitalButton.setText("Manage Hospital ");
@@ -66,7 +66,7 @@ public class ProviderPanel extends javax.swing.JPanel {
                 manageHospitalButtonActionPerformed(evt);
             }
         });
-        add(manageHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 194, 233, 40));
+        add(manageHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 240, 50));
 
         managePharmacyButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         managePharmacyButton.setText("Manage Pharmacy ");
@@ -75,7 +75,7 @@ public class ProviderPanel extends javax.swing.JPanel {
                 managePharmacyButtonActionPerformed(evt);
             }
         });
-        add(managePharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 271, 233, -1));
+        add(managePharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 298, 240, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");

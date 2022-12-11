@@ -57,7 +57,7 @@ public class ManageHospitalPanel extends javax.swing.JPanel {
                 manageEmployeeButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(648, 114, 276, 38));
+        add(manageEmployeeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(644, 112, 290, 50));
 
         manageUserAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         manageUserAccountButton.setText("Manage Hospital User");
@@ -66,7 +66,7 @@ public class ManageHospitalPanel extends javax.swing.JPanel {
                 manageUserAccountButtonActionPerformed(evt);
             }
         });
-        add(manageUserAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(648, 170, 280, 38));
+        add(manageUserAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 178, 290, 50));
 
         addHospitalButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addHospitalButton.setText("Add Hospital ");
@@ -75,7 +75,7 @@ public class ManageHospitalPanel extends javax.swing.JPanel {
                 addHospitalButtonActionPerformed(evt);
             }
         });
-        add(addHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(648, 226, 280, 38));
+        add(addHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 290, 50));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
@@ -85,7 +85,7 @@ public class ManageHospitalPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 315, 140, 40));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, 150, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
         jLabel2.setText("jLabel2");

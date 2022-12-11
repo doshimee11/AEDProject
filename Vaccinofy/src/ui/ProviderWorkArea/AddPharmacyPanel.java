@@ -121,17 +121,17 @@ public class AddPharmacyPanel extends javax.swing.JPanel {
                 addPharmacyButtonActionPerformed(evt);
             }
         });
-        add(addPharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 469, 240, 38));
+        add(addPharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 457, 250, 50));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
-        backJButton.setText(" back");
+        backJButton.setText(" Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, 150, 40));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 540, 170, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

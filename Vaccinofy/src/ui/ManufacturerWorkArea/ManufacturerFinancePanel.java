@@ -191,7 +191,7 @@ public class ManufacturerFinancePanel extends javax.swing.JPanel {
             populateManufactureTable();
         }
         
-        JOptionPane.showMessageDialog(null, "Bill sent successfully", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Bill sent", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_sendButtonActionPerformed
 

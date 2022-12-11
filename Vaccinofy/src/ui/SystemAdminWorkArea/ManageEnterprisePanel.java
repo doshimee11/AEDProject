@@ -98,7 +98,7 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(enterpriseTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 102, -1, 180));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 102, 500, 200));
 
         networkLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         networkLabel.setText("Network :");
@@ -113,15 +113,15 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
         add(enterpriseNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 505, -1, -1));
 
         enterpriseNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(enterpriseNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 502, 164, -1));
+        add(enterpriseNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 500, 170, 50));
 
         networkComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         networkComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(networkComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 352, 164, -1));
+        add(networkComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 170, 40));
 
         enterpriseTypeComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         enterpriseTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(enterpriseTypeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 421, 164, -1));
+        add(enterpriseTypeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 170, 40));
 
         submitButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         submitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Submit.jpg"))); // NOI18N
@@ -131,7 +131,7 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
                 submitButtonActionPerformed(evt);
             }
         });
-        add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 591, -1, 40));
+        add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 591, 130, 50));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
@@ -141,7 +141,7 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 666, 110, 40));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 666, 120, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -152,7 +152,7 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
         Network network = (Network) networkComboBox.getSelectedItem();
         Enterprise.EnterpriseType type = (Enterprise.EnterpriseType)enterpriseTypeComboBox.getSelectedItem();
         if (network == null || type == null){
-            JOptionPane.showMessageDialog(null, "Invalid Input!");
+            JOptionPane.showMessageDialog(null, "Invalid input");
             return;
         }
         String name = enterpriseNameTextField.getText();

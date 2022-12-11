@@ -52,7 +52,7 @@ public class StateDistributorPanel extends javax.swing.JPanel {
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("State Distributor ");
-        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 320, -1));
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, 320, -1));
 
         manageVaccineRequestButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         manageVaccineRequestButton.setText("Manage Vaccine Request ");
@@ -61,7 +61,7 @@ public class StateDistributorPanel extends javax.swing.JPanel {
                 manageVaccineRequestButtonActionPerformed(evt);
             }
         });
-        add(manageVaccineRequestButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(571, 94, 320, 50));
+        add(manageVaccineRequestButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, 350, 60));
 
         manageDistributorOrgButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         manageDistributorOrgButton.setText("Manage Distributor Organization");
@@ -70,7 +70,7 @@ public class StateDistributorPanel extends javax.swing.JPanel {
                 manageDistributorOrgButtonActionPerformed(evt);
             }
         });
-        add(manageDistributorOrgButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(571, 171, 320, 50));
+        add(manageDistributorOrgButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 350, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

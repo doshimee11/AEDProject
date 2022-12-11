@@ -59,15 +59,15 @@ public class ViewOrderItemPanel extends javax.swing.JPanel {
 
         quantityTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         quantityTextField.setEnabled(false);
-        add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(779, 154, 180, -1));
+        add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, 180, -1));
 
         vaccineIDLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineIDLabel.setText("Vaccine ID :");
-        add(vaccineIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 229, -1, -1));
+        add(vaccineIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, -1));
 
         vaccineIdTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineIdTextField.setEnabled(false);
-        add(vaccineIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(779, 226, 180, -1));
+        add(vaccineIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 180, -1));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
@@ -77,7 +77,7 @@ public class ViewOrderItemPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 306, 120, 40));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 120, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("View Order Item");
@@ -85,15 +85,15 @@ public class ViewOrderItemPanel extends javax.swing.JPanel {
 
         vaccineNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineNameLabel.setText("Vaccine Name :");
-        add(vaccineNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 96, -1, -1));
+        add(vaccineNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
 
         vaccineNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineNameTextField.setEnabled(false);
-        add(vaccineNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(778, 86, 180, -1));
+        add(vaccineNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, 180, -1));
 
         vaccineQuantityLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineQuantityLabel.setText("Quantity :");
-        add(vaccineQuantityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 164, -1, -1));
+        add(vaccineQuantityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");

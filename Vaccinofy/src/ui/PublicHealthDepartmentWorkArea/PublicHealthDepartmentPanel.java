@@ -74,7 +74,7 @@ public class PublicHealthDepartmentPanel extends javax.swing.JPanel {
                 manageOrderJButton1ActionPerformed(evt);
             }
         });
-        add(manageOrderJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 320, 50));
+        add(manageOrderJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 320, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
