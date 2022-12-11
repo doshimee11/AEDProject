@@ -113,25 +113,27 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
             vaccineOrderTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 66, 692, 126));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 66, 730, 126));
 
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ViewOrder (1).png"))); // NOI18N
         viewOrderButton.setText("View Order");
         viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewOrderButtonActionPerformed(evt);
             }
         });
-        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 237, -1, -1));
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 140, 50));
 
         assignButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
         assignButton.setText("Assign to me");
         assignButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignButtonActionPerformed(evt);
             }
         });
-        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 237, -1, -1));
+        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 170, 50));
 
         forwardButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         forwardButton.setText("Forward to National Distributor");
@@ -140,7 +142,7 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
                 forwardButtonActionPerformed(evt);
             }
         });
-        add(forwardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 237, -1, -1));
+        add(forwardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 225, -1, 40));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -164,25 +166,27 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
             orderTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 299, 692, 146));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 299, 730, 146));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< Back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 501, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 497, 110, 40));
 
         rejectButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rejectButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Remove (1).jpg"))); // NOI18N
         rejectButton.setText("Reject");
         rejectButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rejectButtonActionPerformed(evt);
             }
         });
-        add(rejectButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(797, 237, -1, -1));
+        add(rejectButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 220, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");

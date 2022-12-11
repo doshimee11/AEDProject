@@ -134,22 +134,24 @@ public class ManageProviderPaymentPanel extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 91, 748, 126));
 
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ViewOrder (1).png"))); // NOI18N
         viewOrderButton.setText("View Order");
         viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewOrderButtonActionPerformed(evt);
             }
         });
-        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 271, -1, -1));
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 271, 180, 50));
 
         sendButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        sendButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Paybill.jpg"))); // NOI18N
         sendButton.setText("Send Bill");
         sendButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sendButtonActionPerformed(evt);
             }
         });
-        add(sendButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 265, 207, 40));
+        add(sendButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 210, 50));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -172,13 +174,14 @@ public class ManageProviderPaymentPanel extends javax.swing.JPanel {
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 348, 748, 146));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 575, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 561, 120, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ManufacturerOrganization.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

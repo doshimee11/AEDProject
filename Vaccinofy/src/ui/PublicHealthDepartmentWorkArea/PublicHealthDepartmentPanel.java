@@ -48,6 +48,7 @@ public class PublicHealthDepartmentPanel extends javax.swing.JPanel {
         enrollmentApprovalJButton = new javax.swing.JButton();
         manageOrderJButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -56,25 +57,31 @@ public class PublicHealthDepartmentPanel extends javax.swing.JPanel {
         add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 30, -1, -1));
 
         enrollmentApprovalJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        enrollmentApprovalJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
         enrollmentApprovalJButton.setText("Enrollment Request Approval");
         enrollmentApprovalJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enrollmentApprovalJButtonActionPerformed(evt);
             }
         });
-        add(enrollmentApprovalJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, -1, 39));
+        add(enrollmentApprovalJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 320, 60));
 
         manageOrderJButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        manageOrderJButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RegisterHospital.jpg"))); // NOI18N
         manageOrderJButton1.setText("Manage Vaccine Order");
         manageOrderJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageOrderJButton1ActionPerformed(evt);
             }
         });
-        add(manageOrderJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 258, 39));
+        add(manageOrderJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 320, 50));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 3, 1190, 1000));
+
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, -3, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void enrollmentApprovalJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentApprovalJButtonActionPerformed
@@ -94,6 +101,7 @@ public class PublicHealthDepartmentPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton enrollmentApprovalJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton manageOrderJButton1;
     private javax.swing.JLabel titleJLabel;
     // End of variables declaration//GEN-END:variables

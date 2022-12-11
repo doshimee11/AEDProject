@@ -235,22 +235,24 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 223, 748, 126));
 
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ViewOrder (1).png"))); // NOI18N
         viewOrderButton.setText("View Order");
         viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewOrderButtonActionPerformed(evt);
             }
         });
-        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 367, -1, -1));
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 358, 140, 40));
 
         assignButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
         assignButton.setText("Assign to me");
         assignButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignButtonActionPerformed(evt);
             }
         });
-        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 367, -1, -1));
+        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 170, 40));
 
         forwardButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         forwardButton.setText("Forward to Distributor Finance");
@@ -259,7 +261,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 forwardButtonActionPerformed(evt);
             }
         });
-        add(forwardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 367, -1, -1));
+        add(forwardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 358, -1, 40));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -305,13 +307,14 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 577, 748, 126));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 715, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 736, 110, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ManufacturerOrganization.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

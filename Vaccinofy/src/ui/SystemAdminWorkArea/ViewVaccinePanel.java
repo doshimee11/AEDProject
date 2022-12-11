@@ -85,22 +85,24 @@ public class ViewVaccinePanel extends javax.swing.JPanel {
         add(diseaseNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 174, 159, -1));
 
         updateJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        updateJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Order History Icon.jpg"))); // NOI18N
         updateJButton.setText("Update Product");
         updateJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateJButtonActionPerformed(evt);
             }
         });
-        add(updateJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 252, 176, -1));
+        add(updateJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 245, 190, 50));
 
         backJButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backJButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
         backJButton1.setText("Back");
         backJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButton1ActionPerformed(evt);
             }
         });
-        add(backJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 252, -1, -1));
+        add(backJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 130, 40));
 
         vaccineIdJTextField.setEditable(false);
         vaccineIdJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -120,11 +122,11 @@ public class ViewVaccinePanel extends javax.swing.JPanel {
                 saveJButtonActionPerformed(evt);
             }
         });
-        add(saveJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 252, 70, 30));
+        add(saveJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 90, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 4, 850, 820));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 4, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void updateJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateJButtonActionPerformed

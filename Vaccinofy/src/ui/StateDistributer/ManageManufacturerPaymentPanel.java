@@ -111,31 +111,34 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 66, 724, 126));
 
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
         viewOrderButton.setText("View Bill");
         viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewOrderButtonActionPerformed(evt);
             }
         });
-        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 231, -1, -1));
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 216, 140, 50));
 
         assignButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
         assignButton.setText("Assign to me");
         assignButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignButtonActionPerformed(evt);
             }
         });
-        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 231, -1, -1));
+        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 216, 180, 50));
 
         payBillButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        payBillButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Paybill.jpg"))); // NOI18N
         payBillButton.setText("Pay Bill");
         payBillButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 payBillButtonActionPerformed(evt);
             }
         });
-        add(payBillButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 231, -1, -1));
+        add(payBillButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 214, 130, 50));
 
         billTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

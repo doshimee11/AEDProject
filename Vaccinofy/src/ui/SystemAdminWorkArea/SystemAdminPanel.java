@@ -140,7 +140,7 @@ public class SystemAdminPanel extends javax.swing.JPanel {
                 .addComponent(manageVaccineOrderJButton1)
                 .addGap(32, 32, 32)
                 .addComponent(manageVaccineJButton)
-                .addContainerGap(429, Short.MAX_VALUE))
+                .addContainerGap(533, Short.MAX_VALUE))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {manageEnterpriseAdminJButton, manageEnterpriseJButton, manageNetworkJButton, manageVaccineJButton, manageVaccineOrderJButton1});

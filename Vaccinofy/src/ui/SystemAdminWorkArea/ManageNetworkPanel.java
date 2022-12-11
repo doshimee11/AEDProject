@@ -97,6 +97,7 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
         add(networkNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 199, -1));
 
         submitButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        submitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Submit.jpg"))); // NOI18N
         submitButton.setText("Submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,17 +107,18 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
         add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, 40));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 436, 110, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -3, 810, 680));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -3, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
