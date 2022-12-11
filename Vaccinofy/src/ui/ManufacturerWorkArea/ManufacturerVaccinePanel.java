@@ -66,13 +66,14 @@ public class ManufacturerVaccinePanel extends javax.swing.JPanel {
         add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 338, 211, -1));
 
         submitButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        submitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Submit.jpg"))); // NOI18N
         submitButton.setText("Submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitButtonActionPerformed(evt);
             }
         });
-        add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, 107, 38));
+        add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 160, 50));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setText("<< Back");

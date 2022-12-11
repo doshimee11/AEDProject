@@ -61,22 +61,24 @@ public class PharmacyOrderOrganizationPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 21, -1, -1));
 
         orderVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        orderVaccineButton.setText("Order Vaccine >>");
+        orderVaccineButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/OrderVacccine.jpg"))); // NOI18N
+        orderVaccineButton.setText("Order Vaccine");
         orderVaccineButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orderVaccineButtonActionPerformed(evt);
             }
         });
-        add(orderVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 132, 260, 39));
+        add(orderVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 132, 260, 50));
 
         viewOrderHistoryButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        viewOrderHistoryButton.setText("View Order History >>");
+        viewOrderHistoryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Order History Icon.jpg"))); // NOI18N
+        viewOrderHistoryButton.setText("View Order History ");
         viewOrderHistoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewOrderHistoryButtonActionPerformed(evt);
             }
         });
-        add(viewOrderHistoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(604, 212, 260, 40));
+        add(viewOrderHistoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, 260, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");

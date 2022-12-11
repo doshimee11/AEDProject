@@ -107,22 +107,24 @@ public class RegisterHospitalPanel extends javax.swing.JPanel {
         add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 737, -1, -1));
 
         enrollmentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        enrollmentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Enrollment Request (1).png"))); // NOI18N
         enrollmentButton.setText("Enrollment Request");
         enrollmentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enrollmentButtonActionPerformed(evt);
             }
         });
-        add(enrollmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 231, -1, -1));
+        add(enrollmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 280, 50));
 
         refreshButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        refreshButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Refresh (2).png"))); // NOI18N
         refreshButton.setText("Refresh");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshButtonActionPerformed(evt);
             }
         });
-        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 231, -1, -1));
+        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 200, 50));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Register Hospital");

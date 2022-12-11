@@ -89,6 +89,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 327, -1, 154));
 
         viewButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
         viewButton.setText("View");
         viewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,13 +123,14 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
         add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 258, -1, -1));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< Back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText(" Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 812, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 791, 140, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

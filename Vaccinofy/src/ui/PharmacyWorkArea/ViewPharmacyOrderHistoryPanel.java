@@ -93,6 +93,7 @@ public class ViewPharmacyOrderHistoryPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 77, -1, 154));
 
         viewButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
         viewButton.setText("View");
         viewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
