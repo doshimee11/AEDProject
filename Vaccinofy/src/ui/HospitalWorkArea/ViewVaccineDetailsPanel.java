@@ -66,22 +66,23 @@ public class ViewVaccineDetailsPanel extends javax.swing.JPanel {
         add(vaccineQuantityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 242, -1, -1));
 
         vaccineNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(vaccineNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 91, 182, -1));
+        add(vaccineNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 182, -1));
 
         diseasesNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(diseasesNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 163, 182, -1));
+        add(diseasesNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 182, -1));
 
         vaccineIDTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(vaccineIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 228, 182, -1));
+        add(vaccineIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 182, -1));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText(" back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 406, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 309, 120, 50));
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("View Vaccine Details");

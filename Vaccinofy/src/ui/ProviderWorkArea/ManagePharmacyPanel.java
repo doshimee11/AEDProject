@@ -78,13 +78,14 @@ public class ManagePharmacyPanel extends javax.swing.JPanel {
         add(addPharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 223, 293, 40));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
         backButton.setText(" Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 112, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 140, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");

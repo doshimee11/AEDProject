@@ -70,13 +70,14 @@ public class ViewOrderItemPanel extends javax.swing.JPanel {
         add(vaccineIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(779, 226, 180, -1));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<<Back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 306, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 306, 120, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("View Order Item");

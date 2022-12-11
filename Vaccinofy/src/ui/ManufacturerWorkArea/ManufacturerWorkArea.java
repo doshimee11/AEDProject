@@ -52,22 +52,24 @@ public class ManufacturerWorkArea extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         manageManufacturerRqstButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageManufacturerRqstButton.setText("Manage Manufacture Request >>");
+        manageManufacturerRqstButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ManufactureVaccine.jpg"))); // NOI18N
+        manageManufacturerRqstButton.setText("Manage Manufacture Request ");
         manageManufacturerRqstButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageManufacturerRqstButtonActionPerformed(evt);
             }
         });
-        add(manageManufacturerRqstButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 106, 331, 39));
+        add(manageManufacturerRqstButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 106, 360, 50));
 
         manageManufactureOrgButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageManufactureOrgButton.setText("Manage Manufacture Organization >>");
+        manageManufactureOrgButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ManufactureVaccine.jpg"))); // NOI18N
+        manageManufactureOrgButton.setText("Manage Manufacture Organization ");
         manageManufactureOrgButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageManufactureOrgButtonActionPerformed(evt);
             }
         });
-        add(manageManufactureOrgButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 211, -1, -1));
+        add(manageManufactureOrgButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 211, 370, 50));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

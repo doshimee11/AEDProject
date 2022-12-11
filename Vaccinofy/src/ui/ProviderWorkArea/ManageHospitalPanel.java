@@ -78,13 +78,14 @@ public class ManageHospitalPanel extends javax.swing.JPanel {
         add(addHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(648, 226, 280, 38));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
         backButton.setText(" Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 315, 112, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 315, 140, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
         jLabel2.setText("jLabel2");

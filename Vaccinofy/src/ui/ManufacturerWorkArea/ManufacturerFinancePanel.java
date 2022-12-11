@@ -133,6 +133,7 @@ public class ManufacturerFinancePanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 101, 724, 126));
 
         sendButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        sendButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Paybill.jpg"))); // NOI18N
         sendButton.setText("Send Bill");
         sendButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -148,13 +148,14 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 79, 754, 126));
 
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ViewOrder (3).png"))); // NOI18N
         viewOrderButton.setText("View Order");
         viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewOrderButtonActionPerformed(evt);
             }
         });
-        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 223, -1, -1));
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 239, 160, 40));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -174,25 +175,27 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(orderTable);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 263, 754, 146));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 754, 146));
 
         payBillButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        payBillButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Paybill.jpg"))); // NOI18N
         payBillButton.setText("Pay bill");
         payBillButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 payBillButtonActionPerformed(evt);
             }
         });
-        add(payBillButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(738, 223, 138, -1));
+        add(payBillButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(838, 239, 160, 40));
 
         assignButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
         assignButton.setText("Assign to me");
         assignButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignButtonActionPerformed(evt);
             }
         });
-        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(599, 223, -1, -1));
+        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 180, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Distributor Payment");

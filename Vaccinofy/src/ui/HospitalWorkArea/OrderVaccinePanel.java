@@ -110,7 +110,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
                 changeQuantityTextFieldActionPerformed(evt);
             }
         });
-        add(changeQuantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(563, 624, -1, -1));
+        add(changeQuantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, -1, 50));
 
         modifyQuantityButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         modifyQuantityButton.setText("Modify Quantity");
@@ -119,34 +119,37 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
                 modifyQuantityButtonActionPerformed(evt);
             }
         });
-        add(modifyQuantityButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 624, -1, -1));
+        add(modifyQuantityButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(705, 609, 220, 50));
 
         viewVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewVaccineButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
         viewVaccineButton.setText("View Vaccine Details");
         viewVaccineButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewVaccineButtonActionPerformed(evt);
             }
         });
-        add(viewVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 326, -1, -1));
+        add(viewVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 279, 250, 50));
 
         viewOrderDetailsButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderDetailsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ViewOrder (3).png"))); // NOI18N
         viewOrderDetailsButton.setText("View Order Details");
         viewOrderDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewOrderDetailsButtonActionPerformed(evt);
             }
         });
-        add(viewOrderDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 624, -1, -1));
+        add(viewOrderDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 609, 230, 50));
 
         removeItemButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        removeItemButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Remove (1).jpg"))); // NOI18N
         removeItemButton.setText("Remove Item");
         removeItemButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeItemButtonActionPerformed(evt);
             }
         });
-        add(removeItemButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(526, 687, -1, -1));
+        add(removeItemButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 699, 190, 50));
 
         vaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -166,37 +169,40 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(vaccineTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 173, 665, 141));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 665, 141));
 
         checkOutButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        checkOutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Checkout (1).jpg"))); // NOI18N
         checkOutButton.setText("Check Out");
         checkOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkOutButtonActionPerformed(evt);
             }
         });
-        add(checkOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(532, 727, 129, 39));
+        add(checkOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 699, 200, 50));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<<Back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 795, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 810, 120, 40));
 
         spnQuantitySpinner.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(spnQuantitySpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 326, -1, -1));
+        add(spnQuantitySpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, 80, 50));
 
         addToOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addToOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ViewOrder (3).png"))); // NOI18N
         addToOrderButton.setText("Add to Order List");
         addToOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addToOrderButtonActionPerformed(evt);
             }
         });
-        add(addToOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(676, 326, -1, -1));
+        add(addToOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 279, 230, 50));
 
         orderItemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
