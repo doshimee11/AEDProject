@@ -86,22 +86,24 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
         viewOrderButton.setText("View Order");
         viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewOrderButtonActionPerformed(evt);
             }
         });
-        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 462, -1, -1));
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, 180, 50));
 
         assignButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
         assignButton.setText("Assign to me");
         assignButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignButtonActionPerformed(evt);
             }
         });
-        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 462, -1, -1));
+        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, 170, 50));
 
         forwardButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         forwardButton.setText("Forward to State Distributor");
@@ -110,7 +112,7 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
                 forwardButtonActionPerformed(evt);
             }
         });
-        add(forwardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 462, -1, -1));
+        add(forwardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 470, 320, 50));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -130,16 +132,17 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(orderTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 524, 669, 146));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 570, 669, 146));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
         backButton.setText(" Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 726, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 760, 120, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

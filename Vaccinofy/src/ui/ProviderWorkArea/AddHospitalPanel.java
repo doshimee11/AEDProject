@@ -114,22 +114,24 @@ public class AddHospitalPanel extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 238, -1, -1));
 
         addHospitalButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addHospitalButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RegisterHospital.jpg"))); // NOI18N
         addHospitalButton.setText("Add Hospital");
         addHospitalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addHospitalButtonActionPerformed(evt);
             }
         });
-        add(addHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 407, -1, 38));
+        add(addHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 407, 180, 38));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText(" back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 447, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 447, 150, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
         jLabel1.setText("jLabel1");

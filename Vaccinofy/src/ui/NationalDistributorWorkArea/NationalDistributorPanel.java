@@ -52,13 +52,14 @@ public class NationalDistributorPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 270, 40));
 
         manageVaccineOrderRqstButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        manageVaccineOrderRqstButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/OrderVacccine.jpg"))); // NOI18N
         manageVaccineOrderRqstButton.setText("Manage Vaccine Order Request ");
         manageVaccineOrderRqstButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageVaccineOrderRqstButtonActionPerformed(evt);
             }
         });
-        add(manageVaccineOrderRqstButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, -1, 40));
+        add(manageVaccineOrderRqstButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 380, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/NationalDistributor.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");

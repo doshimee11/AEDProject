@@ -105,40 +105,44 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
         assignJButton.setText("Assign to Me");
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignJButtonActionPerformed(evt);
             }
         });
-        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 351, -1, -1));
+        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 180, 40));
 
         approveJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        approveJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Order History Icon.jpg"))); // NOI18N
         approveJButton.setText("Approve Enrollment");
         approveJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 approveJButtonActionPerformed(evt);
             }
         });
-        add(approveJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 351, -1, -1));
+        add(approveJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 230, 40));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backJButton.setText("<< Back");
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 462, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, 130, 40));
 
         rejectJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rejectJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Remove (1).jpg"))); // NOI18N
         rejectJButton.setText("Reject Enrollment");
         rejectJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rejectJButtonActionPerformed(evt);
             }
         });
-        add(rejectJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 385, -1, -1));
+        add(rejectJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 230, 50));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Enrollment Request");

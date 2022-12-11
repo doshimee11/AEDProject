@@ -52,13 +52,14 @@ public class HospitalFinancePanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Payment (3).png"))); // NOI18N
         jButton1.setText("Manage Distributor Payment >>");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 350, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
         jLabel2.setText("jLabel2");

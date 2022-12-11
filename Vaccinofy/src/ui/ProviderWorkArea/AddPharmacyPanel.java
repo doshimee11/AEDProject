@@ -114,22 +114,24 @@ public class AddPharmacyPanel extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, -1, -1));
 
         addPharmacyButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addPharmacyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RegisterHospital.jpg"))); // NOI18N
         addPharmacyButton.setText("Add Pharmacy");
         addPharmacyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addPharmacyButtonActionPerformed(evt);
             }
         });
-        add(addPharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 469, -1, 38));
+        add(addPharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 469, 240, 38));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backJButton.setText("<< back");
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backJButton.setText(" back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, 150, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

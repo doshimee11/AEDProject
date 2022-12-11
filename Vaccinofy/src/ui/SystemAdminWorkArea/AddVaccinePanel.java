@@ -72,22 +72,24 @@ public class AddVaccinePanel extends javax.swing.JPanel {
         add(diseasesNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(572, 158, 182, -1));
 
         addVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addVaccineButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/OrderVacccine.jpg"))); // NOI18N
         addVaccineButton.setText("Add Vaccine");
         addVaccineButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addVaccineButtonActionPerformed(evt);
             }
         });
-        add(addVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 241, -1, 39));
+        add(addVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 241, 230, 50));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 140, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
