@@ -55,10 +55,15 @@ public class ManufacturerVaccinePanel extends javax.swing.JPanel {
         expiryDateLabel = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
         manufacturerDateTextField = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         expiryDateTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(expiryDateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 258, 211, -1));
 
         priceTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 338, 211, -1));
 
         submitButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         submitButton.setText("Submit");
@@ -67,6 +72,7 @@ public class ManufacturerVaccinePanel extends javax.swing.JPanel {
                 submitButtonActionPerformed(evt);
             }
         });
+        add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, 107, 38));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setText("<< Back");
@@ -75,100 +81,46 @@ public class ManufacturerVaccinePanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 887, -1, -1));
 
         vaccineIDLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineIDLabel.setText("Vaccine ID :");
+        add(vaccineIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 79, -1, -1));
 
         vaccineNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineNameLabel.setText("Vaccine Name :");
+        add(vaccineNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 139, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manufacture Vaccine");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 19, -1, -1));
 
         vaccineIDTextField.setEditable(false);
         vaccineIDTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(vaccineIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 76, 211, -1));
 
         manufacturerDateLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         manufacturerDateLabel.setText("Manufacture Date:");
+        add(manufacturerDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 195, -1, -1));
 
         vaccineNameTextField.setEditable(false);
         vaccineNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(vaccineNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 136, 211, -1));
 
         expiryDateLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         expiryDateLabel.setText("Expiry Date :");
+        add(expiryDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 261, -1, -1));
 
         priceLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         priceLabel.setText("Price :");
+        add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 341, -1, -1));
 
         manufacturerDateTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(manufacturerDateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 192, 211, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(359, 359, 359)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(manufacturerDateLabel)
-                                    .addComponent(expiryDateLabel)
-                                    .addComponent(priceLabel)
-                                    .addComponent(vaccineIDLabel)
-                                    .addComponent(vaccineNameLabel))
-                                .addGap(156, 156, 156)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(manufacturerDateTextField)
-                                    .addComponent(expiryDateTextField)
-                                    .addComponent(priceTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
-                                    .addComponent(vaccineIDTextField)
-                                    .addComponent(vaccineNameTextField)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(279, 279, 279)
-                                        .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(backButton))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(454, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(vaccineIDLabel)
-                    .addComponent(vaccineIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(vaccineNameLabel)
-                    .addComponent(vaccineNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(manufacturerDateLabel)
-                    .addComponent(manufacturerDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(expiryDateLabel)
-                    .addComponent(expiryDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(priceLabel)
-                    .addComponent(priceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, Short.MAX_VALUE)
-                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(backButton)
-                .addGap(84, 84, 84))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 2, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
@@ -197,6 +149,7 @@ public class ManufacturerVaccinePanel extends javax.swing.JPanel {
     private javax.swing.JLabel expiryDateLabel;
     private javax.swing.JTextField expiryDateTextField;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel manufacturerDateLabel;
     private javax.swing.JTextField manufacturerDateTextField;
     private javax.swing.JLabel priceLabel;

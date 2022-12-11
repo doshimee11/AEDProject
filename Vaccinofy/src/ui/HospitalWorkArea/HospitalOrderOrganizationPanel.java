@@ -51,9 +51,13 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         orderVaccineButton = new javax.swing.JButton();
         viewOrderHistoryButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Hospital Order Organization Work Area");
+        jLabel1.setText("Hospital Order ");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, -1, -1));
 
         orderVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         orderVaccineButton.setText("Order Vaccine >>");
@@ -62,6 +66,7 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
                 orderVaccineButtonActionPerformed(evt);
             }
         });
+        add(orderVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 132, 260, 39));
 
         viewOrderHistoryButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewOrderHistoryButton.setText("View Order History >>");
@@ -70,36 +75,11 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
                 viewOrderHistoryButtonActionPerformed(evt);
             }
         });
+        add(viewOrderHistoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(604, 212, 260, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(508, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(orderVaccineButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(viewOrderHistoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(336, 336, 336))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(228, 228, 228))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addGap(81, 81, 81)
-                .addComponent(orderVaccineButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(viewOrderHistoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(748, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 2, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void orderVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderVaccineButtonActionPerformed
@@ -136,6 +116,7 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton orderVaccineButton;
     private javax.swing.JButton viewOrderHistoryButton;
     // End of variables declaration//GEN-END:variables

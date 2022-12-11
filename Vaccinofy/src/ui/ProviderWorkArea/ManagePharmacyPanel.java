@@ -42,17 +42,22 @@ public class ManagePharmacyPanel extends javax.swing.JPanel {
         manageUserAccountButton = new javax.swing.JButton();
         addPharmacyButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Pharmacy Work Area");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 26, -1, -1));
 
         manageEmployeeButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageEmployeeButton.setText("Manage Pharmacy Employee >>");
+        manageEmployeeButton.setText("Manage Pharmacy Employee ");
         manageEmployeeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEmployeeButtonActionPerformed(evt);
             }
         });
+        add(manageEmployeeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 102, 293, 38));
 
         manageUserAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         manageUserAccountButton.setText("Manage Pharmacy UserAccount >>");
@@ -61,58 +66,29 @@ public class ManagePharmacyPanel extends javax.swing.JPanel {
                 manageUserAccountButtonActionPerformed(evt);
             }
         });
+        add(manageUserAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 158, 293, 38));
 
         addPharmacyButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addPharmacyButton.setText("Add Pharmacy >>");
+        addPharmacyButton.setText("Add Pharmacy ");
         addPharmacyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addPharmacyButtonActionPerformed(evt);
             }
         });
+        add(addPharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 223, 293, 40));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< Back");
+        backButton.setText(" Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 112, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(285, 285, 285)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(320, 320, 320)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(manageUserAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(manageEmployeeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(addPharmacyButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(564, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1)
-                .addGap(47, 47, 47)
-                .addComponent(manageEmployeeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(manageUserAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(addPharmacyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(backButton)
-                .addContainerGap(657, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 5, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageEmployeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeButtonActionPerformed
@@ -155,6 +131,7 @@ public class ManagePharmacyPanel extends javax.swing.JPanel {
     private javax.swing.JButton addPharmacyButton;
     private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton manageEmployeeButton;
     private javax.swing.JButton manageUserAccountButton;
     // End of variables declaration//GEN-END:variables

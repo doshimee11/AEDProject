@@ -46,53 +46,35 @@ public class StateDistributorPanel extends javax.swing.JPanel {
         titleJLabel = new javax.swing.JLabel();
         manageVaccineRequestButton = new javax.swing.JButton();
         manageDistributorOrgButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        titleJLabel.setText("State Distributor Work Area");
+        titleJLabel.setText("State Distributor ");
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(571, 16, 320, -1));
 
         manageVaccineRequestButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageVaccineRequestButton.setText("Manage Vaccine Request >>");
+        manageVaccineRequestButton.setText("Manage Vaccine Request ");
         manageVaccineRequestButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageVaccineRequestButtonActionPerformed(evt);
             }
         });
+        add(manageVaccineRequestButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(571, 104, 320, 40));
 
         manageDistributorOrgButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageDistributorOrgButton.setText("Manage Distributor Organization >>");
+        manageDistributorOrgButton.setText("Manage Distributor Organization");
         manageDistributorOrgButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageDistributorOrgButtonActionPerformed(evt);
             }
         });
+        add(manageDistributorOrgButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(571, 193, 320, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(571, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(titleJLabel)
-                        .addGap(274, 274, 274))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(manageDistributorOrgButton, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(manageVaccineRequestButton, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(263, 263, 263))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(titleJLabel)
-                .addGap(59, 59, 59)
-                .addComponent(manageVaccineRequestButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(manageDistributorOrgButton)
-                .addContainerGap(779, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageVaccineRequestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageVaccineRequestButtonActionPerformed
@@ -111,6 +93,7 @@ public class StateDistributorPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton manageDistributorOrgButton;
     private javax.swing.JButton manageVaccineRequestButton;
     private javax.swing.JLabel titleJLabel;

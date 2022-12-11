@@ -102,9 +102,14 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         vaccineTableJTable = new javax.swing.JTable();
         providerJComboBox = new javax.swing.JComboBox();
         assignJButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Manage Vaccine Order");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
         vaccineRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -127,6 +132,8 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(vaccineRequestJTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 107, 591, 122));
+
         viewJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewJButton.setText("View Order");
         viewJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -134,6 +141,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 viewJButtonActionPerformed(evt);
             }
         });
+        add(viewJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 260, -1, -1));
 
         forwardJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         forwardJButton.setText("Forward to CDC");
@@ -142,6 +150,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 forwardJButtonActionPerformed(evt);
             }
         });
+        add(forwardJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 260, -1, -1));
 
         rejectJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         rejectJButton.setText("Reject");
@@ -150,6 +159,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 rejectJButtonActionPerformed(evt);
             }
         });
+        add(rejectJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 260, -1, -1));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backJButton.setText("<< Back");
@@ -158,6 +168,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 505, -1, -1));
 
         vaccineTableJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -177,12 +188,15 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(vaccineTableJTable);
 
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 306, 591, 133));
+
         providerJComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         providerJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 providerJComboBoxActionPerformed(evt);
             }
         });
+        add(providerJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 67, 171, -1));
 
         assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         assignJButton.setText("Assign to me");
@@ -191,55 +205,11 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 assignJButtonActionPerformed(evt);
             }
         });
+        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 260, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(providerJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(viewJButton)
-                                    .addGap(28, 28, 28)
-                                    .addComponent(assignJButton)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(forwardJButton)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(rejectJButton))
-                                .addComponent(backJButton)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(330, 330, 330)
-                        .addComponent(jLabel1)))
-                .addContainerGap(440, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(providerJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewJButton)
-                    .addComponent(forwardJButton)
-                    .addComponent(rejectJButton)
-                    .addComponent(assignJButton))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addComponent(backJButton)
-                .addContainerGap(465, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 4, 1200, 990));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewJButtonActionPerformed
@@ -425,6 +395,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JButton forwardJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JComboBox providerJComboBox;
