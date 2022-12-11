@@ -53,18 +53,26 @@ public class ViewVaccineDetailsPanel extends javax.swing.JPanel {
         backButton = new javax.swing.JButton();
         titleJLabel = new javax.swing.JLabel();
         vaccineNameLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         diseasesNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         diseasesNameLabel.setText("Diseases Name :");
+        add(diseasesNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 169, -1, -1));
 
         vaccineQuantityLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineQuantityLabel.setText("Vaccine ID :");
+        add(vaccineQuantityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 242, -1, -1));
 
         vaccineNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(vaccineNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 91, 182, -1));
 
         diseasesNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(diseasesNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 163, 182, -1));
 
         vaccineIDTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(vaccineIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 228, 182, -1));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setText("<< back");
@@ -73,65 +81,19 @@ public class ViewVaccineDetailsPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 406, -1, -1));
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("View Vaccine Details");
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 29, -1, -1));
 
         vaccineNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineNameLabel.setText("Vaccine Name :");
+        add(vaccineNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 97, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(backButton)
-                        .addGap(761, 761, 761))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(diseasesNameLabel)
-                            .addComponent(vaccineQuantityLabel)
-                            .addComponent(vaccineNameLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 448, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(vaccineNameTextField)
-                            .addComponent(vaccineIDTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(diseasesNameTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(276, 276, 276))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(288, 288, 288)
-                .addComponent(titleJLabel)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(titleJLabel)
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(vaccineNameLabel)
-                            .addComponent(vaccineNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50)
-                        .addComponent(diseasesNameLabel))
-                    .addComponent(diseasesNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(vaccineIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(vaccineQuantityLabel)))
-                .addGap(142, 142, 142)
-                .addComponent(backButton)
-                .addContainerGap(565, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View Vaccine Details.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, -3, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
@@ -147,6 +109,7 @@ public class ViewVaccineDetailsPanel extends javax.swing.JPanel {
     private javax.swing.JButton backButton;
     private javax.swing.JLabel diseasesNameLabel;
     private javax.swing.JTextField diseasesNameTextField;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel titleJLabel;
     private javax.swing.JTextField vaccineIDTextField;
     private javax.swing.JLabel vaccineNameLabel;

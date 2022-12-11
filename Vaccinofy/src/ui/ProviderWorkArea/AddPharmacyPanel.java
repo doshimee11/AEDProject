@@ -64,9 +64,13 @@ public class AddPharmacyPanel extends javax.swing.JPanel {
         pharmacyAddressTextArea = new javax.swing.JTextArea();
         addPharmacyButton = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("Add Pharmacy");
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 22, -1, -1));
 
         pharmacyTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -89,18 +93,25 @@ public class AddPharmacyPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(pharmacyTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 69, 909, 142));
+
         hospitalNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         hospitalNameLabel.setText("Pharmacy Name :");
+        add(hospitalNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 247, -1, -1));
 
         hospitalAddressLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         hospitalAddressLabel.setText("Pharmacy Address :");
+        add(hospitalAddressLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 299, -1, -1));
 
         pharmacyNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(pharmacyNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 314, -1));
 
         pharmacyAddressTextArea.setColumns(20);
         pharmacyAddressTextArea.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         pharmacyAddressTextArea.setRows(5);
         jScrollPane2.setViewportView(pharmacyAddressTextArea);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, -1, -1));
 
         addPharmacyButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addPharmacyButton.setText("Add Pharmacy");
@@ -109,6 +120,7 @@ public class AddPharmacyPanel extends javax.swing.JPanel {
                 addPharmacyButtonActionPerformed(evt);
             }
         });
+        add(addPharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 469, -1, 38));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backJButton.setText("<< back");
@@ -117,58 +129,11 @@ public class AddPharmacyPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hospitalNameLabel)
-                            .addComponent(hospitalAddressLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 439, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(pharmacyNameTextField)
-                            .addComponent(jScrollPane2))))
-                .addGap(133, 133, 133))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backJButton)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(304, 304, 304)
-                        .addComponent(addPharmacyButton)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(363, 363, 363)
-                .addComponent(titleJLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(titleJLabel)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(hospitalNameLabel)
-                    .addComponent(pharmacyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(hospitalAddressLabel)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addComponent(addPharmacyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(backJButton)
-                .addContainerGap(455, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addPharmacyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPharmacyButtonActionPerformed
@@ -196,6 +161,7 @@ public class AddPharmacyPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel hospitalAddressLabel;
     private javax.swing.JLabel hospitalNameLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea pharmacyAddressTextArea;

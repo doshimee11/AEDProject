@@ -42,41 +42,27 @@ public class NationalDistributorPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         manageVaccineOrderRqstButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("National Distributor Work Area");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("National Distributor ");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 270, 40));
 
         manageVaccineOrderRqstButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageVaccineOrderRqstButton.setText("Manage Vaccine Order Request >>");
+        manageVaccineOrderRqstButton.setText("Manage Vaccine Order Request ");
         manageVaccineOrderRqstButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageVaccineOrderRqstButtonActionPerformed(evt);
             }
         });
+        add(manageVaccineOrderRqstButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, -1, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(551, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(272, 272, 272))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(manageVaccineOrderRqstButton)
-                        .addGap(298, 298, 298))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1)
-                .addGap(70, 70, 70)
-                .addComponent(manageVaccineOrderRqstButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(844, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/NationalDistributor.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 6, 1180, 990));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageVaccineOrderRqstButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageVaccineOrderRqstButtonActionPerformed
@@ -90,6 +76,7 @@ public class NationalDistributorPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton manageVaccineOrderRqstButton;
     // End of variables declaration//GEN-END:variables
 }

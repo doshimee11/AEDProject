@@ -59,11 +59,13 @@ public class SystemAdminPanel extends javax.swing.JPanel {
 
         jSplitPane1.setLeftComponent(jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(175, 199, 209));
+
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        titleJLabel.setText("System Admin Work Area");
+        titleJLabel.setText("System Admin ");
 
         manageNetworkJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageNetworkJButton.setText("Manage Network >>");
+        manageNetworkJButton.setText("Manage Network");
         manageNetworkJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageNetworkJButtonActionPerformed(evt);
@@ -71,7 +73,7 @@ public class SystemAdminPanel extends javax.swing.JPanel {
         });
 
         manageEnterpriseJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageEnterpriseJButton.setText("Manage Enterprise >>");
+        manageEnterpriseJButton.setText("Manage Enterprise");
         manageEnterpriseJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEnterpriseJButtonActionPerformed(evt);
@@ -79,7 +81,7 @@ public class SystemAdminPanel extends javax.swing.JPanel {
         });
 
         manageEnterpriseAdminJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageEnterpriseAdminJButton.setText("Manage Enterprise Admin >>");
+        manageEnterpriseAdminJButton.setText("Manage Enterprise Admin");
         manageEnterpriseAdminJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEnterpriseAdminJButtonActionPerformed(evt);
@@ -87,7 +89,7 @@ public class SystemAdminPanel extends javax.swing.JPanel {
         });
 
         manageVaccineJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageVaccineJButton.setText("Manage Vaccine >>");
+        manageVaccineJButton.setText("Manage Vaccine ");
         manageVaccineJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageVaccineJButtonActionPerformed(evt);
@@ -95,7 +97,7 @@ public class SystemAdminPanel extends javax.swing.JPanel {
         });
 
         manageVaccineOrderJButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageVaccineOrderJButton1.setText("Manage Vaccine Order Request >>");
+        manageVaccineOrderJButton1.setText("Manage Vaccine Order Request ");
         manageVaccineOrderJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageVaccineOrderJButton1ActionPerformed(evt);
@@ -107,17 +109,17 @@ public class SystemAdminPanel extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(441, 441, 441)
+                .addGap(566, 566, 566)
                 .addComponent(titleJLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(545, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(462, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(manageNetworkJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(manageVaccineOrderJButton1)
                     .addComponent(manageVaccineJButton)
                     .addComponent(manageEnterpriseAdminJButton)
-                    .addComponent(manageEnterpriseJButton)
-                    .addComponent(manageNetworkJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(manageEnterpriseJButton))
                 .addGap(445, 445, 445))
         );
 
@@ -128,17 +130,17 @@ public class SystemAdminPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(titleJLabel)
-                .addGap(97, 97, 97)
+                .addGap(30, 30, 30)
                 .addComponent(manageNetworkJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(45, 45, 45)
                 .addComponent(manageEnterpriseJButton)
-                .addGap(68, 68, 68)
+                .addGap(39, 39, 39)
                 .addComponent(manageEnterpriseAdminJButton)
-                .addGap(57, 57, 57)
-                .addComponent(manageVaccineJButton)
-                .addGap(41, 41, 41)
+                .addGap(42, 42, 42)
                 .addComponent(manageVaccineOrderJButton1)
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(manageVaccineJButton)
+                .addContainerGap(429, Short.MAX_VALUE))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {manageEnterpriseAdminJButton, manageEnterpriseJButton, manageNetworkJButton, manageVaccineJButton, manageVaccineOrderJButton1});
