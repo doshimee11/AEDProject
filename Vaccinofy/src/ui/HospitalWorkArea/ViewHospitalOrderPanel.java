@@ -64,6 +64,9 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
         vaccineTable = new javax.swing.JTable();
         titleJLabel = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         orderIDTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -83,6 +86,8 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(orderIDTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 327, -1, 154));
+
         viewButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewButton.setText("View");
         viewButton.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +95,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
                 viewButtonActionPerformed(evt);
             }
         });
+        add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 507, 140, 42));
 
         vaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,8 +115,11 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(vaccineTable);
 
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 567, -1, 175));
+
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("View Hospital Order History");
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 258, -1, -1));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setText("<< Back");
@@ -119,48 +128,11 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 812, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(349, 349, 349)
-                .addComponent(backButton)
-                .addContainerGap(752, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(374, 374, 374)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(160, 160, 160)
-                            .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(titleJLabel)
-                            .addGap(61, 61, 61)))
-                    .addContainerGap(374, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(811, Short.MAX_VALUE)
-                .addComponent(backButton)
-                .addGap(160, 160, 160))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(258, 258, 258)
-                    .addComponent(titleJLabel)
-                    .addGap(40, 40, 40)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(26, 26, 26)
-                    .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(258, Short.MAX_VALUE)))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -3, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
@@ -200,6 +172,7 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable orderIDTable;

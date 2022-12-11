@@ -183,9 +183,13 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         jScrollPane4 = new javax.swing.JScrollPane();
         manufactureOrderTable = new javax.swing.JTable();
         backButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("Manage Vaccine Order Request");
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 17, -1, -1));
 
         vaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -204,6 +208,8 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(vaccineTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 64, 748, 141));
 
         vaccineOrderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -226,6 +232,8 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(vaccineOrderTable);
 
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 223, 748, 126));
+
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewOrderButton.setText("View Order");
         viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
@@ -233,6 +241,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 viewOrderButtonActionPerformed(evt);
             }
         });
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 367, -1, -1));
 
         assignButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         assignButton.setText("Assign to me");
@@ -241,6 +250,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 assignButtonActionPerformed(evt);
             }
         });
+        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 367, -1, -1));
 
         forwardButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         forwardButton.setText("Forward to Distributor Finance");
@@ -249,6 +259,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 forwardButtonActionPerformed(evt);
             }
         });
+        add(forwardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 367, -1, -1));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -267,6 +278,8 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane3.setViewportView(orderTable);
+
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 413, 748, 146));
 
         manufactureOrderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -289,63 +302,20 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         });
         jScrollPane4.setViewportView(manufactureOrderTable);
 
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 577, 748, 126));
+
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< back");
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 715, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(titleJLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(viewOrderButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(assignButton)
-                                .addGap(69, 69, 69)
-                                .addComponent(forwardButton))
-                            .addComponent(jScrollPane2)
-                            .addComponent(jScrollPane3)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(backButton)))
-                .addContainerGap(315, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(titleJLabel)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewOrderButton)
-                    .addComponent(assignButton)
-                    .addComponent(forwardButton))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(backButton)
-                .addContainerGap(257, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ManufacturerOrganization.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, -2, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderButtonActionPerformed
@@ -513,6 +483,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
     private javax.swing.JButton assignButton;
     private javax.swing.JButton backButton;
     private javax.swing.JButton forwardButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

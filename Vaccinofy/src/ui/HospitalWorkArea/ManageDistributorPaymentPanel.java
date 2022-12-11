@@ -120,6 +120,9 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
         payBillButton = new javax.swing.JButton();
         assignButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         billTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -142,6 +145,8 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(billTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 79, 754, 126));
+
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewOrderButton.setText("View Order");
         viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
@@ -149,6 +154,7 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
                 viewOrderButtonActionPerformed(evt);
             }
         });
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 223, -1, -1));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -168,6 +174,8 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(orderTable);
 
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 263, 754, 146));
+
         payBillButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         payBillButton.setText("Pay bill");
         payBillButton.addActionListener(new java.awt.event.ActionListener() {
@@ -175,6 +183,7 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
                 payBillButtonActionPerformed(evt);
             }
         });
+        add(payBillButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(738, 223, 138, -1));
 
         assignButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         assignButton.setText("Assign to me");
@@ -183,50 +192,15 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
                 assignButtonActionPerformed(evt);
             }
         });
+        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(599, 223, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Distributor Payment");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 15, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(472, 472, 472)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(318, 318, 318)
-                .addComponent(viewOrderButton)
-                .addGap(102, 102, 102)
-                .addComponent(assignButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(payBillButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(330, 330, 330))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(payBillButton)
-                    .addComponent(viewOrderButton)
-                    .addComponent(assignButton))
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 3, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderButtonActionPerformed
@@ -352,6 +326,7 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
     private javax.swing.JButton assignButton;
     private javax.swing.JTable billTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable orderTable;

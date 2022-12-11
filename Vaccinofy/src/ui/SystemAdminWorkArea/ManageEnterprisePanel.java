@@ -80,9 +80,13 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
         enterpriseTypeComboBox = new javax.swing.JComboBox();
         submitButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("Manage Enterprise");
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 26, -1, -1));
 
         enterpriseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,22 +98,30 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(enterpriseTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 102, -1, 180));
+
         networkLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         networkLabel.setText("Network :");
+        add(networkLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 355, 115, -1));
 
         enterpriseTypeLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         enterpriseTypeLabel.setText("Enterprise Type :");
+        add(enterpriseTypeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 424, -1, -1));
 
         enterpriseNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         enterpriseNameLabel.setText("Enterprise Name :");
+        add(enterpriseNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 505, -1, -1));
 
         enterpriseNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(enterpriseNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 502, 164, -1));
 
         networkComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         networkComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(networkComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 352, 164, -1));
 
         enterpriseTypeComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         enterpriseTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(enterpriseTypeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 421, 164, -1));
 
         submitButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         submitButton.setText("Submit");
@@ -118,75 +130,20 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
                 submitButtonActionPerformed(evt);
             }
         });
+        add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 591, -1, 40));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< back");
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 670, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(183, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(163, 163, 163))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(networkLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(enterpriseTypeLabel)
-                            .addComponent(enterpriseNameLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(networkComboBox, 0, 164, Short.MAX_VALUE)
-                            .addComponent(enterpriseTypeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(enterpriseNameTextField))
-                        .addGap(187, 187, 187))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(287, 287, 287)
-                        .addComponent(titleJLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(325, 325, 325)
-                        .addComponent(submitButton)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(backButton)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(titleJLabel)
-                .addGap(47, 47, 47)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(networkLabel)
-                    .addComponent(networkComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(enterpriseTypeLabel)
-                    .addComponent(enterpriseTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(enterpriseNameLabel)
-                    .addComponent(enterpriseNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(backButton)
-                .addGap(125, 125, 125))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 5, 790, 820));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
@@ -216,6 +173,7 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
     private javax.swing.JTable enterpriseTable;
     private javax.swing.JComboBox enterpriseTypeComboBox;
     private javax.swing.JLabel enterpriseTypeLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox networkComboBox;
     private javax.swing.JLabel networkLabel;

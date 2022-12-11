@@ -47,9 +47,13 @@ public class PublicHealthDepartmentPanel extends javax.swing.JPanel {
         titleJLabel = new javax.swing.JLabel();
         enrollmentApprovalJButton = new javax.swing.JButton();
         manageOrderJButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        titleJLabel.setText("Public Health Department Work Area");
+        titleJLabel.setText("Public Health Department ");
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 30, -1, -1));
 
         enrollmentApprovalJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         enrollmentApprovalJButton.setText("Enrollment Request Approval");
@@ -58,6 +62,7 @@ public class PublicHealthDepartmentPanel extends javax.swing.JPanel {
                 enrollmentApprovalJButtonActionPerformed(evt);
             }
         });
+        add(enrollmentApprovalJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, -1, 39));
 
         manageOrderJButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         manageOrderJButton1.setText("Manage Vaccine Order");
@@ -66,34 +71,11 @@ public class PublicHealthDepartmentPanel extends javax.swing.JPanel {
                 manageOrderJButton1ActionPerformed(evt);
             }
         });
+        add(manageOrderJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 258, 39));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(520, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(titleJLabel)
-                        .addGap(231, 231, 231))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(enrollmentApprovalJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(manageOrderJButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(327, 327, 327))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(titleJLabel)
-                .addGap(57, 57, 57)
-                .addComponent(enrollmentApprovalJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(manageOrderJButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(766, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/kalindjoshi/Downloads/BluePlain-4.jpg")); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 3, 1190, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void enrollmentApprovalJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentApprovalJButtonActionPerformed
@@ -112,6 +94,7 @@ public class PublicHealthDepartmentPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton enrollmentApprovalJButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton manageOrderJButton1;
     private javax.swing.JLabel titleJLabel;
     // End of variables declaration//GEN-END:variables

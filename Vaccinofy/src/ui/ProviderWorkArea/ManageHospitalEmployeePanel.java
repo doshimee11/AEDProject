@@ -96,6 +96,9 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
         titleJLabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         organizationComboBox = new javax.swing.JComboBox();
+        jLabel6 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backButton.setText("<< Back");
@@ -223,11 +226,15 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
                 .addGap(138, 138, 138))
         );
 
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 197, -1, -1));
+
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("Manage Hospital Employee");
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 6, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Organization :");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 115, -1, -1));
 
         organizationComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         organizationComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -236,44 +243,11 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
                 organizationComboBoxActionPerformed(evt);
             }
         });
+        add(organizationComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 115, 154, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(461, 461, 461)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                        .addComponent(organizationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(titleJLabel)))
-                .addGap(425, 425, 425))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 129, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 129, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleJLabel)
-                .addGap(80, 80, 80)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(organizationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(857, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 197, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 197, Short.MAX_VALUE)))
-        );
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Employee.png"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, -3, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
@@ -318,6 +292,7 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameTextField;

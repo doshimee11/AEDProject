@@ -42,76 +42,53 @@ public class ManageHospitalPanel extends javax.swing.JPanel {
         manageUserAccountButton = new javax.swing.JButton();
         addHospitalButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Hospital Work Area");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 21, -1, -1));
 
         manageEmployeeButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageEmployeeButton.setText("Manage Hospital Employee >>");
+        manageEmployeeButton.setText("Manage Hospital Employee ");
         manageEmployeeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEmployeeButtonActionPerformed(evt);
             }
         });
+        add(manageEmployeeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(648, 114, 276, 38));
 
         manageUserAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageUserAccountButton.setText("Manage Hospital UserAccount >>");
+        manageUserAccountButton.setText("Manage Hospital User");
         manageUserAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageUserAccountButtonActionPerformed(evt);
             }
         });
+        add(manageUserAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(648, 170, 280, 38));
 
         addHospitalButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addHospitalButton.setText("Add Hospital >>");
+        addHospitalButton.setText("Add Hospital ");
         addHospitalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addHospitalButtonActionPerformed(evt);
             }
         });
+        add(addHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(648, 226, 280, 38));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< Back");
+        backButton.setText(" Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 315, 112, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(612, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(258, 258, 258))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(manageUserAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(manageEmployeeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(addHospitalButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGap(272, 272, 272)))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addGap(64, 64, 64)
-                .addComponent(manageEmployeeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(manageUserAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(addHospitalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(backButton)
-                .addContainerGap(657, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 5, 1200, 990));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageEmployeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeButtonActionPerformed
@@ -154,6 +131,7 @@ public class ManageHospitalPanel extends javax.swing.JPanel {
     private javax.swing.JButton addHospitalButton;
     private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton manageEmployeeButton;
     private javax.swing.JButton manageUserAccountButton;
     // End of variables declaration//GEN-END:variables
