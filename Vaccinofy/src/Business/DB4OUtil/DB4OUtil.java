@@ -11,6 +11,7 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.ta.TransparentPersistenceSupport;
+import java.nio.file.Paths;
 
 /**
  *
@@ -18,7 +19,8 @@ import com.db4o.ta.TransparentPersistenceSupport;
  */
 
 public class DB4OUtil {
-    private static final String FILENAME = "DataBank.db4o";
+    
+    private static final String FILENAME = "DataBank.db4o"; // path to the data store
     private static DB4OUtil dB4OUtil;
     
     public synchronized static DB4OUtil getInstance(){
@@ -27,15 +29,16 @@ public class DB4OUtil {
         }
         return dB4OUtil;
     }
-    
+
     protected synchronized static void shutdown(ObjectContainer conn) {
         if (conn != null) {
             conn.close();
         }
     }
-    
+
     private ObjectContainer createConnection() {
         try {
+
             EmbeddedConfiguration config = Db4oEmbedded.newConfiguration();
             config.common().add(new TransparentPersistenceSupport());
             //Controls the number of objects in memory
@@ -74,4 +77,5 @@ public class DB4OUtil {
         conn.close();
         return system;
     }
+    
 }

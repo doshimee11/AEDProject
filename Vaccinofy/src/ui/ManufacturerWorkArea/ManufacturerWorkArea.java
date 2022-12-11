@@ -5,7 +5,7 @@
 package ui.ManufacturerWorkArea;
 
 import Business.Ecosystem;
-import Business.Enterprise.VaccineManufacturesEnterprise;
+import Business.Enterprise.VaccineManufacturerEnterprise;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -14,23 +14,27 @@ import javax.swing.JPanel;
  *
  * @author ADMIN
  */
-public class ManufacturerWorkArea extends javax.swing.JPanel {
-    private JPanel userProcessContainer;
-    private Ecosystem system;
-    private UserAccount userAccount;
-    private VaccineManufacturesEnterprise vaccineManufacturesEnterprise;
 
+public class ManufacturerWorkArea extends javax.swing.JPanel {
+    
     /**
      * Creates new form ManufacturerWorkArea
      */
-    public ManufacturerWorkArea(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, VaccineManufacturesEnterprise vaccineManufacturesEnterprise) {
+    
+    private JPanel userProcessContainer;
+    private Ecosystem system;
+    private UserAccount userAccount;
+    private VaccineManufacturerEnterprise vaccineManufacturerEnterprise;
+    
+    public ManufacturerWorkArea(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, VaccineManufacturerEnterprise vaccineManufacturerEnterprise) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
         this.system = system;
-        this.vaccineManufacturesEnterprise = vaccineManufacturesEnterprise;
+        this.vaccineManufacturerEnterprise = vaccineManufacturerEnterprise;
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,23 +44,23 @@ public class ManufacturerWorkArea extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        manageManufactureOrgJButton = new javax.swing.JButton();
+        manageManufacturerRqstButton = new javax.swing.JButton();
+        manageManufactureOrgButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Manage Manufacture Request >>");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        manageManufacturerRqstButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        manageManufacturerRqstButton.setText("Manage Manufacture Request >>");
+        manageManufacturerRqstButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                manageManufacturerRqstButtonActionPerformed(evt);
             }
         });
 
-        manageManufactureOrgJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageManufactureOrgJButton.setText("Manage Manufacture Organization >>");
-        manageManufactureOrgJButton.addActionListener(new java.awt.event.ActionListener() {
+        manageManufactureOrgButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        manageManufactureOrgButton.setText("Manage Manufacture Organization >>");
+        manageManufactureOrgButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageManufactureOrgJButtonActionPerformed(evt);
+                manageManufactureOrgButtonActionPerformed(evt);
             }
         });
 
@@ -70,8 +74,8 @@ public class ManufacturerWorkArea extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(324, 324, 324)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(manageManufactureOrgJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(manageManufacturerRqstButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(manageManufactureOrgButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabel1)))
@@ -83,31 +87,34 @@ public class ManufacturerWorkArea extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(59, 59, 59)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(manageManufacturerRqstButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66)
-                .addComponent(manageManufactureOrgJButton)
+                .addComponent(manageManufactureOrgButton)
                 .addContainerGap(760, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ManageManufactureRequestJPanel manageManufactureRequestJPanel = new ManageManufactureRequestJPanel(userProcessContainer, system, userAccount, vaccineManufacturesEnterprise);
-        userProcessContainer.add("ManageManufactureRequestJPanel", manageManufactureRequestJPanel);
+    private void manageManufacturerRqstButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageManufacturerRqstButtonActionPerformed
+        
+        ManageManufacturerRequestPanel manageManufactureReqPanel = new ManageManufacturerRequestPanel(userProcessContainer, system, userAccount, vaccineManufacturerEnterprise);
+        userProcessContainer.add("ManageManufactureRequestPanel", manageManufactureReqPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_manageManufacturerRqstButtonActionPerformed
 
-    private void manageManufactureOrgJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageManufactureOrgJButtonActionPerformed
-        ManageManufactureOrganizationJPanel manageManufactureOrganizationJPanel = new ManageManufactureOrganizationJPanel(userProcessContainer, vaccineManufacturesEnterprise);
-        userProcessContainer.add("manageManufactureOrganizationJPanel", manageManufactureOrganizationJPanel);
+    private void manageManufactureOrgButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageManufactureOrgButtonActionPerformed
+        
+        ManageManufacturerOrganizationPanel manageManufactureOrgPanel = new ManageManufacturerOrganizationPanel(userProcessContainer, vaccineManufacturerEnterprise);
+        userProcessContainer.add("manageManufactureOrganizationPanel", manageManufactureOrgPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageManufactureOrgJButtonActionPerformed
-
+        
+    }//GEN-LAST:event_manageManufactureOrgButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton manageManufactureOrgJButton;
+    private javax.swing.JButton manageManufactureOrgButton;
+    private javax.swing.JButton manageManufacturerRqstButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,7 +10,7 @@ import Business.Enterprise.ProviderEnterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import ui.ProviderWorkArea.ProviderWorkAreaJPanel;
+import ui.ProviderWorkArea.ProviderPanel;
 
 /**
  *
@@ -21,7 +21,7 @@ public class ProviderAdminRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Ecosystem system) {
-        return new ProviderWorkAreaJPanel(userProcessContainer, (ProviderEnterprise)enterprise);
+        return new ProviderPanel(userProcessContainer, (ProviderEnterprise)enterprise);
     }
     
 }

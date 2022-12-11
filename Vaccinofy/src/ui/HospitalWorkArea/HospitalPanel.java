@@ -28,6 +28,7 @@ public class HospitalPanel extends javax.swing.JPanel {
     
     public HospitalPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, ProviderEnterprise providerEnterprise) {
         initComponents();
+        
         this.system = system;
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
@@ -44,16 +45,16 @@ public class HospitalPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         titleJLabel = new javax.swing.JLabel();
-        registerHospitalJButton = new javax.swing.JButton();
+        registerHospitalButton = new javax.swing.JButton();
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("Hospital Work Area");
 
-        registerHospitalJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        registerHospitalJButton.setText("Register Hospital");
-        registerHospitalJButton.addActionListener(new java.awt.event.ActionListener() {
+        registerHospitalButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        registerHospitalButton.setText("Register Hospital");
+        registerHospitalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registerHospitalJButtonActionPerformed(evt);
+                registerHospitalButtonActionPerformed(evt);
             }
         });
 
@@ -68,7 +69,7 @@ public class HospitalPanel extends javax.swing.JPanel {
                         .addComponent(titleJLabel))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(288, 288, 288)
-                        .addComponent(registerHospitalJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(registerHospitalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -77,23 +78,22 @@ public class HospitalPanel extends javax.swing.JPanel {
                 .addGap(24, 24, 24)
                 .addComponent(titleJLabel)
                 .addGap(60, 60, 60)
-                .addComponent(registerHospitalJButton)
+                .addComponent(registerHospitalButton)
                 .addContainerGap(859, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void registerHospitalJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerHospitalJButtonActionPerformed
+    private void registerHospitalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerHospitalButtonActionPerformed
         
         RegisterHospitalPanel registerHospitalPanel = new RegisterHospitalPanel(userProcessContainer, system, userAccount, providerEnterprise);
-        userProcessContainer.add("RegisterHospitalJPanel", registerHospitalPanel);
+        userProcessContainer.add("RegisterHospitalPanel", registerHospitalPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         
-    }//GEN-LAST:event_registerHospitalJButtonActionPerformed
-
+    }//GEN-LAST:event_registerHospitalButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton registerHospitalJButton;
+    private javax.swing.JButton registerHospitalButton;
     private javax.swing.JLabel titleJLabel;
     // End of variables declaration//GEN-END:variables
 }
