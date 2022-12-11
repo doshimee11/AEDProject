@@ -78,17 +78,27 @@ public class StateDistributorPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageVaccineRequestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageVaccineRequestButtonActionPerformed
-        ManageVaccineOrderPanel manageVaccineOrderPanel = new ManageVaccineOrderPanel(userProcessContainer, ecoSystem, userAccount, distributorEnterprise);
+        try{
+            ManageVaccineOrderPanel manageVaccineOrderPanel = new ManageVaccineOrderPanel(userProcessContainer, ecoSystem, userAccount, distributorEnterprise);
         userProcessContainer.add("ManageVaccineOrdersPanel", manageVaccineOrderPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageVaccineRequestButtonActionPerformed
 
     private void manageDistributorOrgButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageDistributorOrgButtonActionPerformed
-        ManageDistributorOrganizationPanel manageManufactureOrganizationPanel = new ManageDistributorOrganizationPanel(userProcessContainer, distributorEnterprise);
-        userProcessContainer.add("ManageDistributorOrganizationPanel", manageManufactureOrganizationPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            ManageDistributorOrganizationPanel manageManufactureOrganizationPanel = new ManageDistributorOrganizationPanel(userProcessContainer, distributorEnterprise);
+            userProcessContainer.add("ManageDistributorOrganizationPanel", manageManufactureOrganizationPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageDistributorOrgButtonActionPerformed
 
 

@@ -241,77 +241,85 @@ public class ManageProviderPaymentPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_viewOrderButtonActionPerformed
 
     private void sendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendButtonActionPerformed
-        
-        int selectedRow = billTable.getSelectedRow();
-        int orderId = (Integer) billTable.getValueAt(selectedRow, 0);
-        Order order = null;
-        PaymentRequest request = new PaymentRequest();
-        request.setRequestType("Provider Payment Request");
-        request.setStatus("Sent");
-        request.setPaymentRequest("Sent");
-        request.setSender(userAccount);
-        Enterprise enterprise = null;
-        Network net = null;
-        Organization org = null;
-        UserAccount u = null;
-        for (Network network : system.getNetworkDirectory()) {
-            for (Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
-                if (ent == distributorEnterprise) {
-                    net = network;
+        try{
+            int selectedRow = billTable.getSelectedRow();
+            int orderId = (Integer) billTable.getValueAt(selectedRow, 0);
+            Order order = null;
+            PaymentRequest request = new PaymentRequest();
+            request.setRequestType("Provider Payment Request");
+            request.setStatus("Sent");
+            request.setPaymentRequest("Sent");
+            request.setSender(userAccount);
+            Enterprise enterprise = null;
+            Network net = null;
+            Organization org = null;
+            UserAccount u = null;
+            for (Network network : system.getNetworkDirectory()) {
+                for (Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
+                    if (ent == distributorEnterprise) {
+                        net = network;
+                    }
                 }
             }
-        }
-        
-        for (Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()) {
-            if (ent instanceof ProviderEnterprise) {
-                enterprise = ent;
-                break;
-            }
-        }
-        
-        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
-            if (organization instanceof FinanceOrganization) {
-                org = organization;
-            }
-        }
-        
-        for (UserAccount user : org.getUserAccountDirectory().getUserAccountDirectory()) {
-            if(user.getEmployee().getHospital().getHospitalName() == billTable.getValueAt(selectedRow, 1)){
-                u = user;
-                JOptionPane.showMessageDialog(null, user.getEmployee().getEmployeeName());
-            }
-        }
-        
-        UserAccount uu = null;
-        for (Organization o : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
-            if (o instanceof OrderOrganization) {
-                for (UserAccount user : o.getUserAccountDirectory().getUserAccountDirectory()) {
-                    uu = user;
+
+            for (Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()) {
+                if (ent instanceof ProviderEnterprise) {
+                    enterprise = ent;
+                    break;
                 }
             }
-        }
-        
-        for (Order o : uu.getEmployee().getOrderCatalog().getOrderList()) {
-            if (o.getOrderID() == orderId) {
-                order = o;
+
+            for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
+                if (organization instanceof FinanceOrganization) {
+                    org = organization;
+                }
+            }
+
+            for (UserAccount user : org.getUserAccountDirectory().getUserAccountDirectory()) {
+                if(user.getEmployee().getHospital().getHospitalName() == billTable.getValueAt(selectedRow, 1)){
+                    u = user;
+                    JOptionPane.showMessageDialog(null, user.getEmployee().getEmployeeName());
+                }
+            }
+
+            UserAccount uu = null;
+            for (Organization o : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
+                if (o instanceof OrderOrganization) {
+                    for (UserAccount user : o.getUserAccountDirectory().getUserAccountDirectory()) {
+                        uu = user;
+                    }
+                }
+            }
+
+            for (Order o : uu.getEmployee().getOrderCatalog().getOrderList()) {
+                if (o.getOrderID() == orderId) {
+                    order = o;
+                }
+            }
+
+            request.setOrderID(order.getOrderID());
+
+            if (u != null) {
+                u.getWorkQueue().getWorkRequestList().add(request);
+                userAccount.getWorkQueue().getWorkRequestList().add(request);
+                populateVaccineOrderTable();
+                JOptionPane.showMessageDialog(null, "Bill sent", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
             }
         }
-        
-        request.setOrderID(order.getOrderID());
-        
-        if (u != null) {
-            u.getWorkQueue().getWorkRequestList().add(request);
-            userAccount.getWorkQueue().getWorkRequestList().add(request);
-            populateVaccineOrderTable();
-            JOptionPane.showMessageDialog(null, "Bill sent", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
     }//GEN-LAST:event_sendButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.remove(this);
-        layout.previous(userProcessContainer);
+        try{
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            userProcessContainer.remove(this);
+            layout.previous(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_backButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

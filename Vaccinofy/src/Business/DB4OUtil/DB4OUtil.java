@@ -11,7 +11,6 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.ta.TransparentPersistenceSupport;
-import java.nio.file.Paths;
 
 /**
  *
@@ -58,10 +57,15 @@ public class DB4OUtil {
     }
 
     public synchronized void storeSystem(Ecosystem system) {
-        ObjectContainer conn = createConnection();
-        conn.store(system);
-        conn.commit();
-        conn.close();
+        try{
+            ObjectContainer conn = createConnection();
+            conn.store(system);
+            conn.commit();
+            conn.close();
+        }
+        catch(Exception e){
+            System.out.println(e + "In Storing !");
+        }
     }
     
     public Ecosystem retrieveSystem(){

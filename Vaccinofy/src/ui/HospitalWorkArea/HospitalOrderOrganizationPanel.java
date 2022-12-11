@@ -85,7 +85,6 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void orderVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderVaccineButtonActionPerformed
-        
         try{
             if(userAccount.getEmployee().getHospital().getHospitalStatus().equalsIgnoreCase("Approved")){
                 OrderVaccinePanel orderVaccineJPanel = new OrderVaccinePanel(userProcessContainer, system, userAccount, orderOrganization, providerEnterprise);
@@ -102,18 +101,19 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
         }
         catch (Exception ex){
             JOptionPane.showMessageDialog(null, "Send a hospital registration request to Health Dept", "Hospital Registration Not Initialized", JOptionPane.ERROR_MESSAGE);
-            return;
         }
-        
     }//GEN-LAST:event_orderVaccineButtonActionPerformed
 
     private void viewOrderHistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderHistoryButtonActionPerformed
-        
-        ViewHospitalOrderPanel hospOrderPanel = new ViewHospitalOrderPanel(userProcessContainer, userAccount);
-        userProcessContainer.add("ViewOrderHistoryPanel", hospOrderPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
+        try{
+            ViewHospitalOrderPanel hospOrderPanel = new ViewHospitalOrderPanel(userProcessContainer, userAccount);
+            userProcessContainer.add("ViewOrderHistoryPanel", hospOrderPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_viewOrderHistoryButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

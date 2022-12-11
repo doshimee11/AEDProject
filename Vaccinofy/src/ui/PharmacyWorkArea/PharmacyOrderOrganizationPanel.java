@@ -86,7 +86,6 @@ public class PharmacyOrderOrganizationPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void orderVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderVaccineButtonActionPerformed
-        
         try{
             if(userAccount.getEmployee().getPharmacy().getPharmacyStatus().equalsIgnoreCase("Approved")){
                 OrderVaccinePanel orderVaccineJPanel = new OrderVaccinePanel(userProcessContainer, system, userAccount, orderOrganization, providerEnterprise);
@@ -105,20 +104,20 @@ public class PharmacyOrderOrganizationPanel extends javax.swing.JPanel {
         }
         catch (Exception ex){
             JOptionPane.showMessageDialog(null, "Send a hospital registration request to Health Department", "Hospital Registration Not Initialized", JOptionPane.ERROR_MESSAGE);
-            return;
         }
-        
     }//GEN-LAST:event_orderVaccineButtonActionPerformed
 
     private void viewOrderHistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderHistoryButtonActionPerformed
-        
-        ViewPharmacyOrderHistoryPanel pharmacyOrderHistory = new ViewPharmacyOrderHistoryPanel(userProcessContainer, userAccount);
-        userProcessContainer.add("ViewPharmacyOrderHistoryPanel", pharmacyOrderHistory);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
+        try{
+            ViewPharmacyOrderHistoryPanel pharmacyOrderHistory = new ViewPharmacyOrderHistoryPanel(userProcessContainer, userAccount);
+            userProcessContainer.add("ViewPharmacyOrderHistoryPanel", pharmacyOrderHistory);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_viewOrderHistoryButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

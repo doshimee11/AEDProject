@@ -166,84 +166,93 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderButtonActionPerformed
-        int selectedRow = manufacturerPaymentTable.getSelectedRow();
-        if (selectedRow >= 0) {
-            PaymentRequest request = (PaymentRequest) manufacturerPaymentTable.getValueAt(selectedRow, 0);
-            DefaultTableModel dtm = (DefaultTableModel) billTable.getModel();
-            dtm.setRowCount(0);
-            
-            for (Vaccine vaccine : system.getVaccineDirectory().getVaccineDirectory()) {
-                if (vaccine.getVaccineID() == request.getOrderID()) {
-                    Object[] row = new Object[6];
-                    row[0] = vaccine;
-                    row[1] = vaccine.getVaccineID();
-                    row[2] = vaccine.getDiseaseName();
-                    row[3] = vaccine.getVaccinePrice();
-                    row[4] = request.getRequestedQuantity();
-                    row[5] = request.getRequestedQuantity() * vaccine.getVaccinePrice();
-                    dtm.addRow(row);
-                }
-            }
+        try{
+            int selectedRow = manufacturerPaymentTable.getSelectedRow();
+            if (selectedRow >= 0) {
+                PaymentRequest request = (PaymentRequest) manufacturerPaymentTable.getValueAt(selectedRow, 0);
+                DefaultTableModel dtm = (DefaultTableModel) billTable.getModel();
+                dtm.setRowCount(0);
 
+                for (Vaccine vaccine : system.getVaccineDirectory().getVaccineDirectory()) {
+                    if (vaccine.getVaccineID() == request.getOrderID()) {
+                        Object[] row = new Object[6];
+                        row[0] = vaccine;
+                        row[1] = vaccine.getVaccineID();
+                        row[2] = vaccine.getDiseaseName();
+                        row[3] = vaccine.getVaccinePrice();
+                        row[4] = request.getRequestedQuantity();
+                        row[5] = request.getRequestedQuantity() * vaccine.getVaccinePrice();
+                        dtm.addRow(row);
+                    }
+                }
+
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Select a row", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
         }
-        else {
-            JOptionPane.showMessageDialog(null, "Select a row", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
     }//GEN-LAST:event_viewOrderButtonActionPerformed
 
     private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
-        int selectedRow = manufacturerPaymentTable.getSelectedRow();
-
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        if (manufacturerPaymentTable.getValueAt(selectedRow, 2) != null) {
-            JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        PaymentRequest request = (PaymentRequest) manufacturerPaymentTable.getValueAt(selectedRow, 0);
-        request.setReceiver(userAccount);
-        request.setStatus("Pending");
-        UserAccount user = (UserAccount) request.getSender();
-        Employee person = (Employee) user.getEmployee();
-        for (Order order : person.getOrderCatalog().getOrderList()) {
-            if (request.getOrderID() == order.getOrderID()) {
-                order.setOrderStatus("Waiting to be approved by National Distributor");
+        try{
+            int selectedRow = manufacturerPaymentTable.getSelectedRow();
+            if (selectedRow < 0) {
+                JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
             }
+            if (manufacturerPaymentTable.getValueAt(selectedRow, 2) != null) {
+                JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            PaymentRequest request = (PaymentRequest) manufacturerPaymentTable.getValueAt(selectedRow, 0);
+            request.setReceiver(userAccount);
+            request.setStatus("Pending");
+            UserAccount user = (UserAccount) request.getSender();
+            Employee person = (Employee) user.getEmployee();
+            for (Order order : person.getOrderCatalog().getOrderList()) {
+                if (request.getOrderID() == order.getOrderID()) {
+                    order.setOrderStatus("Waiting to be approved by National Distributor");
+                }
+            }
+            populateManufacturePaymentTable();
+            JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
         }
-        
-        populateManufacturePaymentTable();
-        
-        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_assignButtonActionPerformed
 
     private void payBillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payBillButtonActionPerformed
-        int selectedRow = manufacturerPaymentTable.getSelectedRow();
+        try{
+            int selectedRow = manufacturerPaymentTable.getSelectedRow();
+            if (selectedRow < 0) {
+                JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
 
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
+            if (manufacturerPaymentTable.getValueAt(selectedRow, 3) == "Paid") {
+                JOptionPane.showMessageDialog(null, "This bill is paid", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            if (manufacturerPaymentTable.getValueAt(selectedRow, 2) == null) {
+                JOptionPane.showMessageDialog(null, "This request is yet to be assigned to Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            PaymentRequest paymentRequest = (PaymentRequest) manufacturerPaymentTable.getValueAt(selectedRow, 0);
+            paymentRequest.setPaymentRequest("Paid");
+            paymentRequest.setStatus("Paid");
+            populateManufacturePaymentTable();
+            JOptionPane.showMessageDialog(null, "Bill paid", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
         }
-
-        if (manufacturerPaymentTable.getValueAt(selectedRow, 3) == "Paid") {
-            JOptionPane.showMessageDialog(null, "This bill is paid", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-
-        if (manufacturerPaymentTable.getValueAt(selectedRow, 2) == null) {
-            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        PaymentRequest paymentRequest = (PaymentRequest) manufacturerPaymentTable.getValueAt(selectedRow, 0);
-        paymentRequest.setPaymentRequest("Paid");
-        paymentRequest.setStatus("Paid");
-        populateManufacturePaymentTable();
-        JOptionPane.showMessageDialog(null, "Bill paid", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_payBillButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

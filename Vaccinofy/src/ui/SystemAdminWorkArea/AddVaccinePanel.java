@@ -14,6 +14,7 @@ import Business.Organization.InventoryOrganization;
 import Business.Organization.Organization;
 import Business.Vaccine.Vaccine;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -104,21 +105,28 @@ public class AddVaccinePanel extends javax.swing.JPanel {
         vaccine.setVaccineName(vaccineName);
         vaccine.setDiseaseName(diseasesName);
         Enterprise ent = null;
-        for(Network network : system.getNetworkDirectory()){
-            for(Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()){
-                if(enterprise instanceof DistributorEnterprise){
-                    ent = enterprise;
+        try{
+            for(Network network : system.getNetworkDirectory()){
+                for(Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()){
+                    if(enterprise instanceof DistributorEnterprise){
+                        ent = enterprise;
+                    }
                 }
             }
-        }
-        Organization o = null;
-        for(Organization organization : ent.getOrganizationDirectory().getOrganizationDirectory()){
-            if(organization instanceof InventoryOrganization){
-                o = organization;
+            Organization o = null;
+            for(Organization organization : ent.getOrganizationDirectory().getOrganizationDirectory()){
+                if(organization instanceof InventoryOrganization){
+                    o = organization;
+                }
             }
+            o.getInventoryDirectory().createNewInventory(vaccine);
+            JOptionPane.showMessageDialog(null, "New Vaccine has been added successfully !!!");
         }
-        o.getInventoryDirectory().createNewInventory(vaccine);
-        
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
+        vaccineNameTextField.setText(null);
+        diseasesNameTextField.setText(null);
     }//GEN-LAST:event_addVaccineButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed

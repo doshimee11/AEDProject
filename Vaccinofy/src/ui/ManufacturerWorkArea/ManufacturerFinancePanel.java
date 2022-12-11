@@ -148,51 +148,51 @@ public class ManufacturerFinancePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendButtonActionPerformed
-        
-        int selectedRow = manufacturerOrderTable.getSelectedRow();
-        Vaccine vaccine = (Vaccine) manufacturerOrderTable.getValueAt(selectedRow, 0);
-        PaymentRequest request = new PaymentRequest();
-        request.setRequestType("Manufacture Payment Request");
-        request.setStatus("Sent");
-        request.setPaymentRequest("Sent");
-        request.setSender(userAccount);
-        request.setOrderID(vaccine.getVaccineID());
-        request.setRequestedQuantity(((Integer) (manufacturerOrderTable.getValueAt(selectedRow, 3))));
-        UserAccount ua = (UserAccount) request.getSender();
-        Employee employee = (Employee) ua.getEmployee();
-        Enterprise enterprise = null;
-        Network net = null;
-        Organization org = null;
-        
-        for (Network network : system.getNetworkDirectory()) {
-            for (Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
-                if (ent == vaccineManufacturesEnterprise) {
-                    net = network;
+        try{
+            int selectedRow = manufacturerOrderTable.getSelectedRow();
+            Vaccine vaccine = (Vaccine) manufacturerOrderTable.getValueAt(selectedRow, 0);
+            PaymentRequest request = new PaymentRequest();
+            request.setRequestType("Manufacture Payment Request");
+            request.setStatus("Sent");
+            request.setPaymentRequest("Sent");
+            request.setSender(userAccount);
+            request.setOrderID(vaccine.getVaccineID());
+            request.setRequestedQuantity(((Integer) (manufacturerOrderTable.getValueAt(selectedRow, 3))));
+            UserAccount ua = (UserAccount) request.getSender();
+            Employee employee = (Employee) ua.getEmployee();
+            Enterprise enterprise = null;
+            Network net = null;
+            Organization org = null;
+            
+            for (Network network : system.getNetworkDirectory()) {
+                for (Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
+                    if (ent == vaccineManufacturesEnterprise) {
+                        net = network;
+                    }
                 }
             }
-        }
-        
-        for (Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()) {
-            if (ent instanceof DistributorEnterprise) {
-                enterprise = ent;
-                break;
+            for (Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()) {
+                if (ent instanceof DistributorEnterprise) {
+                    enterprise = ent;
+                    break;
+                }
             }
-        }
-        
-        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
-            if (organization instanceof FinanceOrganization) {
-                org = organization;
+            for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
+                if (organization instanceof FinanceOrganization) {
+                    org = organization;
+                }
             }
+            if (org != null) {
+                org.getWorkQueue().getWorkRequestList().add(request);
+                userAccount.getWorkQueue().getWorkRequestList().add(request);
+                populateManufactureTable();
+            }
+            
+            JOptionPane.showMessageDialog(null, "Bill sent", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
         }
-        
-        if (org != null) {
-            org.getWorkQueue().getWorkRequestList().add(request);
-            userAccount.getWorkQueue().getWorkRequestList().add(request);
-            populateManufactureTable();
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
-        JOptionPane.showMessageDialog(null, "Bill sent", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
-        
     }//GEN-LAST:event_sendButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

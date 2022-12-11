@@ -85,17 +85,27 @@ public class PublicHealthDepartmentPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enrollmentApprovalJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentApprovalJButtonActionPerformed
-        EnrollmentApprovalPanel enrollmentApprovalPanel = new EnrollmentApprovalPanel(userProcessContainer, publicHealthEnterprise, userAccount);
-        userProcessContainer.add("EnrollmentApprovalPanel", enrollmentApprovalPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            EnrollmentApprovalPanel enrollmentApprovalPanel = new EnrollmentApprovalPanel(userProcessContainer, publicHealthEnterprise, userAccount);
+            userProcessContainer.add("EnrollmentApprovalPanel", enrollmentApprovalPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_enrollmentApprovalJButtonActionPerformed
 
     private void manageOrderJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrderJButton1ActionPerformed
-        ManageVaccineOrderPanel manageVaccineOrderPanel = new ManageVaccineOrderPanel(userProcessContainer, userAccount, system, publicHealthEnterprise);
-        userProcessContainer.add("ManageVaccineOrderPanel", manageVaccineOrderPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            ManageVaccineOrderPanel manageVaccineOrderPanel = new ManageVaccineOrderPanel(userProcessContainer, userAccount, system, publicHealthEnterprise);
+            userProcessContainer.add("ManageVaccineOrderPanel", manageVaccineOrderPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageOrderJButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

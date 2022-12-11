@@ -207,122 +207,122 @@ public class ManageDistributorPaymentPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderButtonActionPerformed
-        
-        int selectedRow = billTable.getSelectedRow();
-        if (selectedRow >= 0) {
-            WorkRequest request = (WorkRequest) billTable.getValueAt(selectedRow, 0);
-            Enterprise enterprise = null;
-            Network net = null;
-            
-            for (Network network : system.getNetworkDirectory()) {
-                for (Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
-                    for (Organization organization : ent.getOrganizationDirectory().getOrganizationDirectory()) {
-                        for (UserAccount userAccount1 : organization.getUserAccountDirectory().getUserAccountDirectory()) {
-                            if (userAccount1 == userAccount) {
-                                net = network;
+        try{
+            int selectedRow = billTable.getSelectedRow();
+            if (selectedRow >= 0) {
+                WorkRequest request = (WorkRequest) billTable.getValueAt(selectedRow, 0);
+                Enterprise enterprise = null;
+                Network net = null;
+
+                for (Network network : system.getNetworkDirectory()) {
+                    for (Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
+                        for (Organization organization : ent.getOrganizationDirectory().getOrganizationDirectory()) {
+                            for (UserAccount userAccount1 : organization.getUserAccountDirectory().getUserAccountDirectory()) {
+                                if (userAccount1 == userAccount) {
+                                    net = network;
+                                }
                             }
                         }
                     }
                 }
-            }
-            
-            for (Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()) {
-                if (ent instanceof ProviderEnterprise) {
-                    enterprise = ent;
-                    break;
-                }
-            }
-            
-            UserAccount uu = null;
-            for (Organization o : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
-                if (o instanceof OrderOrganization) {
-                    for (UserAccount user : o.getUserAccountDirectory().getUserAccountDirectory()) {
-                        uu = user;
+                for (Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()) {
+                    if (ent instanceof ProviderEnterprise) {
+                        enterprise = ent;
+                        break;
                     }
                 }
-            }
-            
-            DefaultTableModel dtm = (DefaultTableModel) orderTable.getModel();
-            dtm.setRowCount(0);
 
-            Order orderI = null;
-            for (Order order : uu.getEmployee().getOrderCatalog().getOrderList()) {
-                if (request.getOrderID() == order.getOrderID()) {
-                    orderI = order;
+                UserAccount uu = null;
+                for (Organization o : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
+                    if (o instanceof OrderOrganization) {
+                        for (UserAccount user : o.getUserAccountDirectory().getUserAccountDirectory()) {
+                            uu = user;
+                        }
+                    }
+                }
+
+                DefaultTableModel dtm = (DefaultTableModel) orderTable.getModel();
+                dtm.setRowCount(0);
+                Order orderI = null;
+                for (Order order : uu.getEmployee().getOrderCatalog().getOrderList()) {
+                    if (request.getOrderID() == order.getOrderID()) {
+                        orderI = order;
+                    }
+                }
+                for (OrderItem orderItem : orderI.getOrderItemList()) {
+                    Object[] row = new Object[2];
+                    row[0] = orderItem;
+                    row[1] = orderItem.getItemQuantity();
+                    dtm.addRow(row);
                 }
             }
-            
-            for (OrderItem orderItem : orderI.getOrderItemList()) {
-                Object[] row = new Object[2];
-                row[0] = orderItem;
-                row[1] = orderItem.getItemQuantity();
-                dtm.addRow(row);
+            else {
+                JOptionPane.showMessageDialog(null, "Select a row", "Warning", JOptionPane.WARNING_MESSAGE);
             }
-            
         }
-        else {
-            JOptionPane.showMessageDialog(null, "Select a row", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
     }//GEN-LAST:event_viewOrderButtonActionPerformed
 
     private void payBillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payBillButtonActionPerformed
-        
-        int selectedRow = billTable.getSelectedRow();
-        
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
+        try{
+            int selectedRow = billTable.getSelectedRow();
+
+            if (selectedRow < 0) {
+                JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (billTable.getValueAt(selectedRow, 5) == "Paid") {
+                JOptionPane.showMessageDialog(null, "This bill is paid", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (billTable.getValueAt(selectedRow, 4) == null) {
+                JOptionPane.showMessageDialog(null, "This request is yet to be assigned to distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            PaymentRequest paymentRequest = (PaymentRequest) billTable.getValueAt(selectedRow, 0);
+            paymentRequest.setPaymentRequest("Paid");
+            paymentRequest.setStatus("Paid");
+            populateBillTable();
+            JOptionPane.showMessageDialog(null, "Bill paid", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
         }
-        
-        if (billTable.getValueAt(selectedRow, 5) == "Paid") {
-            JOptionPane.showMessageDialog(null, "This bill is paid", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
-        if (billTable.getValueAt(selectedRow, 4) == null) {
-            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to distributor", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        PaymentRequest paymentRequest = (PaymentRequest) billTable.getValueAt(selectedRow, 0);
-        paymentRequest.setPaymentRequest("Paid");
-        paymentRequest.setStatus("Paid");
-        populateBillTable();
-        JOptionPane.showMessageDialog(null, "Bill paid", "Payment Request", JOptionPane.INFORMATION_MESSAGE);
-        
     }//GEN-LAST:event_payBillButtonActionPerformed
 
     private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
-        
-        int selectedRow = billTable.getSelectedRow();
-        
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        if (billTable.getValueAt(selectedRow, 4) != null) {
-            JOptionPane.showMessageDialog(null, "This request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        PaymentRequest request = (PaymentRequest) billTable.getValueAt(selectedRow, 0);
-        request.setReceiver(userAccount);
-        request.setStatus("Pending");
-        UserAccount user = (UserAccount) request.getSender();
-        Employee person = (Employee) user.getEmployee();
-        for (Order order : person.getOrderCatalog().getOrderList()) {
-            if (request.getOrderID() == order.getOrderID()) {
-                order.setOrderStatus("Waiting to be approved by National Distributor");
+        try{
+            int selectedRow = billTable.getSelectedRow();
+
+            if (selectedRow < 0) {
+                JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
             }
+            if (billTable.getValueAt(selectedRow, 4) != null) {
+                JOptionPane.showMessageDialog(null, "This request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            PaymentRequest request = (PaymentRequest) billTable.getValueAt(selectedRow, 0);
+            request.setReceiver(userAccount);
+            request.setStatus("Pending");
+            UserAccount user = (UserAccount) request.getSender();
+            Employee person = (Employee) user.getEmployee();
+            for (Order order : person.getOrderCatalog().getOrderList()) {
+                if (request.getOrderID() == order.getOrderID()) {
+                    order.setOrderStatus("Waiting to be approved by National Distributor");
+                }
+            }
+
+            populateBillTable();
+            JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
         }
-        
-        populateBillTable();
-        
-        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
-        
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_assignButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

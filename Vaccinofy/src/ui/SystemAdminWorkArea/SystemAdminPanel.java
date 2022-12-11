@@ -7,15 +7,9 @@
 package ui.SystemAdminWorkArea;
 
 import Business.Ecosystem;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
-import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
-import java.util.ArrayList;
 import javax.swing.JPanel;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -151,40 +145,64 @@ public class SystemAdminPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageNetworkJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageNetworkJButtonActionPerformed
-        ManageNetworkPanel manageNetworkPanel = new ManageNetworkPanel(userProcessContainer, system);
-        userProcessContainer.add("manageNetworkPanel", manageNetworkPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            ManageNetworkPanel manageNetworkPanel = new ManageNetworkPanel(userProcessContainer, system);
+            userProcessContainer.add("manageNetworkPanel", manageNetworkPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageNetworkJButtonActionPerformed
 
     private void manageEnterpriseJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEnterpriseJButtonActionPerformed
-        ManageEnterprisePanel manageEnterprisePanel = new ManageEnterprisePanel(userProcessContainer, system);
-        userProcessContainer.add("manageEnterprisePanel", manageEnterprisePanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            ManageEnterprisePanel manageEnterprisePanel = new ManageEnterprisePanel(userProcessContainer, system);
+            userProcessContainer.add("manageEnterprisePanel", manageEnterprisePanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageEnterpriseJButtonActionPerformed
 
     private void manageEnterpriseAdminJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEnterpriseAdminJButtonActionPerformed
-        ManageEnterpriseAdminPanel manageEnterpriseAdminPanel = new ManageEnterpriseAdminPanel(userProcessContainer, system);
-        userProcessContainer.add("manageEnterpriseAdminPanel", manageEnterpriseAdminPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            ManageEnterpriseAdminPanel manageEnterpriseAdminPanel = new ManageEnterpriseAdminPanel(userProcessContainer, system);
+            userProcessContainer.add("manageEnterpriseAdminPanel", manageEnterpriseAdminPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageEnterpriseAdminJButtonActionPerformed
 
     private void manageVaccineJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageVaccineJButtonActionPerformed
-        ManageVaccinePanel manageVaccine = new ManageVaccinePanel(userProcessContainer, system);
-        userProcessContainer.add("ManageVaccinePanel", manageVaccine);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            ManageVaccinePanel manageVaccine = new ManageVaccinePanel(userProcessContainer, system);
+            userProcessContainer.add("ManageVaccinePanel", manageVaccine);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageVaccineJButtonActionPerformed
 
     private void manageVaccineOrderJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageVaccineOrderJButton1ActionPerformed
-        ManageVaccineOrderRequestPanel manageVaccineOrderRequestPanel = new ManageVaccineOrderRequestPanel(userProcessContainer, userAccount, system);
-        userProcessContainer.add("ManageVaccineOrderRequestPanel", manageVaccineOrderRequestPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            ManageVaccineOrderRequestPanel manageVaccineOrderRequestPanel = new ManageVaccineOrderRequestPanel(userProcessContainer, userAccount, system);
+            userProcessContainer.add("ManageVaccineOrderRequestPanel", manageVaccineOrderRequestPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageVaccineOrderJButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;

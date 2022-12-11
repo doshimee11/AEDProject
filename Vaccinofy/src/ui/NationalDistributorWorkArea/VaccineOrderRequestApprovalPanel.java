@@ -178,155 +178,153 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderButtonActionPerformed
-        
-        int selectedRow = vaccineOrderTable.getSelectedRow();
-        if(selectedRow >= 0){
-            VaccineRequest request = (VaccineRequest) vaccineOrderTable.getValueAt(selectedRow, 0);
-            DefaultTableModel dtm = (DefaultTableModel) orderTable.getModel();
-            dtm.setRowCount(0);
-            
-            UserAccount userAccount = (UserAccount) request.getSender();
-            Employee employee = (Employee) userAccount.getEmployee();
-            Order orderI = null;
-            
-            for(Order order : employee.getOrderCatalog().getOrderList()){
-                if(request.getOrderID() == order.getOrderID()){
-                    orderI = order;
+        try{
+            int selectedRow = vaccineOrderTable.getSelectedRow();
+            if(selectedRow >= 0){
+                VaccineRequest request = (VaccineRequest) vaccineOrderTable.getValueAt(selectedRow, 0);
+                DefaultTableModel dtm = (DefaultTableModel) orderTable.getModel();
+                dtm.setRowCount(0);
+
+                UserAccount userAccount = (UserAccount) request.getSender();
+                Employee employee = (Employee) userAccount.getEmployee();
+                Order orderI = null;
+
+                for(Order order : employee.getOrderCatalog().getOrderList()){
+                    if(request.getOrderID() == order.getOrderID()){
+                        orderI = order;
+                    }
+                }
+
+                for(OrderItem orderItem : orderI.getOrderItemList()){
+                    Object[] row = new Object[2];
+                    row[0] = orderItem;
+                    row[1] = orderItem.getItemQuantity();
+                    dtm.addRow(row);
                 }
             }
-            
-            for(OrderItem orderItem : orderI.getOrderItemList()){
-                Object[] row = new Object[2];
-                row[0] = orderItem;
-                row[1] = orderItem.getItemQuantity();
-                dtm.addRow(row);
+            else {
+                JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
             }
         }
-        else {
-            JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
     }//GEN-LAST:event_viewOrderButtonActionPerformed
 
     private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
-        
-        int selectedRow = vaccineOrderTable.getSelectedRow();
-        
-        if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        if(vaccineOrderTable.getValueAt(selectedRow, 3) != null){
-            JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        VaccineRequest request = (VaccineRequest) vaccineOrderTable.getValueAt(selectedRow, 0);
-        request.setReceiver(userAccount);
-        request.setStatus("Pending");
-        UserAccount user = (UserAccount) request.getSender();
-        Employee person = (Employee) user.getEmployee();
-        
-        for(Order order : person.getOrderCatalog().getOrderList()){
-            if(request.getOrderID() == order.getOrderID()){
-                order.setOrderStatus("Waiting to be approved by National Distributor");
+        try{
+            int selectedRow = vaccineOrderTable.getSelectedRow();
+            if(selectedRow < 0){
+                JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
             }
+            if(vaccineOrderTable.getValueAt(selectedRow, 3) != null){
+                JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            VaccineRequest request = (VaccineRequest) vaccineOrderTable.getValueAt(selectedRow, 0);
+            request.setReceiver(userAccount);
+            request.setStatus("Pending");
+            UserAccount user = (UserAccount) request.getSender();
+            Employee person = (Employee) user.getEmployee();
+            for(Order order : person.getOrderCatalog().getOrderList()){
+                if(request.getOrderID() == order.getOrderID()){
+                    order.setOrderStatus("Waiting to be approved by National Distributor");
+                }
+            }
+            populateVaccineOrderTable();
+            JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
         }
-        
-        populateVaccineOrderTable();
-        
-        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
-        
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_assignButtonActionPerformed
 
     private void forwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardButtonActionPerformed
-        
-        int selectedRow = vaccineOrderTable.getSelectedRow();
-        
-        if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "This request is sent to State Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        VaccineRequest request = (VaccineRequest) vaccineOrderTable.getValueAt(selectedRow, 0);
-        if(vaccineOrderTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        request.setStatus("Approved");
-        request.setVaccineRequest("Approved");
-        UserAccount user = (UserAccount) request.getSender();
-        Employee employee = (Employee) user.getEmployee();
-        
-        for(Order order : employee.getOrderCatalog().getOrderList()){
-            if(request.getOrderID() == order.getOrderID()){
-                order.setOrderStatus("Approved by National Distributor");
+        try{
+            int selectedRow = vaccineOrderTable.getSelectedRow();
+            if(selectedRow < 0){
+                JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
             }
-        }
-        
-        VaccineRequest vaccineRequest = new VaccineRequest();
-        if(employee.getCheck().equalsIgnoreCase("Hospital")){
-            vaccineRequest.setRequestType("Hospital Vaccine Request");
-        }
-        else if(employee.getCheck().equalsIgnoreCase("Pharmacy")){
-            vaccineRequest.setRequestType("Pharmacy Vaccine Request");
-        }
-        
-        vaccineRequest.setStatus("waiting");
-        vaccineRequest.setSender(request.getSender());
-        vaccineRequest.setOrderID(request.getOrderID());
-        vaccineRequest.setReceiver(null);
-        Enterprise e = null;
-        Network net = null;
-        
-        for(Network network : system.getNetworkDirectory()){
-            for(Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()){
-                for(Organization organization : enterprise.getOrganizationDirectory().getOrganizationDirectory()){
-                    for(UserAccount userAccount1 : organization.getUserAccountDirectory().getUserAccountDirectory()){
-                        if(user == userAccount1){
-                            net = network;
-                            break;
+            if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Approved"){
+                JOptionPane.showMessageDialog(null, "This request is sent to State Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Rejected"){
+                JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            VaccineRequest request = (VaccineRequest) vaccineOrderTable.getValueAt(selectedRow, 0);
+            if(vaccineOrderTable.getValueAt(selectedRow, 3) == null){
+                JOptionPane.showMessageDialog(null, "This request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            request.setStatus("Approved");
+            request.setVaccineRequest("Approved");
+            UserAccount user = (UserAccount) request.getSender();
+            Employee employee = (Employee) user.getEmployee();
+            for(Order order : employee.getOrderCatalog().getOrderList()){
+                if(request.getOrderID() == order.getOrderID()){
+                    order.setOrderStatus("Approved by National Distributor");
+                }
+            }
+
+            VaccineRequest vaccineRequest = new VaccineRequest();
+            if(employee.getCheck().equalsIgnoreCase("Hospital")){
+                vaccineRequest.setRequestType("Hospital Vaccine Request");
+            }
+            else if(employee.getCheck().equalsIgnoreCase("Pharmacy")){
+                vaccineRequest.setRequestType("Pharmacy Vaccine Request");
+            }
+            vaccineRequest.setStatus("waiting");
+            vaccineRequest.setSender(request.getSender());
+            vaccineRequest.setOrderID(request.getOrderID());
+            vaccineRequest.setReceiver(null);
+            Enterprise e = null;
+            Network net = null;
+
+            for(Network network : system.getNetworkDirectory()){
+                for(Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()){
+                    for(Organization organization : enterprise.getOrganizationDirectory().getOrganizationDirectory()){
+                        for(UserAccount userAccount1 : organization.getUserAccountDirectory().getUserAccountDirectory()){
+                            if(user == userAccount1){
+                                net = network;
+                                break;
+                            }
                         }
                     }
                 }
             }
-        }
-        
-        for(Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()){
-            if(ent instanceof DistributorEnterprise){
-                e = ent;
-                break;
+            for(Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()){
+                if(ent instanceof DistributorEnterprise){
+                    e = ent;
+                    break;
+                }
             }
+            if(e != null){
+                e.getWorkQueue().getWorkRequestList().add(vaccineRequest);
+                user.getWorkQueue().getWorkRequestList().add(vaccineRequest);
+            }
+            populateVaccineOrderTable();
         }
-        
-        if(e != null){
-            e.getWorkQueue().getWorkRequestList().add(vaccineRequest);
-            user.getWorkQueue().getWorkRequestList().add(vaccineRequest);
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
-        populateVaccineOrderTable();
-        
     }//GEN-LAST:event_forwardButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.remove(this);
-        layout.previous(userProcessContainer);
-        
+        try{
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            userProcessContainer.remove(this);
+            layout.previous(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_backButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

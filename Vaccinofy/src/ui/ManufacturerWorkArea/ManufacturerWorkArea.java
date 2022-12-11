@@ -82,21 +82,27 @@ public class ManufacturerWorkArea extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageManufacturerRqstButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageManufacturerRqstButtonActionPerformed
-        
-        ManageManufacturerRequestPanel manageManufactureReqPanel = new ManageManufacturerRequestPanel(userProcessContainer, system, userAccount, vaccineManufacturerEnterprise);
-        userProcessContainer.add("ManageManufactureRequestPanel", manageManufactureReqPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
+        try{
+            ManageManufacturerRequestPanel manageManufactureReqPanel = new ManageManufacturerRequestPanel(userProcessContainer, system, userAccount, vaccineManufacturerEnterprise);
+            userProcessContainer.add("ManageManufactureRequestPanel", manageManufactureReqPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageManufacturerRqstButtonActionPerformed
 
     private void manageManufactureOrgButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageManufactureOrgButtonActionPerformed
-        
-        ManageManufacturerOrganizationPanel manageManufactureOrgPanel = new ManageManufacturerOrganizationPanel(userProcessContainer, vaccineManufacturerEnterprise);
-        userProcessContainer.add("manageManufactureOrganizationPanel", manageManufactureOrgPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
+        try{
+            ManageManufacturerOrganizationPanel manageManufactureOrgPanel = new ManageManufacturerOrganizationPanel(userProcessContainer, vaccineManufacturerEnterprise);
+            userProcessContainer.add("manageManufactureOrganizationPanel", manageManufactureOrgPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageManufactureOrgButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
