@@ -97,25 +97,27 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
             vaccineTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 73, 670, 141));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 73, 710, 141));
 
         refreshButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        refreshButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Refresh (2).png"))); // NOI18N
         refreshButton.setText("Refresh");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshButtonActionPerformed(evt);
             }
         });
-        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 284, -1, -1));
+        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
 
         removeVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        removeVaccineButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Remove (1).jpg"))); // NOI18N
         removeVaccineButton.setText("Remove Vaccine");
         removeVaccineButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeVaccineButtonActionPerformed(evt);
             }
         });
-        add(removeVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, 284, -1, -1));
+        add(removeVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 210, 50));
 
         addVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addVaccineButton.setText("Add Vaccine");
@@ -124,32 +126,34 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
                 addVaccineButtonActionPerformed(evt);
             }
         });
-        add(addVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 284, -1, -1));
+        add(addVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 262, 130, 50));
 
         viewVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewVaccineButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
         viewVaccineButton.setText("View Vaccine");
         viewVaccineButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewVaccineButtonActionPerformed(evt);
             }
         });
-        add(viewVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 284, 147, -1));
+        add(viewVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 260, 170, 50));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 396, 110, 40));
 
         vaccineIDLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineIDLabel.setText("Vaccine ID :");
-        add(vaccineIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, 346, -1, -1));
+        add(vaccineIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, -1, -1));
 
         vaccineIdTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(vaccineIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 343, 126, -1));
+        add(vaccineIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 126, -1));
 
         searchVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         searchVaccineButton.setText("Search Vaccine");

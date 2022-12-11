@@ -182,6 +182,7 @@ public class ManageEnterpriseAdminPanel extends javax.swing.JPanel {
         add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 496, 136, -1));
 
         submitButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        submitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Submit.jpg"))); // NOI18N
         submitButton.setText("Submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,13 +192,14 @@ public class ManageEnterpriseAdminPanel extends javax.swing.JPanel {
         add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 571, 121, 43));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 630, -1, -1));
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 626, 110, 40));
 
         enterpriseRoleComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         enterpriseRoleComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));

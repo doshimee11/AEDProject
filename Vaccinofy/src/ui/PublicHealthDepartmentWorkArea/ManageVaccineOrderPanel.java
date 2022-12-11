@@ -132,16 +132,17 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(vaccineRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 107, 591, 122));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 107, 730, 122));
 
         viewJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
         viewJButton.setText("View Order");
         viewJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewJButtonActionPerformed(evt);
             }
         });
-        add(viewJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 260, -1, -1));
+        add(viewJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 150, 40));
 
         forwardJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         forwardJButton.setText("Forward to CDC");
@@ -150,25 +151,26 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
                 forwardJButtonActionPerformed(evt);
             }
         });
-        add(forwardJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 260, -1, -1));
+        add(forwardJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 190, 40));
 
         rejectJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rejectJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Remove (1).jpg"))); // NOI18N
         rejectJButton.setText("Reject");
         rejectJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rejectJButtonActionPerformed(evt);
             }
         });
-        add(rejectJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 260, -1, -1));
+        add(rejectJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 120, 40));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backJButton.setText("<< Back");
+        backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 505, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
 
         vaccineTableJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -188,7 +190,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(vaccineTableJTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 306, 591, 133));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 306, 730, 133));
 
         providerJComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         providerJComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -199,13 +201,14 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
         add(providerJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 67, 171, -1));
 
         assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
         assignJButton.setText("Assign to me");
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignJButtonActionPerformed(evt);
             }
         });
-        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 260, -1, -1));
+        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 170, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");

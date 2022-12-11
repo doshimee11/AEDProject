@@ -53,25 +53,27 @@ public class DistributerFinancePanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Distributor Finance  ");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 6, 300, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 300, -1));
 
         manageManufacturerPaymentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        manageManufacturerPaymentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ManufactureVaccine.jpg"))); // NOI18N
         manageManufacturerPaymentButton.setText("Manage Manufacture Payment ");
         manageManufacturerPaymentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageManufacturerPaymentButtonActionPerformed(evt);
             }
         });
-        add(manageManufacturerPaymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 280, 50));
+        add(manageManufacturerPaymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 310, 70));
 
         manageProviderPaymentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        manageProviderPaymentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Payment (3).png"))); // NOI18N
         manageProviderPaymentButton.setText("Manage Provider Payment ");
         manageProviderPaymentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageProviderPaymentButtonActionPerformed(evt);
             }
         });
-        add(manageProviderPaymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 280, 40));
+        add(manageProviderPaymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 310, 70));
 
         jLabel2.setIcon(new javax.swing.ImageIcon("/Users/kalindjoshi/Downloads/Employee.png")); // NOI18N
         jLabel2.setText("jLabel2");
