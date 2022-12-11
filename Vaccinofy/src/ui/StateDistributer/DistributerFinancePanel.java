@@ -81,17 +81,27 @@ public class DistributerFinancePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageManufacturerPaymentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageManufacturerPaymentButtonActionPerformed
-        ManageManufacturerPaymentPanel manageManufacturerPaymentPanel = new ManageManufacturerPaymentPanel(userProcessContainer, system, userAccount, distributorEnterprise);
-        userProcessContainer.add("manageManufacturePaymentJPanel", manageManufacturerPaymentPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            ManageManufacturerPaymentPanel manageManufacturerPaymentPanel = new ManageManufacturerPaymentPanel(userProcessContainer, system, userAccount, distributorEnterprise);
+            userProcessContainer.add("manageManufacturePaymentJPanel", manageManufacturerPaymentPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageManufacturerPaymentButtonActionPerformed
 
     private void manageProviderPaymentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageProviderPaymentButtonActionPerformed
-        ManageProviderPaymentPanel manageProviderPaymentPanel = new ManageProviderPaymentPanel(userProcessContainer, system, userAccount, distributorEnterprise);
-        userProcessContainer.add("manageProviderPaymentJPanel", manageProviderPaymentPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            ManageProviderPaymentPanel manageProviderPaymentPanel = new ManageProviderPaymentPanel(userProcessContainer, system, userAccount, distributorEnterprise);
+            userProcessContainer.add("manageProviderPaymentJPanel", manageProviderPaymentPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageProviderPaymentButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

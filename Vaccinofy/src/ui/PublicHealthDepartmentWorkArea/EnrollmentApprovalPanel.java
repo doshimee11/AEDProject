@@ -182,113 +182,126 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
-        int selectedRow = messageJTable.getSelectedRow();
+        try{
+            int selectedRow = messageJTable.getSelectedRow();
+            if(selectedRow < 0){
+                JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
 
-        if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+            if(messageJTable.getValueAt(selectedRow, 3) != null){
+                JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
 
-        if(messageJTable.getValueAt(selectedRow, 3) != null){
-            JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
+            EnrollmentRequest request = (EnrollmentRequest) messageJTable.getValueAt(selectedRow, 0);
+            request.setReceiver(userAccount);
+            request.setStatus("Pending");
+            if(request.getSender().getEmployee().getCheck().equalsIgnoreCase("Hospital")){
+                populateHosptialTable();
+            } else if(request.getSender().getEmployee().getCheck().equalsIgnoreCase("Pharmacy")){
+                populatePharmacyTable();
+            }
+            JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
         }
-
-        EnrollmentRequest request = (EnrollmentRequest) messageJTable.getValueAt(selectedRow, 0);
-        request.setReceiver(userAccount);
-        request.setStatus("Pending");
-        if(request.getSender().getEmployee().getCheck().equalsIgnoreCase("Hospital")){
-            populateHosptialTable();
-        } else if(request.getSender().getEmployee().getCheck().equalsIgnoreCase("Pharmacy")){
-            populatePharmacyTable();
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
     }//GEN-LAST:event_assignJButtonActionPerformed
 
     private void approveJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveJButtonActionPerformed
-        int selectedRow = messageJTable.getSelectedRow();
+        try{
+            int selectedRow = messageJTable.getSelectedRow();
+            if(selectedRow < 0){
+                JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if(messageJTable.getValueAt(selectedRow, 4) == "Approved"){
+                JOptionPane.showMessageDialog(null, "The request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if(messageJTable.getValueAt(selectedRow, 4) == "Rejected"){
+                JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
 
-        if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
+            EnrollmentRequest request = (EnrollmentRequest) messageJTable.getValueAt(selectedRow, 0);
+            if(messageJTable.getValueAt(selectedRow, 3) == null){
+                JOptionPane.showMessageDialog(null, "This request is yet to be assigned to the Health Dept", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            UserAccount userAccount = (UserAccount) request.getSender();
+            Employee employee = (Employee) userAccount.getEmployee();
+            employee.setEnrollmentStatus("Approved");
+            request.setStatus("Approved");
+            request.setEnrollmentRequest("Approved");
+            if(employee.getCheck().equalsIgnoreCase("hospital")){
+                employee.getHospital().setHospitalStatus("Approved");
+                populateHosptialTable();
+            } else if(employee.getCheck().equalsIgnoreCase("Pharmacy")){
+                employee.getPharmacy().setPharmacyStatus("Approved");
+                populatePharmacyTable();
+            }
+            JOptionPane.showMessageDialog(null, "This request is approved", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
         }
-
-        if(messageJTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-
-        if(messageJTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        EnrollmentRequest request = (EnrollmentRequest) messageJTable.getValueAt(selectedRow, 0);
-        if(messageJTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to the Health Dept", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        UserAccount userAccount = (UserAccount) request.getSender();
-        Employee employee = (Employee) userAccount.getEmployee();
-        employee.setEnrollmentStatus("Approved");
-        request.setStatus("Approved");
-        request.setEnrollmentRequest("Approved");
-        if(employee.getCheck().equalsIgnoreCase("hospital")){
-            employee.getHospital().setHospitalStatus("Approved");
-            populateHosptialTable();
-        } else if(employee.getCheck().equalsIgnoreCase("Pharmacy")){
-            employee.getPharmacy().setPharmacyStatus("Approved");
-            populatePharmacyTable();
-        }
-        JOptionPane.showMessageDialog(null, "This request is approved", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_approveJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.remove(this);
-        layout.previous(userProcessContainer);
+        try{
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            userProcessContainer.remove(this);
+            layout.previous(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void rejectJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectJButtonActionPerformed
-        int selectedRow = messageJTable.getSelectedRow();
-
-        if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        if(messageJTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        if(messageJTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "This request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        EnrollmentRequest request = (EnrollmentRequest) messageJTable.getValueAt(selectedRow, 0);
-        if(messageJTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the Health Dept", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        int dialogButton = JOptionPane.YES_NO_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "Confirm reject?", "warning", dialogButton);
-        if(result == JOptionPane.YES_OPTION){
-            UserAccount userAccount = (UserAccount) request.getSender();
-            Employee employee = (Employee) userAccount.getEmployee();
-            employee.setEnrollmentStatus("Rejected");
-            request.setStatus("Reject");
-            request.setEnrollmentRequest("Rejected");
-            if(employee.getCheck().equalsIgnoreCase("Hospital")){
-                employee.getHospital().setHospitalStatus("Rejected");
-                populateHosptialTable();
-            } else if(employee.getCheck().equalsIgnoreCase("Pharmacy")){
-                employee.getPharmacy().setPharmacyStatus("Rejected");
-                populatePharmacyTable();
+        try{
+            int selectedRow = messageJTable.getSelectedRow();
+            if(selectedRow < 0){
+                JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if(messageJTable.getValueAt(selectedRow, 4) == "Rejected"){
+                JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if(messageJTable.getValueAt(selectedRow, 4) == "Approved"){
+                JOptionPane.showMessageDialog(null, "This request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
             }
 
-            JOptionPane.showMessageDialog(null, "This request is rejected", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
+            EnrollmentRequest request = (EnrollmentRequest) messageJTable.getValueAt(selectedRow, 0);
+            if(messageJTable.getValueAt(selectedRow, 3) == null){
+                JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the Health Dept", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            int dialogButton = JOptionPane.YES_NO_OPTION;
+            int result = JOptionPane.showConfirmDialog(null, "Confirm reject?", "warning", dialogButton);
+            if(result == JOptionPane.YES_OPTION){
+                UserAccount userAccount = (UserAccount) request.getSender();
+                Employee employee = (Employee) userAccount.getEmployee();
+                employee.setEnrollmentStatus("Rejected");
+                request.setStatus("Reject");
+                request.setEnrollmentRequest("Rejected");
+                if(employee.getCheck().equalsIgnoreCase("Hospital")){
+                    employee.getHospital().setHospitalStatus("Rejected");
+                    populateHosptialTable();
+                } else if(employee.getCheck().equalsIgnoreCase("Pharmacy")){
+                    employee.getPharmacy().setPharmacyStatus("Rejected");
+                    populatePharmacyTable();
+                }
+
+                JOptionPane.showMessageDialog(null, "This request is rejected", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
     }//GEN-LAST:event_rejectJButtonActionPerformed
 

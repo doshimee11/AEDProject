@@ -9,6 +9,9 @@ package ui.SystemAdminWorkArea;
 import Business.Ecosystem;
 import Business.Network.Network;
 import java.awt.CardLayout;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,6 +24,7 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private Ecosystem system;
+    Pattern p;
     
     public ManageNetworkPanel(JPanel userProcessContainer, Ecosystem system) {
         initComponents();
@@ -40,6 +44,27 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
             row[0] = network.getNetworkName();
             model.addRow(row);
         }
+    }
+    
+    public boolean validateName(String name) {
+        String nameValidate = "[A-Za-z]{1,100}";
+        p = Pattern.compile(nameValidate);
+        Matcher matcher = p.matcher(name);
+        return matcher.matches();
+    }
+    
+    public boolean validateUsername(String username) {
+        String uservalidate = "[a-zA-Z0-9!@_]{4,100}";
+        p = Pattern.compile(uservalidate);
+        Matcher matcher = p.matcher(username);
+        return matcher.matches();
+    }
+    
+    public boolean validatePassword(String password) {
+        String passvalidate = "[a-zA-Z0-9!@_*$#%&^()-]{4,100}";
+        p = Pattern.compile(passvalidate);
+        Matcher matcher = p.matcher(password);
+        return matcher.matches();
     }
     
     /**
@@ -94,6 +119,11 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
         add(networkNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
 
         networkNameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        networkNameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                networkNameTextFieldActionPerformed(evt);
+            }
+        });
         add(networkNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 199, -1));
 
         submitButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -122,10 +152,28 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        String name = networkNameTextField.getText();
-        Network network = system.createNetwork(name);
-        
-        populateNetworkTable();
+        try{
+            String name = networkNameTextField.getText();
+            boolean nameCheck = validateName(networkNameTextField.getText().toString());
+            
+            if(name.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Please enter a network !!!");
+            }
+            else{
+                if (nameCheck){
+                    Network network = system.createNetwork(name);
+                    JOptionPane.showMessageDialog(submitButton, "Network Added Successfully");
+                    populateNetworkTable();
+                    networkNameTextField.setText(null);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid Network Name !!!");
+                }
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Check input fields !!!");
+        }
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -134,6 +182,9 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private void networkNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_networkNameTextFieldActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;

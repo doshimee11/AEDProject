@@ -86,5 +86,10 @@ public abstract class Organization {
     }
     
     public abstract ArrayList<Role> getSupportedRole();
+
+    @Override
+    public String toString() {
+        return orgnizationName;
+    }
     
 }

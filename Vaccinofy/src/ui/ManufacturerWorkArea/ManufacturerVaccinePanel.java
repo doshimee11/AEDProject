@@ -126,24 +126,34 @@ public class ManufacturerVaccinePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        
-        String manufactureDate = manufacturerDateTextField.getText();
-        String expiryDate = expiryDateTextField.getText();
-        float price = Float.parseFloat(priceTextField.getText());
-        
-        inventory.getVaccine().setVaccineManufactureDate(manufactureDate);
-        inventory.getVaccine().setVaccineExpiryDate(expiryDate);
-        inventory.getVaccine().setVaccinePrice(price);
-        inventory.getVaccine().setAvailablity(inventory.getVaccine().getAvailablity() + requestedQuantity);
-        
+        try{
+            String manufactureDate = manufacturerDateTextField.getText();
+            String expiryDate = expiryDateTextField.getText();
+            float price = Float.parseFloat(priceTextField.getText());
+            
+            inventory.getVaccine().setVaccineManufactureDate(manufactureDate);
+            inventory.getVaccine().setVaccineExpiryDate(expiryDate);
+            inventory.getVaccine().setVaccinePrice(price);
+            inventory.getVaccine().setAvailablity(inventory.getVaccine().getAvailablity() + requestedQuantity);
+            
+            manufacturerDateTextField.setText(null);
+            expiryDateTextField.setText(null);
+            priceTextField.setText(null);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.remove(this);
-        layout.previous(userProcessContainer);
-        
+        try{
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            userProcessContainer.remove(this);
+            layout.previous(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_backButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -142,58 +142,65 @@ public class RegisterPharmacyPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_refreshButtonActionPerformed
 
     private void enrollmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentButtonActionPerformed
-        
-        for(WorkRequest workRequest: userAccount.getWorkQueue().getWorkRequestList()){
-            if(workRequest.getStatus().equalsIgnoreCase("Approved")){
-                JOptionPane.showMessageDialog(null, "Enrollment request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
-                return;
-            } else if(workRequest.getStatus().equalsIgnoreCase("sent")){
-                JOptionPane.showMessageDialog(null, "Enrollment request is sent and waiting to be approved", "Warning", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-        }
-        
-        EnrollmentRequest enrollmentRequest = new EnrollmentRequest();
-        enrollmentRequest.setRequestType("Enrollment Request");
-        enrollmentRequest.setStatus("Sent");
-        enrollmentRequest.setSender(userAccount);
-        UserAccount ua = (UserAccount) enrollmentRequest.getSender();
-        Employee employee = (Employee) ua.getEmployee();
-        employee.setEnrollmentStatus("Processing");
-        employee.getPharmacy().setPharmacyStatus("Processing");
-        Enterprise enterprise = null;
-        Network net = null;
-        
-        for(Network network : system.getNetworkDirectory()){
-            for(Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()){
-                if(ent == providerEnterprise){
-                    net = network;
+        try{
+            for(WorkRequest workRequest: userAccount.getWorkQueue().getWorkRequestList()){
+                if(workRequest.getStatus().equalsIgnoreCase("Approved")){
+                    JOptionPane.showMessageDialog(null, "Enrollment request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                } else if(workRequest.getStatus().equalsIgnoreCase("sent")){
+                    JOptionPane.showMessageDialog(null, "Enrollment request is sent and waiting to be approved", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
                 }
             }
-        }
-        
-        for(Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()){
-            if(ent instanceof PublicHealthEnterprise){
-                enterprise = ent;
-                break;
+
+            EnrollmentRequest enrollmentRequest = new EnrollmentRequest();
+            enrollmentRequest.setRequestType("Enrollment Request");
+            enrollmentRequest.setStatus("Sent");
+            enrollmentRequest.setSender(userAccount);
+            UserAccount ua = (UserAccount) enrollmentRequest.getSender();
+            Employee employee = (Employee) ua.getEmployee();
+            employee.setEnrollmentStatus("Processing");
+            employee.getPharmacy().setPharmacyStatus("Processing");
+            Enterprise enterprise = null;
+            Network net = null;
+
+            for(Network network : system.getNetworkDirectory()){
+                for(Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()){
+                    if(ent == providerEnterprise){
+                        net = network;
+                    }
+                }
             }
+
+            for(Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()){
+                if(ent instanceof PublicHealthEnterprise){
+                    enterprise = ent;
+                    break;
+                }
+            }
+
+            if(enterprise!=null){
+                enterprise.getWorkQueue().getWorkRequestList().add(enrollmentRequest);
+                userAccount.getWorkQueue().getWorkRequestList().add(enrollmentRequest);
+                populateTable();
+            }
+
+            JOptionPane.showMessageDialog(null, "Enrollment is requested successfully", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
         }
-        
-        if(enterprise!=null){
-            enterprise.getWorkQueue().getWorkRequestList().add(enrollmentRequest);
-            userAccount.getWorkQueue().getWorkRequestList().add(enrollmentRequest);
-            populateTable();
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
-        JOptionPane.showMessageDialog(null, "Enrollment is requested successfully", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_enrollmentButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.remove(this);
-        layout.previous(userProcessContainer);
-        
+        try{
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            userProcessContainer.remove(this);
+            layout.previous(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_backButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

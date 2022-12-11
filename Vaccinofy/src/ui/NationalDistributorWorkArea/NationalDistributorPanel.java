@@ -67,12 +67,15 @@ public class NationalDistributorPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageVaccineOrderRqstButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageVaccineOrderRqstButtonActionPerformed
-        
-        VaccineOrderRequestApprovalPanel vaccineOrderRequestApprovalPanel = new VaccineOrderRequestApprovalPanel(userProcessContainer, userAccount, system);
-        userProcessContainer.add("VaccineOrderRequestApprovalPanel", vaccineOrderRequestApprovalPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
+        try{
+            VaccineOrderRequestApprovalPanel vaccineOrderRequestApprovalPanel = new VaccineOrderRequestApprovalPanel(userProcessContainer, userAccount, system);
+            userProcessContainer.add("VaccineOrderRequestApprovalPanel", vaccineOrderRequestApprovalPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_manageVaccineOrderRqstButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -22,6 +22,7 @@ public abstract class Enterprise extends Organization{
         super(name);
         this.enterpriseType = enterpriseType;
         this.organizationDirectory = new OrganizationDirectory();
+        this.userAccountDirectory = new UserAccountDirectory();
     }
     
     public enum EnterpriseType{

@@ -147,7 +147,6 @@ public class ViewVaccinePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (vaccineNameJTextField.getText().equals("") || diseaseNameJTextField.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Enter all the fields", "View Vaccine", JOptionPane.WARNING_MESSAGE);
-            return;
         }
         else {
             vaccine.setVaccineName(vaccineNameJTextField.getText());
@@ -156,7 +155,6 @@ public class ViewVaccinePanel extends javax.swing.JPanel {
             diseaseNameJTextField.setEditable(false);
             JOptionPane.showMessageDialog(null, "Data saved", "Update Vaccine",JOptionPane.INFORMATION_MESSAGE);
             saveJButton.setEnabled(false);
-
         }
     }//GEN-LAST:event_saveJButtonActionPerformed
 

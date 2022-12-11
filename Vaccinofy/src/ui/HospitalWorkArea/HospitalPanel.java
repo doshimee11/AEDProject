@@ -70,12 +70,15 @@ public class HospitalPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registerHospitalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerHospitalButtonActionPerformed
-        
-        RegisterHospitalPanel registerHospitalPanel = new RegisterHospitalPanel(userProcessContainer, system, userAccount, providerEnterprise);
-        userProcessContainer.add("RegisterHospitalPanel", registerHospitalPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
+        try{
+            RegisterHospitalPanel registerHospitalPanel = new RegisterHospitalPanel(userProcessContainer, system, userAccount, providerEnterprise);
+            userProcessContainer.add("RegisterHospitalPanel", registerHospitalPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_registerHospitalButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

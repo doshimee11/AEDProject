@@ -47,7 +47,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         this.orderOrganization = orderOrganization;
         this.providerEnterprise = providerEnterprise;
         if(!isCheckOut){
-        order = new Order();
+            order = new Order();
         }
         
         populateVaccineTable();
@@ -239,200 +239,219 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_changeQuantityTextFieldActionPerformed
 
     private void modifyQuantityButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyQuantityButtonActionPerformed
-        
-        int selectedrow = orderItemTable.getSelectedRow();
-        if (selectedrow < 0){
-            JOptionPane.showMessageDialog(null, "Select a row first", "Modify Quantity", JOptionPane.WARNING_MESSAGE);
-            return;
+        try{
+            int selectedrow = orderItemTable.getSelectedRow();
+            if (selectedrow < 0){
+                JOptionPane.showMessageDialog(null, "Select a row first", "Modify Quantity", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            String changeQuantity = changeQuantityTextField.getText();
+            if(changeQuantity.trim().length() == 0){
+                JOptionPane.showMessageDialog(null, "Enter the quantity to be modified", "Modify quantity", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            OrderItem orderItem = (OrderItem) orderItemTable.getValueAt(selectedrow, 0);
+            int modQuantity = Integer.parseInt(changeQuantityTextField.getText());
+            if (modQuantity > orderItem.getItemQuantity() + orderItem.getVaccine().getAvailablity() || modQuantity <= 0){
+                JOptionPane.showMessageDialog(null, "Quantity is bad");
+                return;
+            }
+
+            int oldAvailablity = orderItem.getVaccine().getAvailablity();
+            int oldItemQuantity = orderItem.getItemQuantity();
+
+            orderItem.setItemQuantity(modQuantity);
+
+            populateVaccineTable();
+            populateOrderItemTable();
+            changeQuantityTextField.setText(null);
         }
-        
-        String changeQuantity = changeQuantityTextField.getText();
-        if(changeQuantity.trim().length() == 0){
-            JOptionPane.showMessageDialog(null, "Enter the quantity to be modified", "Modify quantity", JOptionPane.WARNING_MESSAGE);
-            return;
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
-        OrderItem orderItem = (OrderItem) orderItemTable.getValueAt(selectedrow, 0);
-        int modQuantity = Integer.parseInt(changeQuantityTextField.getText());
-        if (modQuantity > orderItem.getItemQuantity() + orderItem.getVaccine().getAvailablity() || modQuantity <= 0){
-            JOptionPane.showMessageDialog(null, "Quantity is bad");
-            return;
-        }
-        
-        int oldAvailablity = orderItem.getVaccine().getAvailablity();
-        int oldItemQuantity = orderItem.getItemQuantity();
-        
-        orderItem.setItemQuantity(modQuantity);
-        
-        populateVaccineTable();
-        populateOrderItemTable();
-        changeQuantityTextField.setText(null);
-        
     }//GEN-LAST:event_modifyQuantityButtonActionPerformed
 
     private void viewVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewVaccineButtonActionPerformed
-        
-        int selectedRow = vaccineTable.getSelectedRow();
-        if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Select a row " , "Browse Product", JOptionPane.WARNING_MESSAGE);
-            return;
+        try{
+            int selectedRow = vaccineTable.getSelectedRow();
+            if(selectedRow < 0){
+                JOptionPane.showMessageDialog(null, "Select a row " , "Browse Product", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            
+            Vaccine vaccine = (Vaccine) vaccineTable.getValueAt(selectedRow, 0);
+            ViewVaccineDetailsPanel vpj = new ViewVaccineDetailsPanel(userProcessContainer, vaccine);
+            userProcessContainer.add("ViewVaccineDetailsPanel", vpj);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
         }
-        
-        Vaccine vaccine = (Vaccine) vaccineTable.getValueAt(selectedRow, 0);
-        ViewVaccineDetailsPanel vpj = new ViewVaccineDetailsPanel(userProcessContainer, vaccine);
-        userProcessContainer.add("ViewVaccineDetailsPanel", vpj);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_viewVaccineButtonActionPerformed
 
     private void viewOrderDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderDetailsButtonActionPerformed
-        
-        int selectedRow = orderItemTable.getSelectedRow();
-        if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Select a row", "Browse Product", JOptionPane.WARNING_MESSAGE);
-            return;
+        try{
+            int selectedRow = orderItemTable.getSelectedRow();
+            if(selectedRow < 0){
+                JOptionPane.showMessageDialog(null, "Select a row", "Browse Product", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            OrderItem orderItem = (OrderItem) orderItemTable.getValueAt(selectedRow, 0);
+            ViewOrderItemPanel voj = new ViewOrderItemPanel(userProcessContainer, orderItem);
+            userProcessContainer.add("ViewOrderItem", voj);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
         }
-        
-        OrderItem orderItem = (OrderItem) orderItemTable.getValueAt(selectedRow, 0);
-        ViewOrderItemPanel voj = new ViewOrderItemPanel(userProcessContainer, orderItem);
-        userProcessContainer.add("ViewOrderItem", voj);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_viewOrderDetailsButtonActionPerformed
 
     private void removeItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeItemButtonActionPerformed
-        
-        int selectedRow = orderItemTable.getSelectedRow();
-        if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Select a row", "Browse Product", JOptionPane.WARNING_MESSAGE);
-            return;
+        try{
+            int selectedRow = orderItemTable.getSelectedRow();
+            if(selectedRow < 0){
+                JOptionPane.showMessageDialog(null, "Select a row", "Browse Product", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            OrderItem orderItem = (OrderItem) orderItemTable.getValueAt(selectedRow, 0);
+            int dialogButton = JOptionPane.YES_NO_OPTION;
+            int result = JOptionPane.showConfirmDialog(null, "Confirm delete?", "warning", dialogButton);
+            if(result == JOptionPane.YES_OPTION){
+                order.removeOrderItem(orderItem);
+                int newAvailablity = orderItem.getItemQuantity() + orderItem.getVaccine().getAvailablity();
+            }
+
+            populateVaccineTable();
+            populateOrderItemTable();
         }
-        
-        OrderItem orderItem = (OrderItem) orderItemTable.getValueAt(selectedRow, 0);
-        int dialogButton = JOptionPane.YES_NO_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "Confirm delete?", "warning", dialogButton);
-        if(result == JOptionPane.YES_OPTION){
-            order.removeOrderItem(orderItem);
-            int newAvailablity = orderItem.getItemQuantity() + orderItem.getVaccine().getAvailablity();
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
-        populateVaccineTable();
-        populateOrderItemTable();
-        
     }//GEN-LAST:event_removeItemButtonActionPerformed
 
     private void checkOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutButtonActionPerformed
         // TODO add your handling code here:
-        
-        DefaultTableModel dtm = (DefaultTableModel) orderItemTable.getModel();
-        if(dtm.getRowCount() == 0){
-            JOptionPane.showMessageDialog(null, "No item in chart", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        Order ord = userAccount.getEmployee().getOrderCatalog().addNewOrder(order);
-        if(ord != null){
-            JOptionPane.showMessageDialog(null, "You have successfully checked out");
-        }
-        else {
-            JOptionPane.showMessageDialog(null, "There is an error processing the order");
-        }
-        
-        VaccineRequest request = new VaccineRequest();
-        if(userAccount.getEmployee().getCheck().equalsIgnoreCase("Hospital")){
-            request.setRequestType("Hospital Vaccine request");
-        }
-        else if(userAccount.getEmployee().getCheck().equalsIgnoreCase("Pharmacy")){
-            request.setRequestType("Pharmacy Vaccine request");
-        }
-        
-        request.setStatus("Sent");
-        request.setSender(userAccount);
-        request.setOrderID(order.getOrderID());
-        order.setOrderStatus("Processing");
-        Enterprise enterprise = null;
-        Network net = null;
-        
-        for(Network network : system.getNetworkDirectory()){
-            for(Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()){
-                if(ent == providerEnterprise){
-                    net = network;
+        try{
+            DefaultTableModel dtm = (DefaultTableModel) orderItemTable.getModel();
+            if(dtm.getRowCount() == 0){
+                JOptionPane.showMessageDialog(null, "No item in chart", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            
+            Order ord = userAccount.getEmployee().getOrderCatalog().addNewOrder(order);
+            if(ord != null){
+                JOptionPane.showMessageDialog(null, "You have successfully checked out");
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "There is an error processing the order");
+            }
+            
+            VaccineRequest request = new VaccineRequest();
+            if(userAccount.getEmployee().getCheck().equalsIgnoreCase("Hospital")){
+                request.setRequestType("Hospital Vaccine request");
+            }
+            else if(userAccount.getEmployee().getCheck().equalsIgnoreCase("Pharmacy")){
+                request.setRequestType("Pharmacy Vaccine request");
+            }
+            
+            request.setStatus("Sent");
+            request.setSender(userAccount);
+            request.setOrderID(order.getOrderID());
+            order.setOrderStatus("Processing");
+            Enterprise enterprise = null;
+            Network net = null;
+            
+            for(Network network : system.getNetworkDirectory()){
+                for(Enterprise ent : network.getEnterpriseDirectory().getEnterprisesDirectory()){
+                    if(ent == providerEnterprise){
+                        net = network;
+                    }
                 }
             }
-        }
-        
-        for(Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()){
-            if(ent instanceof PublicHealthEnterprise){
-                enterprise = ent;
-                break;
+            for(Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()){
+                if(ent instanceof PublicHealthEnterprise){
+                    enterprise = ent;
+                    break;
+                }
             }
+            if(enterprise!=null){
+                enterprise.getWorkQueue().getWorkRequestList().add(request);
+                userAccount.getWorkQueue().getWorkRequestList().add(request);
+            }
+            
+            isCheckOut = true;
+            order = new Order();
+            populateVaccineTable();
+            populateOrderItemTable();
         }
-        
-        if(enterprise!=null){
-            enterprise.getWorkQueue().getWorkRequestList().add(request);
-            userAccount.getWorkQueue().getWorkRequestList().add(request);
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
-        isCheckOut = true;
-        order = new Order();
-        populateVaccineTable();
-        populateOrderItemTable();
-        
     }//GEN-LAST:event_checkOutButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        
-        if (isCheckOut == false) {
-            for (OrderItem orderItem : order.getOrderItemList()) {
-                orderItem.getVaccine().setAvailablity(orderItem.getItemQuantity() + orderItem.getVaccine().getAvailablity());
+        try{
+            if (isCheckOut == false) {
+                for (OrderItem orderItem : order.getOrderItemList()) {
+                    orderItem.getVaccine().setAvailablity(orderItem.getItemQuantity() + orderItem.getVaccine().getAvailablity());
+                }
             }
+
+            userProcessContainer.remove(this);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.previous(userProcessContainer);
         }
-        
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-        
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void addToOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToOrderButtonActionPerformed
         // TODO add your handling code here:
-        
-        int selectedRow = vaccineTable.getSelectedRow();
-        int quantity = (Integer) spnQuantitySpinner.getValue();
-        if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Select a row");
-            return;
-        }
-        
-        Vaccine vaccine = (Vaccine) vaccineTable.getValueAt(selectedRow, 0);
-        Boolean isIncluded = false;
-        
-        for(OrderItem oi : order.getOrderItemList()){
-            if(oi.getVaccine().getVaccineName().equals(vaccine.getVaccineName())){
-                int oldQuantity = oi.getItemQuantity();
-                int newQuantity = (Integer) spnQuantitySpinner.getValue();
-                int availablity = vaccine.getAvailablity();
-                int total_Quantity = oldQuantity + newQuantity;
-                oi.setItemQuantity(total_Quantity);
-                int new_Availablity = vaccine.getAvailablity() - newQuantity;
-                //                vaccine.setAvailablity(new_Availablity);
-                isIncluded = true;
+        try{
+            int selectedRow = vaccineTable.getSelectedRow();
+            int quantity = (Integer) spnQuantitySpinner.getValue();
+            if(selectedRow < 0){
+                JOptionPane.showMessageDialog(null, "Select a row");
+                return;
             }
+
+            Vaccine vaccine = (Vaccine) vaccineTable.getValueAt(selectedRow, 0);
+            Boolean isIncluded = false;
+
+            for(OrderItem oi : order.getOrderItemList()){
+                if(oi.getVaccine().getVaccineName().equals(vaccine.getVaccineName())){
+                    int oldQuantity = oi.getItemQuantity();
+                    int newQuantity = (Integer) spnQuantitySpinner.getValue();
+                    int availablity = vaccine.getAvailablity();
+                    int total_Quantity = oldQuantity + newQuantity;
+                    oi.setItemQuantity(total_Quantity);
+                    int new_Availablity = vaccine.getAvailablity() - newQuantity;
+                    //                vaccine.setAvailablity(new_Availablity);
+                    isIncluded = true;
+                }
+            }
+
+            if(!isIncluded){
+                OrderItem orderItem = order.addOrderItem();
+                orderItem.setVaccine(vaccine);
+                int quantity_NotIncluded = (Integer) spnQuantitySpinner.getValue();
+                orderItem.setItemQuantity(quantity_NotIncluded);
+                int new_availablity = vaccine.getAvailablity() - quantity_NotIncluded;
+            }
+
+            populateVaccineTable();
+            populateOrderItemTable();
         }
-        
-        if(!isIncluded){
-            OrderItem orderItem = order.addOrderItem();
-            orderItem.setVaccine(vaccine);
-            int quantity_NotIncluded = (Integer) spnQuantitySpinner.getValue();
-            orderItem.setItemQuantity(quantity_NotIncluded);
-            int new_availablity = vaccine.getAvailablity() - quantity_NotIncluded;
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
-        populateVaccineTable();
-        populateOrderItemTable();
-        
     }//GEN-LAST:event_addToOrderButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

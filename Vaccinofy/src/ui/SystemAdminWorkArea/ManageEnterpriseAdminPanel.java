@@ -13,6 +13,9 @@ import Business.Network.Network;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -25,6 +28,7 @@ public class ManageEnterpriseAdminPanel extends javax.swing.JPanel {
     
     private JPanel userProcessContainer;
     private Ecosystem system;
+    Pattern p;
     
     public ManageEnterpriseAdminPanel(JPanel userProcessContainer, Ecosystem system) {
         initComponents();
@@ -72,6 +76,27 @@ public class ManageEnterpriseAdminPanel extends javax.swing.JPanel {
         for(Role role : enterprise.getSupportedRole()){
             enterpriseRoleComboBox.addItem(role);
         }
+    }
+    
+    public boolean validateName(String name) {
+        String nameValidate = "[A-Za-z]{1,100}";
+        p = Pattern.compile(nameValidate);
+        Matcher matcher = p.matcher(name);
+        return matcher.matches();
+    }
+    
+    public boolean validateUsername(String username) {
+        String uservalidate = "[a-zA-Z0-9!@_]{4,100}";
+        p = Pattern.compile(uservalidate);
+        Matcher matcher = p.matcher(username);
+        return matcher.matches();
+    }
+    
+    public boolean validatePassword(String password) {
+        String passvalidate = "[a-zA-Z0-9!@_*$#%&^()-]{4,100}";
+        p = Pattern.compile(passvalidate);
+        Matcher matcher = p.matcher(password);
+        return matcher.matches();
     }
     
     /**
@@ -214,23 +239,60 @@ public class ManageEnterpriseAdminPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        Enterprise enterprise = (Enterprise) enterpriseComboBox.getSelectedItem();
-        
-        String username = userNameTextField.getText();
-        String password = String.valueOf(passwordPasswordField.getPassword());
-        String name = nameTextField.getText();
-        
-        Employee employee = enterprise.getEmployeeDirectory().createNewEmployee(name);
-        Role role = (Role) enterpriseRoleComboBox.getSelectedItem();
-        
-        UserAccount account = enterprise.getUserAccountDirectory().createNewUserAccount(username, password, employee, role);
-        populateTable();
+        try{
+            Enterprise enterprise = (Enterprise) enterpriseComboBox.getSelectedItem();
+            String username = userNameTextField.getText();
+            String password = String.valueOf(passwordPasswordField.getPassword());
+            String name = nameTextField.getText();
+            boolean nameCheck = validateName(nameTextField.getText().toString());
+            boolean userNameCheck = validateUsername(userNameTextField.getText().toString());
+            boolean passwordCheck = validatePassword(passwordPasswordField.getText().toString());
+            
+            boolean flag = enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(username);
+            
+            if(flag == false){
+                JOptionPane.showMessageDialog(userNameTextField, "User name already exists");
+            }
+            else{
+                if(username.isEmpty() || password.isEmpty() || name.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Please fill all input Fields");
+                }
+                else{
+                    if(nameCheck && userNameCheck && passwordCheck){
+                        Employee employee = enterprise.getEmployeeDirectory().createNewEmployee(name);
+                        Role role = (Role) enterpriseRoleComboBox.getSelectedItem();
+                        UserAccount account = enterprise.getUserAccountDirectory().createNewUserAccount(username, password, employee, role);
+                        populateTable();
+                        userNameTextField.setText(null);
+                        passwordPasswordField.setText(null);
+                        nameTextField.setText(null);
+                    }
+                    else if (!nameCheck){
+                        JOptionPane.showMessageDialog(null, "Invalid Admin Name !!!");
+                    }
+                    else if (!userNameCheck){
+                        JOptionPane.showMessageDialog(null, "Invalid Admin Username !!!");
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Invalid Admin Password !!!");
+                    }
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.remove(this);
-        layout.previous(userProcessContainer);
+        try{
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            userProcessContainer.remove(this);
+            layout.previous(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void enterpriseComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpriseComboBoxActionPerformed
@@ -246,7 +308,6 @@ public class ManageEnterpriseAdminPanel extends javax.swing.JPanel {
             populateEnterpriseComboBox(network);
         }
     }//GEN-LAST:event_networkComboBoxActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;

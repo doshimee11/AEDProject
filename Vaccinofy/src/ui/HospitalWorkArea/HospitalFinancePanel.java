@@ -67,10 +67,15 @@ public class HospitalFinancePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ManageDistributorPaymentPanel manageDistributorPaymentPanel = new ManageDistributorPaymentPanel(userProcessContainer, system, userAccount);
-        userProcessContainer.add("manageDistributorPaymentPanel", manageDistributorPaymentPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            ManageDistributorPaymentPanel manageDistributorPaymentPanel = new ManageDistributorPaymentPanel(userProcessContainer, system, userAccount);
+            userProcessContainer.add("manageDistributorPaymentPanel", manageDistributorPaymentPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

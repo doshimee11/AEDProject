@@ -91,12 +91,15 @@ public class PharmacyPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registerPharmacyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerPharmacyButtonActionPerformed
-        
-        RegisterPharmacyPanel registerPharmacyPanel = new RegisterPharmacyPanel(userProcessContainer, system, userAccount, providerEnterprise);
-        userProcessContainer.add("RegisterPharmacyPanel", registerPharmacyPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
+        try{
+            RegisterPharmacyPanel registerPharmacyPanel = new RegisterPharmacyPanel(userProcessContainer, system, userAccount, providerEnterprise);
+            userProcessContainer.add("RegisterPharmacyPanel", registerPharmacyPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_registerPharmacyButtonActionPerformed
 
 

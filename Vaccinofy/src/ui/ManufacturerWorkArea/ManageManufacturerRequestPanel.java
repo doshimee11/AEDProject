@@ -200,225 +200,236 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.remove(this);
-        layout.previous(userProcessContainer);
-        
+        try{
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            userProcessContainer.remove(this);
+            layout.previous(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void manufacturerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manufacturerButtonActionPerformed
-        int selectedRow = manufacturerOrderTable.getSelectedRow();
-        if (selectedRow >= 0) {
-            ManufacturerRequest manufactureRequest = (ManufacturerRequest) manufacturerOrderTable.getValueAt(selectedRow, 0);
-            UserAccount userAccount = (UserAccount) manufactureRequest.getSender();
-            int requestedQuantity = manufactureRequest.getRequestedQuantity();
-            Enterprise ent = null;
-            
-            for (Network network : system.getNetworkDirectory()) {
-                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
-                    for (UserAccount ua : enterprise.getUserAccountDirectory().getUserAccountDirectory()) {
-                        if (ua == userAccount) {
-                            ent = enterprise;
+        try{
+            int selectedRow = manufacturerOrderTable.getSelectedRow();
+            if (selectedRow >= 0) {
+                ManufacturerRequest manufactureRequest = (ManufacturerRequest) manufacturerOrderTable.getValueAt(selectedRow, 0);
+                UserAccount userAccount = (UserAccount) manufactureRequest.getSender();
+                int requestedQuantity = manufactureRequest.getRequestedQuantity();
+                Enterprise ent = null;
+
+                for (Network network : system.getNetworkDirectory()) {
+                    for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
+                        for (UserAccount ua : enterprise.getUserAccountDirectory().getUserAccountDirectory()) {
+                            if (ua == userAccount) {
+                                ent = enterprise;
+                            }
+                        }
+                    }
+                }
+
+                for (Organization organization : ent.getOrganizationDirectory().getOrganizationDirectory()) {
+                    for (Inventory inventory : organization.getInventoryDirectory().getInventoryDirectory()) {
+                        if (manufactureRequest.getOrderID() == inventory.getVaccine().getVaccineID()) {
+                            ManufacturerVaccinePanel manufactureVaccinePanel = new ManufacturerVaccinePanel(userProcessContainer, inventory, requestedQuantity);
+                            userProcessContainer.add("manufactureVaccinePanel", manufactureVaccinePanel);
+                            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                            layout.next(userProcessContainer);
+                        }
+                    }
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
+    }//GEN-LAST:event_manufacturerButtonActionPerformed
+
+    private void rejectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectButtonActionPerformed
+        try{
+            int selectedRow = manufacturerOrderTable.getSelectedRow();
+            int quantity = 0;
+            int orginalQuantity = 0;
+
+            if (selectedRow < 0) {
+                JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Rejected") {
+                JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Approved") {
+                JOptionPane.showMessageDialog(null, "This request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            ManufacturerRequest request = (ManufacturerRequest) manufacturerOrderTable.getValueAt(selectedRow, 0);
+            if (manufacturerOrderTable.getValueAt(selectedRow, 3) == null) {
+                JOptionPane.showMessageDialog(null, "This request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            int dialogButton = JOptionPane.YES_NO_OPTION;
+            int result = JOptionPane.showConfirmDialog(null, "Confirm reject?", "warning", dialogButton);
+            if (result == JOptionPane.YES_OPTION) {
+                UserAccount userAccount = (UserAccount) request.getSender();
+                Employee employee = (Employee) userAccount.getEmployee();
+                for (Order order : employee.getOrderCatalog().getOrderList()) {
+                    if (request.getOrderID() == order.getOrderID()) {
+                        order.setOrderStatus("Order rejected by National Distributor");
+                        request.setStatus("Rejected");
+                        request.setManufacturerRequest("Rejected");
+                        for (OrderItem oi : order.getOrderItemList()) {
+                            quantity = oi.getVaccine().getAvailablity();
+                            orginalQuantity = quantity + oi.getItemQuantity();
+                            oi.getVaccine().setAvailablity(orginalQuantity);
                         }
                     }
                 }
             }
             
-            for (Organization organization : ent.getOrganizationDirectory().getOrganizationDirectory()) {
-                for (Inventory inventory : organization.getInventoryDirectory().getInventoryDirectory()) {
-                    if (manufactureRequest.getOrderID() == inventory.getVaccine().getVaccineID()) {
-                        ManufacturerVaccinePanel manufactureVaccinePanel = new ManufacturerVaccinePanel(userProcessContainer, inventory, requestedQuantity);
-                        userProcessContainer.add("manufactureVaccinePanel", manufactureVaccinePanel);
-                        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-                        layout.next(userProcessContainer);
-                    }
-                }
-            }
+            populateManufactureTable();
+            JOptionPane.showMessageDialog(null, "Request rejected", "Vaccine Request", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_manufacturerButtonActionPerformed
-
-    private void rejectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectButtonActionPerformed
-        
-        int selectedRow = manufacturerOrderTable.getSelectedRow();
-        int quantity = 0;
-        int orginalQuantity = 0;
-        
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
-        if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Rejected") {
-            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Approved") {
-            JOptionPane.showMessageDialog(null, "This request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        ManufacturerRequest request = (ManufacturerRequest) manufacturerOrderTable.getValueAt(selectedRow, 0);
-        if (manufacturerOrderTable.getValueAt(selectedRow, 3) == null) {
-            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        int dialogButton = JOptionPane.YES_NO_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "Confirm reject?", "warning", dialogButton);
-        if (result == JOptionPane.YES_OPTION) {
-            UserAccount userAccount = (UserAccount) request.getSender();
-            Employee employee = (Employee) userAccount.getEmployee();
-            for (Order order : employee.getOrderCatalog().getOrderList()) {
-                if (request.getOrderID() == order.getOrderID()) {
-                    order.setOrderStatus("Order rejected by National Distributor");
-                    request.setStatus("Rejected");
-                    request.setManufacturerRequest("Rejected");
-                    for (OrderItem oi : order.getOrderItemList()) {
-                        quantity = oi.getVaccine().getAvailablity();
-                        orginalQuantity = quantity + oi.getItemQuantity();
-                        oi.getVaccine().setAvailablity(orginalQuantity);
-                    }
-                }
-            }
-        }
-        
-        populateManufactureTable();
-        JOptionPane.showMessageDialog(null, "Request rejected", "Vaccine Request", JOptionPane.INFORMATION_MESSAGE);
-        
     }//GEN-LAST:event_rejectButtonActionPerformed
 
     private void viewOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderButtonActionPerformed
-        
-        int selectedRow = manufacturerOrderTable.getSelectedRow();
-        if (selectedRow >= 0) {
-            ManufacturerRequest request = (ManufacturerRequest) manufacturerOrderTable.getValueAt(selectedRow, 0);
-            DefaultTableModel dtm = (DefaultTableModel) orderTable.getModel();
-            dtm.setRowCount(0);
-            for (Vaccine vaccine : system.getVaccineDirectory().getVaccineDirectory()) {
-                if (vaccine.getVaccineID() == request.getOrderID()) {
-                    Object[] row = new Object[3];
-                    row[0] = vaccine;
-                    row[1] = vaccine.getVaccineID();
-                    row[2] = vaccine.getDiseaseName();
-                    dtm.addRow(row);
-                }
-            }
-        }
-        else {
-            JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-    }//GEN-LAST:event_viewOrderButtonActionPerformed
-
-    private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
-        
-        int selectedRow = manufacturerOrderTable.getSelectedRow();
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        if (manufacturerOrderTable.getValueAt(selectedRow, 3) != null) {
-            JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        ManufacturerRequest request = (ManufacturerRequest) manufacturerOrderTable.getValueAt(selectedRow, 0);
-        request.setReceiver(userAccount);
-        request.setStatus("Pending");
-        UserAccount user = (UserAccount) request.getSender();
-        Employee person = (Employee) user.getEmployee();
-        for (Order order : person.getOrderCatalog().getOrderList()) {
-            if (request.getOrderID() == order.getOrderID()) {
-                order.setOrderStatus("Waiting to be approved by National Distributor");
-            }
-        }
-        
-        populateManufactureTable();
-        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
-        
-    }//GEN-LAST:event_assignButtonActionPerformed
-
-    private void forwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardButtonActionPerformed
-        
-        int selectedRow = manufacturerOrderTable.getSelectedRow();
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Approved") {
-            JOptionPane.showMessageDialog(null, "This request is sent to State Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Rejected") {
-            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        ManufacturerRequest request = (ManufacturerRequest) manufacturerOrderTable.getValueAt(selectedRow, 0);
-        if (manufacturerOrderTable.getValueAt(selectedRow, 3) == null) {
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        request.setStatus("Approved");
-        request.setManufacturerRequest("Approved");
-        UserAccount user = (UserAccount) request.getSender();
-        Employee employee = (Employee) user.getEmployee();
-        
-        for (Order order : employee.getOrderCatalog().getOrderList()) {
-            if (request.getOrderID() == order.getOrderID()) {
-                order.setOrderStatus("Approved by National Distributor");
-            }
-        }
-        
-        ManufacturerRequest manufactureRequest = new ManufacturerRequest();
-        manufactureRequest.setRequestType("Manufacture Vaccine Request");
-        manufactureRequest.setStatus("waiting");
-        manufactureRequest.setSender(request.getSender());
-        manufactureRequest.setOrderID(request.getOrderID());
-        manufactureRequest.setReceiver(null);
-        manufactureRequest.setRequestedQuantity(request.getRequestedQuantity());
-        Enterprise e = null;
-        Network net = null;
-        Organization org = null;
-        
-        for (Network network : system.getNetworkDirectory()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
-                for (UserAccount userAccount1 : enterprise.getUserAccountDirectory().getUserAccountDirectory()) {
-                    if (userAccount == userAccount1) {
-                        net = network;
-                        break;
+        try{
+            int selectedRow = manufacturerOrderTable.getSelectedRow();
+            if (selectedRow >= 0) {
+                ManufacturerRequest request = (ManufacturerRequest) manufacturerOrderTable.getValueAt(selectedRow, 0);
+                DefaultTableModel dtm = (DefaultTableModel) orderTable.getModel();
+                dtm.setRowCount(0);
+                for (Vaccine vaccine : system.getVaccineDirectory().getVaccineDirectory()) {
+                    if (vaccine.getVaccineID() == request.getOrderID()) {
+                        Object[] row = new Object[3];
+                        row[0] = vaccine;
+                        row[1] = vaccine.getVaccineID();
+                        row[2] = vaccine.getDiseaseName();
+                        dtm.addRow(row);
                     }
                 }
             }
-        }
-        
-        for (Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()) {
-            if (ent instanceof VaccineManufacturerEnterprise) {
-                e = ent;
-                break;
+            else {
+                JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
             }
         }
-        
-        for (Organization organization: e.getOrganizationDirectory().getOrganizationDirectory()) {
-            if (organization instanceof FinanceOrganization) {
-                org = organization;
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
+    }//GEN-LAST:event_viewOrderButtonActionPerformed
+
+    private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
+        try{
+            int selectedRow = manufacturerOrderTable.getSelectedRow();
+            if (selectedRow < 0) {
+                JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
             }
+            if (manufacturerOrderTable.getValueAt(selectedRow, 3) != null) {
+                JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            ManufacturerRequest request = (ManufacturerRequest) manufacturerOrderTable.getValueAt(selectedRow, 0);
+            request.setReceiver(userAccount);
+            request.setStatus("Pending");
+            UserAccount user = (UserAccount) request.getSender();
+            Employee person = (Employee) user.getEmployee();
+            for (Order order : person.getOrderCatalog().getOrderList()) {
+                if (request.getOrderID() == order.getOrderID()) {
+                    order.setOrderStatus("Waiting to be approved by National Distributor");
+                }
+            }
+
+            populateManufactureTable();
+            JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
         }
-        
-        if (org!= null) {
-            org.getWorkQueue().getWorkRequestList().add(manufactureRequest);
-            userAccount.getWorkQueue().getWorkRequestList().add(manufactureRequest);
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
-        populateManufactureTable();
-        
+    }//GEN-LAST:event_assignButtonActionPerformed
+
+    private void forwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardButtonActionPerformed
+        try{
+            int selectedRow = manufacturerOrderTable.getSelectedRow();
+            if (selectedRow < 0) {
+                JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Approved") {
+                JOptionPane.showMessageDialog(null, "This request is sent to State Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (manufacturerOrderTable.getValueAt(selectedRow, 4) == "Rejected") {
+                JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            ManufacturerRequest request = (ManufacturerRequest) manufacturerOrderTable.getValueAt(selectedRow, 0);
+            if (manufacturerOrderTable.getValueAt(selectedRow, 3) == null) {
+                JOptionPane.showMessageDialog(null, "The request is yet to be assigned to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            request.setStatus("Approved");
+            request.setManufacturerRequest("Approved");
+            UserAccount user = (UserAccount) request.getSender();
+            Employee employee = (Employee) user.getEmployee();
+
+            for (Order order : employee.getOrderCatalog().getOrderList()) {
+                if (request.getOrderID() == order.getOrderID()) {
+                    order.setOrderStatus("Approved by National Distributor");
+                }
+            }
+
+            ManufacturerRequest manufactureRequest = new ManufacturerRequest();
+            manufactureRequest.setRequestType("Manufacture Vaccine Request");
+            manufactureRequest.setStatus("waiting");
+            manufactureRequest.setSender(request.getSender());
+            manufactureRequest.setOrderID(request.getOrderID());
+            manufactureRequest.setReceiver(null);
+            manufactureRequest.setRequestedQuantity(request.getRequestedQuantity());
+            Enterprise e = null;
+            Network net = null;
+            Organization org = null;
+
+            for (Network network : system.getNetworkDirectory()) {
+                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
+                    for (UserAccount userAccount1 : enterprise.getUserAccountDirectory().getUserAccountDirectory()) {
+                        if (userAccount == userAccount1) {
+                            net = network;
+                            break;
+                        }
+                    }
+                }
+            }
+            for (Enterprise ent : net.getEnterpriseDirectory().getEnterprisesDirectory()) {
+                if (ent instanceof VaccineManufacturerEnterprise) {
+                    e = ent;
+                    break;
+                }
+            }
+            for (Organization organization: e.getOrganizationDirectory().getOrganizationDirectory()) {
+                if (organization instanceof FinanceOrganization) {
+                    org = organization;
+                }
+            }
+            if (org!= null) {
+                org.getWorkQueue().getWorkRequestList().add(manufactureRequest);
+                userAccount.getWorkQueue().getWorkRequestList().add(manufactureRequest);
+            }
+
+            populateManufactureTable();
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_forwardButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

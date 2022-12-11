@@ -138,41 +138,44 @@ public class ViewPharmacyOrderHistoryPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
-        
-        int selectedRow = orderIDTable.getSelectedRow();
-        if(selectedRow >= 0){
-            int orderId = (Integer) orderIDTable.getValueAt(selectedRow, 0);
-            DefaultTableModel dtm = (DefaultTableModel) vaccineTable.getModel();
-            dtm.setRowCount(0);
-            Order orderI = null;
-            for(Order order : userAccount.getEmployee().getOrderCatalog().getOrderList()){
-                if(orderId == order.getOrderID()){
-                    orderI = order;
+        try{
+            int selectedRow = orderIDTable.getSelectedRow();
+            if(selectedRow >= 0){
+                int orderId = (Integer) orderIDTable.getValueAt(selectedRow, 0);
+                DefaultTableModel dtm = (DefaultTableModel) vaccineTable.getModel();
+                dtm.setRowCount(0);
+                Order orderI = null;
+                for(Order order : userAccount.getEmployee().getOrderCatalog().getOrderList()){
+                    if(orderId == order.getOrderID()){
+                        orderI = order;
+                    }
+                }
+                for(OrderItem orderItem : orderI.getOrderItemList()){
+                    Object[] row = new Object[2];
+                    row[0] = orderItem;
+                    row[1] = orderItem.getItemQuantity();
+                    dtm.addRow(row);
                 }
             }
-            
-            for(OrderItem orderItem : orderI.getOrderItemList()){
-                Object[] row = new Object[2];
-                row[0] = orderItem;
-                row[1] = orderItem.getItemQuantity();
-                dtm.addRow(row);
+            else {
+                JOptionPane.showMessageDialog(null, "Select a row first", "View Order", JOptionPane.WARNING_MESSAGE);
             }
         }
-        else {
-            JOptionPane.showMessageDialog(null, "Select a row first", "View Order", JOptionPane.WARNING_MESSAGE);
-            return;
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
-        
     }//GEN-LAST:event_viewButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-        
+        try{
+            userProcessContainer.remove(this);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.previous(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_backButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;

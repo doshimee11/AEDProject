@@ -10,6 +10,8 @@ import Business.Ecosystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import java.awt.CardLayout;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -23,6 +25,7 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private Ecosystem system;
+    Pattern p;
     
     public ManageEnterprisePanel(JPanel userProcessContainer, Ecosystem system) {
         initComponents();
@@ -58,6 +61,27 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
                 dtm.addRow(row);
             }
         }
+    }
+    
+    public boolean validateName(String name) {
+        String nameValidate = "[A-Za-z]{1,100}";
+        p = Pattern.compile(nameValidate);
+        Matcher matcher = p.matcher(name);
+        return matcher.matches();
+    }
+    
+    public boolean validateUsername(String username) {
+        String uservalidate = "[a-zA-Z0-9!@_]{4,100}";
+        p = Pattern.compile(uservalidate);
+        Matcher matcher = p.matcher(username);
+        return matcher.matches();
+    }
+    
+    public boolean validatePassword(String password) {
+        String passvalidate = "[a-zA-Z0-9!@_*$#%&^()-]{4,100}";
+        p = Pattern.compile(passvalidate);
+        Matcher matcher = p.matcher(password);
+        return matcher.matches();
     }
     
     /**
@@ -149,16 +173,31 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        Network network = (Network) networkComboBox.getSelectedItem();
-        Enterprise.EnterpriseType type = (Enterprise.EnterpriseType)enterpriseTypeComboBox.getSelectedItem();
-        if (network == null || type == null){
-            JOptionPane.showMessageDialog(null, "Invalid input");
-            return;
+        try{
+            Network network = (Network) networkComboBox.getSelectedItem();
+            Enterprise.EnterpriseType type = (Enterprise.EnterpriseType)enterpriseTypeComboBox.getSelectedItem();
+            if (network == null || type == null){
+                JOptionPane.showMessageDialog(null, "Invalid input");
+                return;
+            }
+            String name = enterpriseNameTextField.getText();
+            boolean nameCheck = validateName(enterpriseNameTextField.getText().toString());
+            if (name.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Please Enter Enterprise Name !!!");
+            }
+            else{
+                if(nameCheck){
+                    Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+                    populateTable();
+                    enterpriseNameTextField.setText(null);
+                }else{
+                    JOptionPane.showMessageDialog(null, "Invalid Enterprise Name !!!");
+                }
+            }
         }
-        String name = enterpriseNameTextField.getText();
-        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
-        
-        populateTable();
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
@@ -166,7 +205,6 @@ public class ManageEnterprisePanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;

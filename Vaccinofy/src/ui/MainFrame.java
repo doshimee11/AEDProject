@@ -146,58 +146,68 @@ public class MainFrame extends javax.swing.JFrame {
         UserAccount userAccount = system.getUserAccountDirectory().authenticateUserAccount(userName, password);
         Enterprise inEnterprise = null;
         Organization inOrganization = null;
-        if (userAccount == null) {
+        
+        try{
+            if (userAccount == null) {
             //Step2: Go inside each network to check each enterprise
-            for (Network network : system.getNetworkDirectory()) {
-                //Step 2-a: Check against each enterprise
-                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
-                    userAccount = enterprise.getUserAccountDirectory().authenticateUserAccount(userName, password);
-                    if (userAccount == null) {
-                        //Step3: Check against each organization inside that enterprise
-                        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
-                            userAccount = organization.getUserAccountDirectory().authenticateUserAccount(userName, password);
-                            if (userAccount != null) {
-                                inEnterprise = enterprise;
-                                inOrganization = organization;
-                                break;
+                for (Network network : system.getNetworkDirectory()) {
+                    //Step 2-a: Check against each enterprise
+                    for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()) {
+                        userAccount = enterprise.getUserAccountDirectory().authenticateUserAccount(userName, password);
+                        if (userAccount == null) {
+                            //Step3: Check against each organization inside that enterprise
+                            for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationDirectory()) {
+                                userAccount = organization.getUserAccountDirectory().authenticateUserAccount(userName, password);
+                                if (userAccount != null) {
+                                    inEnterprise = enterprise;
+                                    inOrganization = organization;
+                                    break;
+                                }
                             }
+                        } else {
+                            inEnterprise = enterprise;
+                            break;
                         }
-                    } else {
-                        inEnterprise = enterprise;
+                        if (inOrganization != null) {
+                            break;
+                        }
+                    }
+                    if (inEnterprise != null) {
                         break;
                     }
-                    if (inOrganization != null) {
-                        break;
-                    }
-                }
-                if (inEnterprise != null) {
-                    break;
                 }
             }
-        }
 
-        if (userAccount == null) {
-            JOptionPane.showMessageDialog(null, "Invalid Credentails!");
-            userProcessContainer.removeAll();
-            userProcessContainer.repaint();
-            userNameJTextField.setText(null);
-            passwordJPasswordField.setText(null);
-            return;
-        } else {
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            userProcessContainer.add("workArea", userAccount.getRole().createWorkArea(userProcessContainer, userAccount, inOrganization, inEnterprise, system));
-            layout.next(userProcessContainer);
-            userNameJTextField.setText(null);
-            passwordJPasswordField.setText(null);
+            if (userAccount == null) {
+                JOptionPane.showMessageDialog(null, "Invalid Credentails!");
+                userProcessContainer.removeAll();
+                userProcessContainer.repaint();
+                userNameJTextField.setText(null);
+                passwordJPasswordField.setText(null);
+                return;
+            } else {
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                userProcessContainer.add("workArea", userAccount.getRole().createWorkArea(userProcessContainer, userAccount, inOrganization, inEnterprise, system));
+                layout.next(userProcessContainer);
+                userNameJTextField.setText(null);
+                passwordJPasswordField.setText(null);
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
         }
     }//GEN-LAST:event_loginJButtonActionPerformed
 
     private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed
-        userProcessContainer.removeAll();
-        userNameJTextField.setText(null);
-        passwordJPasswordField.setText(null);
-        
-        dB4OUtil.storeSystem(system);
+        try{
+            userProcessContainer.removeAll();
+            userNameJTextField.setText(null);
+            passwordJPasswordField.setText(null);
+            dB4OUtil.storeSystem(system);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_logoutJButtonActionPerformed
 
     /**

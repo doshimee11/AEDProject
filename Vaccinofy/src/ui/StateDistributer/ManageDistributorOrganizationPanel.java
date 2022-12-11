@@ -10,6 +10,9 @@ import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -26,6 +29,7 @@ public class ManageDistributorOrganizationPanel extends javax.swing.JPanel {
     
     private JPanel userProcessContainer;
     private DistributorEnterprise distributorEnterprise;
+    Pattern p;
     
     public ManageDistributorOrganizationPanel(JPanel userProcessContainer, DistributorEnterprise distributorEnterprise) {
         initComponents();
@@ -66,6 +70,27 @@ public class ManageDistributorOrganizationPanel extends javax.swing.JPanel {
             if(role.toString().contains("Distributor"))
             roleComboBox.addItem(role);
         }
+    }
+    
+    public boolean validateName(String name) {
+        String nameValidate = "[A-Za-z]{1,100}";
+        p = Pattern.compile(nameValidate);
+        Matcher matcher = p.matcher(name);
+        return matcher.matches();
+    }
+    
+    public boolean validateUsername(String username) {
+        String uservalidate = "[a-zA-Z0-9!@_]{4,100}";
+        p = Pattern.compile(uservalidate);
+        Matcher matcher = p.matcher(username);
+        return matcher.matches();
+    }
+    
+    public boolean validatePassword(String password) {
+        String passvalidate = "[a-zA-Z0-9!@_*$#%&^()-]{4,100}";
+        p = Pattern.compile(passvalidate);
+        Matcher matcher = p.matcher(password);
+        return matcher.matches();
     }
     
     /**
@@ -250,7 +275,7 @@ public class ManageDistributorOrganizationPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 187, -1, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Employee.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -265,23 +290,54 @@ public class ManageDistributorOrganizationPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_organizationComboBoxActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        
-        String userName = userNameTextField.getText();
-        String password = String.valueOf(passwordPasswordField.getPassword());
-        String empName = nameTextField.getText();
-        Organization organization = (Organization) organizationComboBox.getSelectedItem();
-        Role role = (Role) roleComboBox.getSelectedItem();
-        Employee employee = distributorEnterprise.getEmployeeDirectory().createNewEmployee(empName);
-        organization.getUserAccountDirectory().createNewUserAccount(userName, password, employee, role);
-        
-        populateTable();
-        
+        try{
+            String userName = userNameTextField.getText();
+            String password = String.valueOf(passwordPasswordField.getPassword());
+            String empName = nameTextField.getText();
+            boolean nameCheck = validateName(nameTextField.getText().toString());
+            boolean userNameCheck = validateUsername(userNameTextField.getText().toString());
+            boolean passwordCheck = validatePassword(passwordPasswordField.getText().toString());
+            
+            if(userName.isEmpty() || password.isEmpty() || empName.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Please fill all input Fields");
+            }
+            else{
+                if(nameCheck && userNameCheck && passwordCheck){
+                    Organization organization = (Organization) organizationComboBox.getSelectedItem();
+                    Role role = (Role) roleComboBox.getSelectedItem();
+                    Employee employee = distributorEnterprise.getEmployeeDirectory().createNewEmployee(empName);
+                    organization.getUserAccountDirectory().createNewUserAccount(userName, password, employee, role);
+                    
+                    userNameTextField.setText(null);
+                    passwordPasswordField.setText(null);
+                    nameTextField.setText(null);
+                    populateTable();
+                }
+                else if (!nameCheck){
+                    JOptionPane.showMessageDialog(null, "Invalid Name Format!!!");
+                }
+                else if (!userNameCheck){
+                    JOptionPane.showMessageDialog(null, "Invalid Username Format!!!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid Password Format!!!");
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.remove(this);
-        layout.previous(userProcessContainer);
+        try{
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            userProcessContainer.remove(this);
+            layout.previous(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("Exception executed" + e);
+        }
     }//GEN-LAST:event_backButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
