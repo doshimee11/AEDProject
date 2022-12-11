@@ -79,9 +79,13 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
         payBillButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         billTable = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Manufacture Payment");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 19, -1, -1));
 
         manufacturerPaymentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -104,29 +108,37 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(manufacturerPaymentTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 66, 860, 200));
+
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
         viewOrderButton.setText("View Bill");
         viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewOrderButtonActionPerformed(evt);
             }
         });
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 140, 50));
 
         assignButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
         assignButton.setText("Assign to me");
         assignButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignButtonActionPerformed(evt);
             }
         });
+        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 180, 50));
 
         payBillButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        payBillButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Paybill.jpg"))); // NOI18N
         payBillButton.setText("Pay Bill");
         payBillButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 payBillButtonActionPerformed(evt);
             }
         });
+        add(payBillButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 300, 130, 50));
 
         billTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -146,46 +158,11 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(billTable);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jScrollPane1)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(186, 186, 186)
-                                .addComponent(jLabel1))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(viewOrderButton)
-                        .addGap(77, 77, 77)
-                        .addComponent(assignButton)
-                        .addGap(77, 77, 77)
-                        .addComponent(payBillButton)))
-                .addContainerGap(378, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewOrderButton)
-                    .addComponent(payBillButton)
-                    .addComponent(assignButton))
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(556, Short.MAX_VALUE))
-        );
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 860, 190));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ManufacturerOrganization.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -3, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderButtonActionPerformed
@@ -210,7 +187,7 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
 
         }
         else {
-            JOptionPane.showMessageDialog(null, "Please select a row", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
     }//GEN-LAST:event_viewOrderButtonActionPerformed
@@ -219,12 +196,12 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
         int selectedRow = manufacturerPaymentTable.getSelectedRow();
 
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if (manufacturerPaymentTable.getValueAt(selectedRow, 2) != null) {
-            JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -241,24 +218,24 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
         
         populateManufacturePaymentTable();
         
-        JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
     }//GEN-LAST:event_assignButtonActionPerformed
 
     private void payBillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payBillButtonActionPerformed
         int selectedRow = manufacturerPaymentTable.getSelectedRow();
 
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if (manufacturerPaymentTable.getValueAt(selectedRow, 3) == "Paid") {
-            JOptionPane.showMessageDialog(null, "The bill is already Paid", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This bill is paid", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if (manufacturerPaymentTable.getValueAt(selectedRow, 2) == null) {
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -273,6 +250,7 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
     private javax.swing.JButton assignButton;
     private javax.swing.JTable billTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable manufacturerPaymentTable;

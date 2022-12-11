@@ -100,41 +100,53 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         messageJTable = new javax.swing.JTable();
         providerJComboBox = new javax.swing.JComboBox();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
         assignJButton.setText("Assign to Me");
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignJButtonActionPerformed(evt);
             }
         });
+        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 180, 40));
 
         approveJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        approveJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Order History Icon.jpg"))); // NOI18N
         approveJButton.setText("Approve Enrollment");
         approveJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 approveJButtonActionPerformed(evt);
             }
         });
+        add(approveJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 230, 40));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backJButton.setText("<< Back");
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, 130, 50));
 
         rejectJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rejectJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Remove (1).jpg"))); // NOI18N
         rejectJButton.setText("Reject Enrollment");
         rejectJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rejectJButtonActionPerformed(evt);
             }
         });
+        add(rejectJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 230, 50));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Enrollment Request");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 31, -1, -1));
 
         messageJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -154,67 +166,31 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(messageJTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 133, 476, 191));
+
         providerJComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         providerJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 providerJComboBoxActionPerformed(evt);
             }
         });
+        add(providerJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 87, 171, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backJButton)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane1)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(assignJButton)
-                            .addGap(159, 159, 159)
-                            .addComponent(approveJButton)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(305, 305, 305)
-                        .addComponent(rejectJButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addComponent(jLabel1))
-                    .addComponent(providerJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(533, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1)
-                .addGap(27, 27, 27)
-                .addComponent(providerJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assignJButton)
-                    .addComponent(approveJButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rejectJButton)
-                .addGap(49, 49, 49)
-                .addComponent(backJButton)
-                .addContainerGap(507, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
         int selectedRow = messageJTable.getSelectedRow();
 
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(messageJTable.getValueAt(selectedRow, 3) != null){
-            JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -226,30 +202,30 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
         } else if(request.getSender().getEmployee().getCheck().equalsIgnoreCase("Pharmacy")){
             populatePharmacyTable();
         }
-        JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
     }//GEN-LAST:event_assignJButtonActionPerformed
 
     private void approveJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveJButtonActionPerformed
         int selectedRow = messageJTable.getSelectedRow();
 
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(messageJTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is already approved", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "The request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(messageJTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         EnrollmentRequest request = (EnrollmentRequest) messageJTable.getValueAt(selectedRow, 0);
         if(messageJTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the State PHD", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to the Health Dept", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         UserAccount userAccount = (UserAccount) request.getSender();
@@ -264,7 +240,7 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
             employee.getPharmacy().setPharmacyStatus("Approved");
             populatePharmacyTable();
         }
-        JOptionPane.showMessageDialog(null, "The request is approved", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "This request is approved", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_approveJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -277,27 +253,27 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
         int selectedRow = messageJTable.getSelectedRow();
 
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(messageJTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(messageJTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is already Approved", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         EnrollmentRequest request = (EnrollmentRequest) messageJTable.getValueAt(selectedRow, 0);
         if(messageJTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the State PHD", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to the Health Dept", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "Are you sure if you want to Reject?", "warning", dialogButton);
+        int result = JOptionPane.showConfirmDialog(null, "Confirm reject?", "warning", dialogButton);
         if(result == JOptionPane.YES_OPTION){
             UserAccount userAccount = (UserAccount) request.getSender();
             Employee employee = (Employee) userAccount.getEmployee();
@@ -312,7 +288,7 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
                 populatePharmacyTable();
             }
 
-            JOptionPane.showMessageDialog(null, "The request is rejected", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_rejectJButtonActionPerformed
 
@@ -332,6 +308,7 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
     private javax.swing.JButton assignJButton;
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable messageJTable;
     private javax.swing.JComboBox providerJComboBox;

@@ -75,9 +75,13 @@ public class RegisterPharmacyPanel extends javax.swing.JPanel {
         refreshButton = new javax.swing.JButton();
         enrollmentButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Register Pharmacy");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 6, -1, -1));
 
         hospitalEnrollmentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -97,13 +101,17 @@ public class RegisterPharmacyPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(hospitalEnrollmentTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 59, 580, 160));
+
         refreshButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        refreshButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Refresh (2).png"))); // NOI18N
         refreshButton.setText("Refresh");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshButtonActionPerformed(evt);
             }
         });
+        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 170, 50));
 
         enrollmentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         enrollmentButton.setText("Enrollment Request");
@@ -112,49 +120,21 @@ public class RegisterPharmacyPanel extends javax.swing.JPanel {
                 enrollmentButtonActionPerformed(evt);
             }
         });
+        add(enrollmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 190, 50));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< Back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 170, 50));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(206, 206, 206)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(backButton, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(refreshButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(enrollmentButton))))
-                .addContainerGap(542, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(enrollmentButton)
-                    .addComponent(refreshButton))
-                .addGap(161, 161, 161)
-                .addComponent(backButton)
-                .addContainerGap(571, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -1, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
@@ -165,10 +145,10 @@ public class RegisterPharmacyPanel extends javax.swing.JPanel {
         
         for(WorkRequest workRequest: userAccount.getWorkQueue().getWorkRequestList()){
             if(workRequest.getStatus().equalsIgnoreCase("Approved")){
-                JOptionPane.showMessageDialog(null, "Enrollment request is already approved", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Enrollment request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             } else if(workRequest.getStatus().equalsIgnoreCase("sent")){
-                JOptionPane.showMessageDialog(null, "Enrollment request is already sent and waiting to be approved", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Enrollment request is sent and waiting to be approved", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
         }
@@ -205,7 +185,7 @@ public class RegisterPharmacyPanel extends javax.swing.JPanel {
             populateTable();
         }
         
-        JOptionPane.showMessageDialog(null, "Enrolment is requested successfully", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Enrollment is requested successfully", "Enrollment Request", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_enrollmentButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
@@ -221,6 +201,7 @@ public class RegisterPharmacyPanel extends javax.swing.JPanel {
     private javax.swing.JButton enrollmentButton;
     private javax.swing.JTable hospitalEnrollmentTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshButton;
     // End of variables declaration//GEN-END:variables

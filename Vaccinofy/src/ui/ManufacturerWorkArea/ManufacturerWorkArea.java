@@ -47,51 +47,38 @@ public class ManufacturerWorkArea extends javax.swing.JPanel {
         manageManufacturerRqstButton = new javax.swing.JButton();
         manageManufactureOrgButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         manageManufacturerRqstButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageManufacturerRqstButton.setText("Manage Manufacture Request >>");
+        manageManufacturerRqstButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ManufactureVaccine.jpg"))); // NOI18N
+        manageManufacturerRqstButton.setText("Manage Manufacture Request ");
         manageManufacturerRqstButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageManufacturerRqstButtonActionPerformed(evt);
             }
         });
+        add(manageManufacturerRqstButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 106, 360, 50));
 
         manageManufactureOrgButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageManufactureOrgButton.setText("Manage Manufacture Organization >>");
+        manageManufactureOrgButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ManufactureVaccine.jpg"))); // NOI18N
+        manageManufactureOrgButton.setText("Manage Manufacture Organization ");
         manageManufactureOrgButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageManufactureOrgButtonActionPerformed(evt);
             }
         });
+        add(manageManufactureOrgButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 211, 370, 50));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Manufacturer Work Area");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 18, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(324, 324, 324)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(manageManufacturerRqstButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(manageManufactureOrgButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel1)))
-                .addContainerGap(543, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(59, 59, 59)
-                .addComponent(manageManufacturerRqstButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addComponent(manageManufactureOrgButton)
-                .addContainerGap(760, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -5, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageManufacturerRqstButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageManufacturerRqstButtonActionPerformed
@@ -114,6 +101,7 @@ public class ManufacturerWorkArea extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton manageManufactureOrgButton;
     private javax.swing.JButton manageManufacturerRqstButton;
     // End of variables declaration//GEN-END:variables

@@ -65,9 +65,14 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
         vaccineIDLabel = new javax.swing.JLabel();
         vaccineIdTextField = new javax.swing.JTextField();
         searchVaccineButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Manage Vaccine");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 26, -1, -1));
 
         vaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,21 +97,27 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
             vaccineTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 73, 710, 141));
+
         refreshButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        refreshButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Refresh (2).png"))); // NOI18N
         refreshButton.setText("Refresh");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshButtonActionPerformed(evt);
             }
         });
+        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
 
         removeVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        removeVaccineButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Remove (1).jpg"))); // NOI18N
         removeVaccineButton.setText("Remove Vaccine");
         removeVaccineButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeVaccineButtonActionPerformed(evt);
             }
         });
+        add(removeVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 210, 50));
 
         addVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addVaccineButton.setText("Add Vaccine");
@@ -115,27 +126,34 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
                 addVaccineButtonActionPerformed(evt);
             }
         });
+        add(addVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 262, 130, 50));
 
         viewVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewVaccineButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View.jpg"))); // NOI18N
         viewVaccineButton.setText("View Vaccine");
         viewVaccineButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewVaccineButtonActionPerformed(evt);
             }
         });
+        add(viewVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 260, 170, 50));
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 396, 110, 40));
 
         vaccineIDLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         vaccineIDLabel.setText("Vaccine ID :");
+        add(vaccineIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, -1, -1));
 
         vaccineIdTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(vaccineIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 126, -1));
 
         searchVaccineButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         searchVaccineButton.setText("Search Vaccine");
@@ -144,61 +162,11 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
                 searchVaccineButtonActionPerformed(evt);
             }
         });
+        add(searchVaccineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 343, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(361, 361, 361)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(refreshButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(removeVaccineButton)
-                                    .addComponent(vaccineIDLabel))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(vaccineIdTextField)
-                                    .addComponent(addVaccineButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(46, 46, 46)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(viewVaccineButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(searchVaccineButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(backButton)))
-                .addContainerGap(99, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(refreshButton)
-                    .addComponent(removeVaccineButton)
-                    .addComponent(addVaccineButton)
-                    .addComponent(viewVaccineButton))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(vaccineIDLabel)
-                    .addComponent(vaccineIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchVaccineButton))
-                .addGap(24, 24, 24)
-                .addComponent(backButton)
-                .addContainerGap(169, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 3, 920, 590));
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
@@ -208,16 +176,16 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
     private void removeVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeVaccineButtonActionPerformed
         int row = vaccineTable.getSelectedRow();
         if(row < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         else { 
             Vaccine vaccine = (Vaccine)vaccineTable.getValueAt(row, 0);
             int dialogButton = JOptionPane.YES_NO_OPTION;
-            int result = JOptionPane.showConfirmDialog(null, "Are you sure if you want to delete?", "warning", dialogButton);
+            int result = JOptionPane.showConfirmDialog(null, "Confirm delete?", "warning", dialogButton);
             if(result == JOptionPane.YES_OPTION){
                 system.getVaccineDirectory().removeOldVaccine(vaccine);
-                JOptionPane.showMessageDialog(null, "Vaccine is removed!", "Vaccine Supplier",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Vaccine removed", "Vaccine Supplier",JOptionPane.INFORMATION_MESSAGE);
                 populateTable();
             }
         }
@@ -253,7 +221,7 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
 
     private void searchVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchVaccineButtonActionPerformed
         if(vaccineIdTextField.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Please type the Vaccine ID to be searched.", "Search Vaccine", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Type the Vaccine ID to search.", "Search Vaccine", JOptionPane.WARNING_MESSAGE);
             return;
         }
         try{ 
@@ -261,7 +229,7 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
             int vaccineId = Integer.parseInt(vaccineIdTextField.getText());
             vaccine = system.getVaccineDirectory().searchVaccine(vaccineId);
             if (vaccine == null){
-                JOptionPane.showMessageDialog(null, "Please Input a valid Vaccine ID", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Use a valid Vaccine ID", "Warning", JOptionPane.WARNING_MESSAGE);
                 vaccineIdTextField.setText(null);
                 return;
             }
@@ -281,6 +249,7 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
     private javax.swing.JButton addVaccineButton;
     private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshButton;
     private javax.swing.JButton removeVaccineButton;

@@ -46,41 +46,27 @@ public class HospitalPanel extends javax.swing.JPanel {
 
         titleJLabel = new javax.swing.JLabel();
         registerHospitalButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        titleJLabel.setText("Hospital Work Area");
+        titleJLabel.setText("Hospital ");
+        add(titleJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 200, -1));
 
         registerHospitalButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        registerHospitalButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RegisterHospital.jpg"))); // NOI18N
         registerHospitalButton.setText("Register Hospital");
         registerHospitalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerHospitalButtonActionPerformed(evt);
             }
         });
+        add(registerHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 240, 60));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(325, 325, 325)
-                        .addComponent(titleJLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(288, 288, 288)
-                        .addComponent(registerHospitalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(titleJLabel)
-                .addGap(60, 60, 60)
-                .addComponent(registerHospitalButton)
-                .addContainerGap(859, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -2, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void registerHospitalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerHospitalButtonActionPerformed
@@ -93,6 +79,7 @@ public class HospitalPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_registerHospitalButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton registerHospitalButton;
     private javax.swing.JLabel titleJLabel;
     // End of variables declaration//GEN-END:variables

@@ -76,9 +76,14 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
         orderTable = new javax.swing.JTable();
         backButton = new javax.swing.JButton();
         rejectButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Manage Vaccine Request");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(369, 19, -1, -1));
 
         vaccineOrderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,21 +113,27 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
             vaccineOrderTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 66, 730, 126));
+
         viewOrderButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ViewOrder (1).png"))); // NOI18N
         viewOrderButton.setText("View Order");
         viewOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewOrderButtonActionPerformed(evt);
             }
         });
+        add(viewOrderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 140, 50));
 
         assignButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Assign.jpg"))); // NOI18N
         assignButton.setText("Assign to me");
         assignButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignButtonActionPerformed(evt);
             }
         });
+        add(assignButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 170, 50));
 
         forwardButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         forwardButton.setText("Forward to National Distributor");
@@ -131,6 +142,7 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
                 forwardButtonActionPerformed(evt);
             }
         });
+        add(forwardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 225, -1, 40));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -154,66 +166,31 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
             orderTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 299, 730, 146));
+
         backButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backButton.setText("<< Back");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back.jpg"))); // NOI18N
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 497, 110, 40));
 
         rejectButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rejectButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Remove (1).jpg"))); // NOI18N
         rejectButton.setText("Reject");
         rejectButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rejectButtonActionPerformed(evt);
             }
         });
+        add(rejectButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 220, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(backButton)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(viewOrderButton)
-                                .addGap(47, 47, 47)
-                                .addComponent(assignButton)
-                                .addGap(36, 36, 36)
-                                .addComponent(forwardButton)
-                                .addGap(8, 8, 8)
-                                .addComponent(rejectButton))
-                            .addComponent(jScrollPane1)
-                            .addComponent(jScrollPane2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(369, 369, 369)
-                        .addComponent(jLabel1)))
-                .addContainerGap(333, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewOrderButton)
-                    .addComponent(assignButton)
-                    .addComponent(forwardButton)
-                    .addComponent(rejectButton))
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(backButton)
-                .addContainerGap(338, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, -3, 1210, 870));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderButtonActionPerformed
@@ -239,7 +216,7 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
             }
         }
         else {
-            JOptionPane.showMessageDialog(null, "Please select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
     }//GEN-LAST:event_viewOrderButtonActionPerformed
@@ -247,11 +224,11 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
     private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
         int selectedRow = vaccineOrderTable.getSelectedRow();
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         if(vaccineOrderTable.getValueAt(selectedRow, 3) != null){
-            JOptionPane.showMessageDialog(null, "The request is already assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -262,32 +239,32 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
         Employee person = (Employee) userAccount.getEmployee();
         for(Order order : person.getOrderCatalog().getOrderList()){
             if(request.getOrderID() == order.getOrderID()){
-                order.setOrderStatus("Waiting to be approved by CDC");
+                order.setOrderStatus("Waiting to be approved by Distributor");
             }
         }
         
         populateVaccineOrderTable();
         
-        JOptionPane.showMessageDialog(null, "The request is assigned to " + request.getReceiver());
+        JOptionPane.showMessageDialog(null, "This request is assigned to " + request.getReceiver());
     }//GEN-LAST:event_assignButtonActionPerformed
 
     private void forwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardButtonActionPerformed
         int selectedRow = vaccineOrderTable.getSelectedRow();
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is already sent to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is sent to National Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         VaccineRequest request = (VaccineRequest) vaccineOrderTable.getValueAt(selectedRow, 0);
         if(vaccineOrderTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to CDC", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         request.setStatus("Approved");
@@ -326,33 +303,33 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
         int orginalQuantity = 0;
 
         if(selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select a row from table.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Rejected"){
-            JOptionPane.showMessageDialog(null, "The request is already rejected", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is rejected", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if(vaccineOrderTable.getValueAt(selectedRow, 4) == "Approved"){
-            JOptionPane.showMessageDialog(null, "The request is already Approved", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is approved", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         VaccineRequest request = (VaccineRequest) vaccineOrderTable.getValueAt(selectedRow, 0);
         if(vaccineOrderTable.getValueAt(selectedRow, 3) == null){
-            JOptionPane.showMessageDialog(null, "The request is yet to be assigned to CDC", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "This request is yet to be assigned to Distributor", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "Are you sure if you want to Reject?", "warning", dialogButton);
+        int result = JOptionPane.showConfirmDialog(null, "Confirm reject?", "warning", dialogButton);
         if(result == JOptionPane.YES_OPTION){
             UserAccount userAccount = (UserAccount) request.getSender();
             Employee employee = (Employee) userAccount.getEmployee();
             for(Order order : employee.getOrderCatalog().getOrderList()){
                 if(request.getOrderID() == order.getOrderID()){
-                    order.setOrderStatus("Order rejected by CDC");
+                    order.setOrderStatus("Order rejected by Distributor");
                     request.setStatus("Rejected");
                     request.setVaccineRequest("Rejected");
                     for (OrderItem oi : order.getOrderItemList()) {
@@ -366,7 +343,7 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
         
         populateVaccineOrderTable();
         
-        JOptionPane.showMessageDialog(null, "The request is rejected", "Vaccine Request", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "This request is rejected", "Vaccine Request", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_rejectButtonActionPerformed
 
 
@@ -375,6 +352,7 @@ public class ManageVaccineOrderRequestPanel extends javax.swing.JPanel {
     private javax.swing.JButton backButton;
     private javax.swing.JButton forwardButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable orderTable;

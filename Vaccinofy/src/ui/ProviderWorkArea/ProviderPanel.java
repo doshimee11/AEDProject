@@ -42,64 +42,44 @@ public class ProviderPanel extends javax.swing.JPanel {
         manageOrganizationButton = new javax.swing.JButton();
         manageHospitalButton = new javax.swing.JButton();
         managePharmacyButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Provider Work Area");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 30, -1, -1));
 
         manageOrganizationButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageOrganizationButton.setText("Manage Organization >>");
+        manageOrganizationButton.setText("Manage Organization ");
         manageOrganizationButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageOrganizationButtonActionPerformed(evt);
             }
         });
+        add(manageOrganizationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 138, 240, 50));
 
         manageHospitalButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        manageHospitalButton.setText("Manage Hospital >>");
+        manageHospitalButton.setText("Manage Hospital ");
         manageHospitalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageHospitalButtonActionPerformed(evt);
             }
         });
+        add(manageHospitalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 240, 50));
 
         managePharmacyButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        managePharmacyButton.setText("Manage Pharmacy >>");
+        managePharmacyButton.setText("Manage Pharmacy ");
         managePharmacyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 managePharmacyButtonActionPerformed(evt);
             }
         });
+        add(managePharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 298, 240, 50));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(621, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(346, 346, 346))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(manageOrganizationButton, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(manageHospitalButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(managePharmacyButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(337, 337, 337))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1)
-                .addGap(66, 66, 66)
-                .addComponent(manageOrganizationButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(manageHospitalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(managePharmacyButton)
-                .addContainerGap(701, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 3, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageOrganizationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationButtonActionPerformed
@@ -131,6 +111,7 @@ public class ProviderPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton manageHospitalButton;
     private javax.swing.JButton manageOrganizationButton;
     private javax.swing.JButton managePharmacyButton;
