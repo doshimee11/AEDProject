@@ -17,6 +17,6 @@
 ![Class Diagram](https://github.com/doshimee11/AEDProject/blob/main/Vaccinofy/AED%20Project%20Class%20Diagram.png?raw=true)
 
 * Softwares Used -  Apache NetBeans IDE 15
-* Java Version - Java HotSpot(TM) 64-Bit Server VM 18.0.2.1+1-1Java(TM) SE 
-* Runtime - Runtime Environment 18.0.2.1+1-1
+* Java Version - Java HotSpot(TM) 64-Bit Server VM Zulu 8.0.352+8 SE 
+* Runtime - Runtime Environment Zulu 8.0.352+8
 * OS - Mac OS X version 13.0 running on x86_64; UTF-8; en_GB (nb)
