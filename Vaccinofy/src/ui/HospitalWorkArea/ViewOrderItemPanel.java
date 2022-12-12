@@ -24,6 +24,7 @@ public class ViewOrderItemPanel extends javax.swing.JPanel {
     
     public ViewOrderItemPanel(JPanel userProcessContainer, OrderItem orderItem) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.orderItem = orderItem;
         

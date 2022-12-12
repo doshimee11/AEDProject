@@ -134,7 +134,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, -2, 1190, 1000));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -2, 1210, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed

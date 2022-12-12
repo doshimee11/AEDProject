@@ -48,16 +48,16 @@ public class ConfigureSystem {
         
         if (inventory2.getVaccine().getVaccineID() == vaccine.getVaccineID()) {
             inventory2.getVaccine().setVaccinePrice(10);
-            inventory2.getVaccine().setVaccineManufactureDate("30-May-2014");
-            inventory2.getVaccine().setVaccineExpiryDate("12-May-2016");
+            inventory2.getVaccine().setVaccineManufactureDate("30-May-2022");
+            inventory2.getVaccine().setVaccineExpiryDate("12-May-2024");
             inventory2.getVaccine().setAvailablity(20);
         }
         
         Inventory inventory3 = organization.getInventoryDirectory().createNewInventory(vaccine1);
         if (inventory3.getVaccine().getVaccineID() == vaccine1.getVaccineID()) {
             inventory3.getVaccine().setVaccinePrice(10);
-            inventory3.getVaccine().setVaccineManufactureDate("12-May-2014");
-            inventory3.getVaccine().setVaccineExpiryDate("12-May-2016");
+            inventory3.getVaccine().setVaccineManufactureDate("12-May-2022");
+            inventory3.getVaccine().setVaccineExpiryDate("12-May-2024");
             inventory3.getVaccine().setAvailablity(20);
         }
         return system;

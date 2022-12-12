@@ -41,6 +41,7 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
     
     public ManageManufacturerRequestPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, VaccineManufacturerEnterprise vaccineManufacturesEnterprise) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
         this.system = system;
@@ -232,8 +233,8 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
                 for (Organization organization : ent.getOrganizationDirectory().getOrganizationDirectory()) {
                     for (Inventory inventory : organization.getInventoryDirectory().getInventoryDirectory()) {
                         if (manufactureRequest.getOrderID() == inventory.getVaccine().getVaccineID()) {
-                            ManufacturerVaccinePanel manufactureVaccinePanel = new ManufacturerVaccinePanel(userProcessContainer, inventory, requestedQuantity);
-                            userProcessContainer.add("manufactureVaccinePanel", manufactureVaccinePanel);
+                            ManufacturerVaccinePanel manufacturerVaccinePanel = new ManufacturerVaccinePanel(userProcessContainer, inventory, requestedQuantity);
+                            userProcessContainer.add("manufacturerVaccinePanel", manufacturerVaccinePanel);
                             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                             layout.next(userProcessContainer);
                         }
@@ -317,7 +318,6 @@ public class ManageManufacturerRequestPanel extends javax.swing.JPanel {
             }
             else {
                 JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
-                return;
             }
         }
         catch(Exception e){

@@ -78,7 +78,7 @@ public class PublicHealthDepartmentPanel extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 3, 1190, 1000));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-11, -17, 1220, 1030));
 
         jLabel2.setText("jLabel2");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, -3, 1200, 1000));

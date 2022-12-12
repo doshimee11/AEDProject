@@ -45,7 +45,7 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
         providerJComboBox.addItem("Pharmacy");
     }
     
-    public void populateHosptialTable(){
+    public void populateHospitalTable(){
         DefaultTableModel dtm = (DefaultTableModel) messageJTable.getModel();
         dtm.setRowCount(0);
         
@@ -188,17 +188,16 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Select a row from the table.", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-
             if(messageJTable.getValueAt(selectedRow, 3) != null){
                 JOptionPane.showMessageDialog(null, "This request is assigned", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-
+            
             EnrollmentRequest request = (EnrollmentRequest) messageJTable.getValueAt(selectedRow, 0);
             request.setReceiver(userAccount);
             request.setStatus("Pending");
             if(request.getSender().getEmployee().getCheck().equalsIgnoreCase("Hospital")){
-                populateHosptialTable();
+                populateHospitalTable();
             } else if(request.getSender().getEmployee().getCheck().equalsIgnoreCase("Pharmacy")){
                 populatePharmacyTable();
             }
@@ -237,7 +236,7 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
             request.setEnrollmentRequest("Approved");
             if(employee.getCheck().equalsIgnoreCase("hospital")){
                 employee.getHospital().setHospitalStatus("Approved");
-                populateHosptialTable();
+                populateHospitalTable();
             } else if(employee.getCheck().equalsIgnoreCase("Pharmacy")){
                 employee.getPharmacy().setPharmacyStatus("Approved");
                 populatePharmacyTable();
@@ -291,7 +290,7 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
                 request.setEnrollmentRequest("Rejected");
                 if(employee.getCheck().equalsIgnoreCase("Hospital")){
                     employee.getHospital().setHospitalStatus("Rejected");
-                    populateHosptialTable();
+                    populateHospitalTable();
                 } else if(employee.getCheck().equalsIgnoreCase("Pharmacy")){
                     employee.getPharmacy().setPharmacyStatus("Rejected");
                     populatePharmacyTable();
@@ -309,7 +308,7 @@ public class EnrollmentApprovalPanel extends javax.swing.JPanel {
         String provider = (String) providerJComboBox.getSelectedItem();
         if(provider != null){
             if(provider.equalsIgnoreCase("Hospital")){
-                populateHosptialTable();
+                populateHospitalTable();
             } else if(provider.equalsIgnoreCase("Pharmacy")){
                 populatePharmacyTable();
             }

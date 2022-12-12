@@ -53,7 +53,8 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
             row[0] = request;
             if(request.getRequestType().equalsIgnoreCase("Hospital Vaccine request")){
                 row[1] = request.getSender().getEmployee().getHospital().getHospitalName();
-            } else if(request.getRequestType().equalsIgnoreCase("Pharmacy Vaccine request")){
+            }
+            else if(request.getRequestType().equalsIgnoreCase("Pharmacy Vaccine request")){
                 row[1] = request.getSender().getEmployee().getPharmacy().getPharmacyName();
             }
             row[2] = request.getSender();
@@ -174,7 +175,7 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, -2, 1190, 1000));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -2, 1210, 1010));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderButtonActionPerformed
@@ -204,7 +205,6 @@ public class VaccineOrderRequestApprovalPanel extends javax.swing.JPanel {
             }
             else {
                 JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
-                return;
             }
         }
         catch(Exception e){

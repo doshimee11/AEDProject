@@ -4,7 +4,7 @@
  */
 package Business.Organization;
 
-import Business.Role.DistributerAdminRole;
+import Business.Role.DistributorAdminRole;
 import Business.Role.HospitalAdminRole;
 import Business.Role.ManufacturerAdminRole;
 import Business.Role.PharmacyAdminRole;
@@ -27,7 +27,7 @@ public class AdminOrganization extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList<>();
-        roles.add(new DistributerAdminRole());
+        roles.add(new DistributorAdminRole());
         roles.add(new ManufacturerAdminRole());
         roles.add(new ProviderAdminRole());
         roles.add(new PublicHealthAdmin());

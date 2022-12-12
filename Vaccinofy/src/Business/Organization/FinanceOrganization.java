@@ -4,7 +4,7 @@
  */
 package Business.Organization;
 
-import Business.Role.DistributerFinanceRole;
+import Business.Role.DistributorFinanceRole;
 import Business.Role.HospitalFinanceRole;
 import Business.Role.ManufacturerFinanceRole;
 import Business.Role.ProviderFinanceRole;
@@ -25,7 +25,7 @@ public class FinanceOrganization extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList<>();
-        roles.add(new DistributerFinanceRole());
+        roles.add(new DistributorFinanceRole());
         roles.add(new ProviderFinanceRole());
         roles.add(new ManufacturerFinanceRole());
         roles.add(new HospitalFinanceRole());

@@ -94,18 +94,18 @@ public class AddVaccinePanel extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 1, 940, 590));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-11, -9, 1220, 1020));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVaccineButtonActionPerformed
-        String vaccineName = vaccineNameTextField.getText();
-        String diseasesName = diseasesNameTextField.getText();
-        
-        Vaccine vaccine = system.getVaccineDirectory().createNewVaccine();
-        vaccine.setVaccineName(vaccineName);
-        vaccine.setDiseaseName(diseasesName);
-        Enterprise ent = null;
         try{
+            String vaccineName = vaccineNameTextField.getText();
+            String diseasesName = diseasesNameTextField.getText();
+            Vaccine vaccine = system.getVaccineDirectory().createNewVaccine();
+            vaccine.setVaccineName(vaccineName);
+            vaccine.setDiseaseName(diseasesName);
+            Enterprise ent = null;
+            
             for(Network network : system.getNetworkDirectory()){
                 for(Enterprise enterprise : network.getEnterpriseDirectory().getEnterprisesDirectory()){
                     if(enterprise instanceof DistributorEnterprise){
@@ -121,12 +121,12 @@ public class AddVaccinePanel extends javax.swing.JPanel {
             }
             o.getInventoryDirectory().createNewInventory(vaccine);
             JOptionPane.showMessageDialog(null, "New Vaccine has been added successfully !!!");
+            vaccineNameTextField.setText(null);
+            diseasesNameTextField.setText(null);
         }
         catch(Exception e){
             System.out.println("Exception executed" + e);
         }
-        vaccineNameTextField.setText(null);
-        diseasesNameTextField.setText(null);
     }//GEN-LAST:event_addVaccineButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed

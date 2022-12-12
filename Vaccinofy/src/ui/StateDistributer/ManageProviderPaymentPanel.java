@@ -236,7 +236,6 @@ public class ManageProviderPaymentPanel extends javax.swing.JPanel {
             }
         } else {
             JOptionPane.showMessageDialog(null, "Select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
         }
     }//GEN-LAST:event_viewOrderButtonActionPerformed
 

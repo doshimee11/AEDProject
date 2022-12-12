@@ -164,7 +164,8 @@ public class MainFrame extends javax.swing.JFrame {
                                     break;
                                 }
                             }
-                        } else {
+                        }
+                        else {
                             inEnterprise = enterprise;
                             break;
                         }
@@ -184,8 +185,8 @@ public class MainFrame extends javax.swing.JFrame {
                 userProcessContainer.repaint();
                 userNameJTextField.setText(null);
                 passwordJPasswordField.setText(null);
-                return;
-            } else {
+            }
+            else {
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 userProcessContainer.add("workArea", userAccount.getRole().createWorkArea(userProcessContainer, userAccount, inOrganization, inEnterprise, system));
                 layout.next(userProcessContainer);

@@ -47,7 +47,6 @@ public class DistributerFinancePanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         manageManufacturerPaymentButton = new javax.swing.JButton();
         manageProviderPaymentButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -74,16 +73,12 @@ public class DistributerFinancePanel extends javax.swing.JPanel {
             }
         });
         add(manageProviderPaymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 310, 70));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/kalindjoshi/Downloads/Employee.png")); // NOI18N
-        jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageManufacturerPaymentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageManufacturerPaymentButtonActionPerformed
         try{
             ManageManufacturerPaymentPanel manageManufacturerPaymentPanel = new ManageManufacturerPaymentPanel(userProcessContainer, system, userAccount, distributorEnterprise);
-            userProcessContainer.add("manageManufacturePaymentJPanel", manageManufacturerPaymentPanel);
+            userProcessContainer.add("manageManufacturePaymentPanel", manageManufacturerPaymentPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         }
@@ -95,7 +90,7 @@ public class DistributerFinancePanel extends javax.swing.JPanel {
     private void manageProviderPaymentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageProviderPaymentButtonActionPerformed
         try{
             ManageProviderPaymentPanel manageProviderPaymentPanel = new ManageProviderPaymentPanel(userProcessContainer, system, userAccount, distributorEnterprise);
-            userProcessContainer.add("manageProviderPaymentJPanel", manageProviderPaymentPanel);
+            userProcessContainer.add("manageProviderPaymentPanel", manageProviderPaymentPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         }
@@ -106,7 +101,6 @@ public class DistributerFinancePanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton manageManufacturerPaymentButton;
     private javax.swing.JButton manageProviderPaymentButton;
     // End of variables declaration//GEN-END:variables

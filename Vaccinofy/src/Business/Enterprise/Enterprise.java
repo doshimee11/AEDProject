@@ -16,13 +16,11 @@ public abstract class Enterprise extends Organization{
     
     private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
-    private UserAccountDirectory userAccountDirectory;
     
     public Enterprise(String name, EnterpriseType enterpriseType){
         super(name);
         this.enterpriseType = enterpriseType;
         this.organizationDirectory = new OrganizationDirectory();
-        this.userAccountDirectory = new UserAccountDirectory();
     }
     
     public enum EnterpriseType{
@@ -53,10 +51,6 @@ public abstract class Enterprise extends Organization{
 
     public OrganizationDirectory getOrganizationDirectory() {
         return organizationDirectory;
-    }
-    
-    public UserAccountDirectory getUserAccountDirectory() {
-        return userAccountDirectory;
     }
     
 }

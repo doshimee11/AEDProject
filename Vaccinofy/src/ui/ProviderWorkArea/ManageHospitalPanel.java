@@ -89,13 +89,13 @@ public class ManageHospitalPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Unknown.png"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 5, 1200, 990));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, -5, 1210, 1010));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageEmployeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeButtonActionPerformed
         
-        ManageHospitalEmployeePanel manageEmployeePanel = new ManageHospitalEmployeePanel(userProcessContainer, providerEnterprise);
-        userProcessContainer.add("ManageEmploeePanel", manageEmployeePanel);
+        ManageHospitalEmployeePanel manageHospitalEmployeePanel = new ManageHospitalEmployeePanel(userProcessContainer, providerEnterprise);
+        userProcessContainer.add("ManageHospitalEmployeePanel", manageHospitalEmployeePanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         

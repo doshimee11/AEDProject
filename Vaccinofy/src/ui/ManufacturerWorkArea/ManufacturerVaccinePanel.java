@@ -29,6 +29,7 @@ public class ManufacturerVaccinePanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.requestedQuantity = requestedQuantity;
         this.inventory = inventory;
+        
         vaccineIDTextField.setText(String.valueOf(inventory.getVaccine().getVaccineID()));
         vaccineNameTextField.setText(inventory.getVaccine().getVaccineName());
     }

@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ADMIN/OneDrive/Documents/AEDProject/Vaccinofy/src/ui/HospitalWorkArea/HospitalPanel.java</file>
-            <file>file:/C:/Users/ADMIN/OneDrive/Documents/AEDProject/Vaccinofy/src/ui/HospitalWorkArea/OrderVaccinePanel.java</file>
-            <file>file:/C:/Users/ADMIN/OneDrive/Documents/AEDProject/Vaccinofy/src/ui/HospitalWorkArea/ManageDistributorPaymentPanel.java</file>
-            <file>file:/C:/Users/ADMIN/OneDrive/Documents/AEDProject/Vaccinofy/src/ui/ManufacturerWorkArea/ManageManufacturerOrganizationPanel.java</file>
+            <file>file:/Users/meetdoshi/NetBeansProjects/AEDProject/Vaccinofy/src/ui/MainFrame.java</file>
+            <file>file:/Users/meetdoshi/NetBeansProjects/AEDProject/Vaccinofy/src/Business/Role/SystemAdminRole.java</file>
+            <file>file:/Users/meetdoshi/NetBeansProjects/AEDProject/Vaccinofy/src/ui/SystemAdminWorkArea/SystemAdminPanel.java</file>
         </group>
     </open-files>
 </project-private>

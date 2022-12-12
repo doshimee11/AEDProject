@@ -78,7 +78,7 @@ public class ManufacturerWorkArea extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -5, 1200, 1000));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -5, 1210, 1010));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageManufacturerRqstButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageManufacturerRqstButtonActionPerformed

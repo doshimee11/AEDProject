@@ -39,6 +39,7 @@ public class ManufacturerFinancePanel extends javax.swing.JPanel {
     
     public ManufacturerFinancePanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, VaccineManufacturerEnterprise vaccineManufacturesEnterprise) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
         this.system = system;

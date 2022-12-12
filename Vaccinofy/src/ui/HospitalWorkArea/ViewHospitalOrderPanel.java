@@ -159,7 +159,6 @@ public class ViewHospitalOrderPanel extends javax.swing.JPanel {
             }
             else {
                 JOptionPane.showMessageDialog(null, "Select a row first", "View Order", JOptionPane.WARNING_MESSAGE);
-                return;
             }
         }
         catch(Exception e){

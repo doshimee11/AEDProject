@@ -63,7 +63,7 @@ public class NationalDistributorPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/NationalDistributor.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 6, 1180, 990));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -4, 1210, 1010));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageVaccineOrderRqstButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageVaccineOrderRqstButtonActionPerformed

@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 
 public class VaccineManufacturerEnterprise extends Enterprise {
+    
     public VaccineManufacturerEnterprise(String name){
         super(name, EnterpriseType.VaccineManufactures);
     }

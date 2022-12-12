@@ -82,28 +82,26 @@ public class PharmacyOrderOrganizationPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high-angle-view-white-blue-candy-capsules-green-background_23-2147877557.jpg-2.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 1200, 1000));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1220, 1020));
     }// </editor-fold>//GEN-END:initComponents
 
     private void orderVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderVaccineButtonActionPerformed
         try{
             if(userAccount.getEmployee().getPharmacy().getPharmacyStatus().equalsIgnoreCase("Approved")){
-                OrderVaccinePanel orderVaccineJPanel = new OrderVaccinePanel(userProcessContainer, system, userAccount, orderOrganization, providerEnterprise);
-                userProcessContainer.add("OrderVaccinePanel",orderVaccineJPanel);
+                OrderVaccinePanel orderVaccinePanel = new OrderVaccinePanel(userProcessContainer, system, userAccount, orderOrganization, providerEnterprise);
+                userProcessContainer.add("OrderVaccinePanel",orderVaccinePanel);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
             }
             else if(userAccount.getEmployee().getPharmacy().getPharmacyStatus().equalsIgnoreCase("Rejected")){
-                JOptionPane.showMessageDialog(null, "This hospital registration has been rejected by Health Dept", "Hospital Rejected", JOptionPane.ERROR_MESSAGE);
-                return;
+                JOptionPane.showMessageDialog(null, "This pharmacy registration has been rejected by Health Dept", "Pharmacy Rejected", JOptionPane.ERROR_MESSAGE);
             }
             else if(userAccount.getEmployee().getPharmacy().getPharmacyStatus().equalsIgnoreCase("Processing")){
-                JOptionPane.showMessageDialog(null, "This hospital registration request is pending with Health Dept", "Hospital Registration Pending", JOptionPane.ERROR_MESSAGE);
-                return;
+                JOptionPane.showMessageDialog(null, "This pharmacy registration request is pending with Health Dept", "Pharmacy Registration Pending", JOptionPane.ERROR_MESSAGE);
             }
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(null, "Send a hospital registration request to Health Department", "Hospital Registration Not Initialized", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Send a pharmacy registration request to Health Department", "Pharmacy Registration Not Initialized", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_orderVaccineButtonActionPerformed
 

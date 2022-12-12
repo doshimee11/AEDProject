@@ -36,6 +36,7 @@ public class RegisterHospitalPanel extends javax.swing.JPanel {
     
     public RegisterHospitalPanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, ProviderEnterprise providerEnterprise) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         this.userAccount = userAccount;
