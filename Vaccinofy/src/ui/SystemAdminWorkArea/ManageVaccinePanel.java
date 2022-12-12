@@ -166,7 +166,7 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 3, 920, 590));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-11, -7, 1220, 1020));
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
@@ -198,8 +198,8 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void addVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVaccineButtonActionPerformed
-        AddVaccinePanel addVaccineJPanel = new AddVaccinePanel(userProcessContainer, system);
-        userProcessContainer.add("AddVaccineJPanel", addVaccineJPanel);
+        AddVaccinePanel addVaccinePanel = new AddVaccinePanel(userProcessContainer, system);
+        userProcessContainer.add("AddVaccinePanel", addVaccinePanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_addVaccineButtonActionPerformed
@@ -213,7 +213,7 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
         else {
             Vaccine vaccine = (Vaccine)vaccineTable.getValueAt(row, 0);
             ViewVaccinePanel vpdjp = new ViewVaccinePanel(userProcessContainer, vaccine);
-            userProcessContainer.add("ViewVaccineJPanel", vpdjp);
+            userProcessContainer.add("ViewVaccinePanel", vpdjp);
             CardLayout layout = (CardLayout)userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         }
@@ -234,7 +234,7 @@ public class ManageVaccinePanel extends javax.swing.JPanel {
                 return;
             }
             ViewVaccinePanel vpdjp = new ViewVaccinePanel(userProcessContainer, vaccine);
-            userProcessContainer.add("ViewVaccineJPanel", vpdjp);
+            userProcessContainer.add("ViewVaccinePanel", vpdjp);
             CardLayout layout = (CardLayout)userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         }

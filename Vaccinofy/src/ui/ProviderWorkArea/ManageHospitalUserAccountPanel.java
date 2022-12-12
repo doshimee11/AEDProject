@@ -223,6 +223,9 @@ public class ManageHospitalUserAccountPanel extends javax.swing.JPanel {
         Role role = (Role) roleComboBox.getSelectedItem();
         organization.getUserAccountDirectory().createNewUserAccount(userName, password, employee, role);
         
+        nameTextField.setText(null);
+        passwordTextField.setText(null);
+        
         popData();
     }//GEN-LAST:event_createUserButtonActionPerformed
 

@@ -85,21 +85,21 @@ public class HospitalOrderOrganizationPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void orderVaccineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderVaccineButtonActionPerformed
+        System.out.println(userAccount.getEmployee().getHospital().getHospitalStatus());
         try{
             if(userAccount.getEmployee().getHospital().getHospitalStatus().equalsIgnoreCase("Approved")){
-                OrderVaccinePanel orderVaccineJPanel = new OrderVaccinePanel(userProcessContainer, system, userAccount, orderOrganization, providerEnterprise);
-                userProcessContainer.add("OrderVaccinePanel",orderVaccineJPanel);
+                OrderVaccinePanel orderVaccinePanel = new OrderVaccinePanel(userProcessContainer, system, userAccount, orderOrganization, providerEnterprise);
+                userProcessContainer.add("OrderVaccinePanel",orderVaccinePanel);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
             } else if(userAccount.getEmployee().getHospital().getHospitalStatus().equalsIgnoreCase("Rejected")){
                 JOptionPane.showMessageDialog(null, "This hospital registration has been rejected by Health Dept", "Hospital Rejected", JOptionPane.ERROR_MESSAGE);
-                return;
             } else if(userAccount.getEmployee().getHospital().getHospitalStatus().equalsIgnoreCase("Processing")){
                 JOptionPane.showMessageDialog(null, "This hospital registration request is pending with Health Dept", "Hospital Registration Pending", JOptionPane.ERROR_MESSAGE);
-                return;
             }
         }
         catch (Exception ex){
+//            System.out.println(ex);
             JOptionPane.showMessageDialog(null, "Send a hospital registration request to Health Dept", "Hospital Registration Not Initialized", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_orderVaccineButtonActionPerformed

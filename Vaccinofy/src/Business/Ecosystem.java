@@ -4,14 +4,12 @@
  */
 package Business;
 
-import Business.Employee.EmployeeDirectory;
 import Business.Inventory.InventoryDirectory;
 import Business.NationalDistributor.NationalDistributor;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
-import Business.UserAccount.UserAccountDirectory;
 import Business.Vaccine.VaccineDirectory;
 import java.util.ArrayList;
 
@@ -27,8 +25,6 @@ public class Ecosystem extends Organization {
     private VaccineDirectory vaccineDirectory;
     private InventoryDirectory inventoryDirectory;
     private NationalDistributor nationalDistributor;
-    private UserAccountDirectory userAccountDirectory;
-    private EmployeeDirectory employeeDirectory;
     
     public static Ecosystem getInstance(){
         if(system == null){
@@ -43,8 +39,6 @@ public class Ecosystem extends Organization {
         vaccineDirectory = new VaccineDirectory();
         inventoryDirectory = new InventoryDirectory();
         nationalDistributor = new NationalDistributor();
-        userAccountDirectory = new UserAccountDirectory();
-        employeeDirectory = new EmployeeDirectory();
     }
     
     public Network createNetwork(String networkName){
@@ -76,15 +70,7 @@ public class Ecosystem extends Organization {
     public NationalDistributor getNationalDistributor() {
         return nationalDistributor;
     }
-
-    public UserAccountDirectory getUserAccountDirectory() {
-        return userAccountDirectory;
-    }
-
-    public EmployeeDirectory getEmployeeDirectory() {
-        return employeeDirectory;
-    }
-
+    
     public void setNationalDistributor(NationalDistributor nationalDistributor) {
         this.nationalDistributor = nationalDistributor;
     }

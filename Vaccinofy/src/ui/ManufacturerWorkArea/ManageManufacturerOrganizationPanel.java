@@ -33,6 +33,7 @@ public class ManageManufacturerOrganizationPanel extends javax.swing.JPanel {
     
     public ManageManufacturerOrganizationPanel(JPanel userProcessContainer, VaccineManufacturerEnterprise vaccineManufacturesEnterprise) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.vaccineManufacturesEnterprise = vaccineManufacturesEnterprise;
         

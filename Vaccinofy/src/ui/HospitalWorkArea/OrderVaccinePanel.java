@@ -41,6 +41,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
     
     public OrderVaccinePanel(JPanel userProcessContainer, Ecosystem system, UserAccount userAccount, OrderOrganization orderOrganization, ProviderEnterprise providerEnterprise) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         this.userAccount = userAccount;
@@ -231,7 +232,7 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BluePlain-4.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         jLabel2.setPreferredSize(new java.awt.Dimension(1000, 1200));
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 1220));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 1190));
     }// </editor-fold>//GEN-END:initComponents
 
     private void changeQuantityTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeQuantityTextFieldActionPerformed
@@ -433,7 +434,6 @@ public class OrderVaccinePanel extends javax.swing.JPanel {
                     int total_Quantity = oldQuantity + newQuantity;
                     oi.setItemQuantity(total_Quantity);
                     int new_Availablity = vaccine.getAvailablity() - newQuantity;
-                    //                vaccine.setAvailablity(new_Availablity);
                     isIncluded = true;
                 }
             }

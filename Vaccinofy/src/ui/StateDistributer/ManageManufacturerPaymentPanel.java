@@ -189,7 +189,6 @@ public class ManageManufacturerPaymentPanel extends javax.swing.JPanel {
             }
             else {
                 JOptionPane.showMessageDialog(null, "Select a row", "Warning", JOptionPane.WARNING_MESSAGE);
-                return;
             }
         }
         catch(Exception e){

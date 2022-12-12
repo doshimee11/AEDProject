@@ -36,7 +36,6 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
     
     public void populateOrganizationComboBox(){
         organizationComboBox.removeAllItems();
-        
         for (Organization organization : providerEnterprise.getOrganizationDirectory().getOrganizationDirectory()){
             organizationComboBox.addItem(organization);
         }
@@ -44,7 +43,6 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
     
     public void populateHospitalComboBox(){
         hospitalComboBox.removeAllItems();
-        
         for(Hospital hospital : providerEnterprise.getHospitalDirectory().getHospitalDirecotry()){
             hospitalComboBox.addItem(hospital);
         }
@@ -52,7 +50,6 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
     
     public void populateOrganizationEmpComboBox(){
         organizationEmpComboBox.removeAllItems();
-        
         for (Organization organization : providerEnterprise.getOrganizationDirectory().getOrganizationDirectory()){
             organizationEmpComboBox.addItem(organization);
         }
@@ -60,9 +57,7 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
 
     private void populateTable(Organization organization){
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
         model.setRowCount(0);
-        
         for (Employee employee : organization.getEmployeeDirectory().getEmployeeDirectory()){
             if(employee.getCheck().equalsIgnoreCase("Hospital")){
                 Object[] row = new Object[2];
@@ -177,7 +172,7 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(326, 326, 326)
+                .addGap(268, 268, 268)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
@@ -189,7 +184,7 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
                     .addComponent(nameTextField))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(288, Short.MAX_VALUE)
+                .addContainerGap(216, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,10 +200,11 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(organizationEmpComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -216,20 +212,20 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(hospitalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 61, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(89, 89, 89)
                 .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(120, 120, 120))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 197, -1, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 197, 870, 460));
 
         titleJLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleJLabel.setText("Manage Hospital Employee");
@@ -273,6 +269,8 @@ public class ManageHospitalEmployeePanel extends javax.swing.JPanel {
         Employee employee = organization.getEmployeeDirectory().createNewEmployee(name);
         employee.setHospital(hospital);
         employee.setCheck("Hospital");
+        
+        nameTextField.setText(null);
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void organizationComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationComboBoxActionPerformed

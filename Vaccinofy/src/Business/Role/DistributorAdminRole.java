@@ -17,7 +17,7 @@ import ui.StateDistributer.StateDistributorPanel;
  * @author meetdoshi
  */
 
-public class DistributerAdminRole extends Role {
+public class DistributorAdminRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Ecosystem system) {

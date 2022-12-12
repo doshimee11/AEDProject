@@ -35,10 +35,12 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
     
     public ManageVaccineOrderPanel(JPanel userProcessContainer, UserAccount userAccount, Ecosystem system, PublicHealthEnterprise publicHealthEnterprise) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
         this.system = system;
         this.publicHealthEnterprise = publicHealthEnterprise;
+        
         populateProviderComboBox();
     }
     
@@ -213,7 +215,7 @@ public class ManageVaccineOrderPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vaccine Doodle.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 4, 1200, 990));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -16, 1210, 1030));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewJButtonActionPerformed
